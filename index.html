@@ -37,6 +37,7 @@
   <!--
     編集する場所
       屋号            … site.js の SITE.name（表示・タイトル・JSON-LD はここから上書き）
+      改行            … ことばの切れ目は <wbr> と span.phr。単語の途中では切らない
       料金（仮）        … 下の section#prices だけ
       連絡先            … section#contact の会社情報と、その直後の JSON-LD
       フォームURL・通知先 … site.js の FORM_URL と FORM_NOTIFY
@@ -44,18 +45,18 @@
   -->
 </head>
 <body>
-  <a class="skip" href="#main">本文へ進む</a>
+  <a class="skip" href="#main">本文へ<wbr>進む</a>
   <header class="site-header" id="top">
     <div class="wrap header-inner">
       <a class="brand" href="#top">
         <img class="logo" src="assets/mowa_neko_logo.jpg" alt="mowaソリューションズ" data-site-alt="name" width="754" height="193">
-        <span class="brand__service" data-site="service">ITなんでも屋</span>
+        <span class="phr brand__service" data-site="service">ITなんでも屋</span>
       </a>
       <details class="menu">
         <summary>
           <span class="burger" aria-hidden="true"></span>
-          <span class="when-closed">メニュー</span>
-          <span class="when-open">閉じる</span>
+          <span class="when-closed"><span class="phr">メニュー</span></span>
+          <span class="when-open"><span class="phr">閉じる</span></span>
         </summary>
         <nav aria-label="ページ内（携帯）">
           <a href="#troubles">困りごと</a>
@@ -67,7 +68,7 @@
           <a href="#about">会社</a>
           <a href="#flow">流れ</a>
           <a href="#faq">質問</a>
-          <a class="menu__cta" href="#contact">無料で相談する</a>
+          <a class="menu__cta" href="#contact">無料で<wbr>相談する</a>
         </nav>
       </details>
       <nav class="nav-wide" aria-label="ページ内">
@@ -78,7 +79,7 @@
         <a href="#debug">ソフト・アプリ</a>
         <a href="#photos">写真</a>
         <a class="nav-late" href="#about">会社</a>
-        <a class="menu__cta" href="#contact">無料で相談する</a>
+        <a class="menu__cta" href="#contact">無料で<wbr>相談する</a>
       </nav>
     </div>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -88,18 +89,18 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
         <div>
-          <p class="eyebrow hero-rise">大津町で、店や畑の機械を見ています</p>
-          <h1 id="hero-title" class="hero-rise">熊本のITなんでも屋です。</h1>
-          <p class="free-line hero-rise">診断・ご相談は無料です。まず話を聞きます。</p>
-          <p class="lede hero-rise">電源が入らないパソコンを見ています。毎月のExcel集計がつらい、という話も多いです。</p>
+          <p class="eyebrow hero-rise"><span class="phr">大津町で、</span><wbr><span class="phr">店や</span><wbr><span class="phr">畑の</span><wbr><span class="phr">機械を</span><wbr><span class="phr">見ています</span></p>
+          <h1 id="hero-title" class="hero-rise"><span class="phr">熊本の</span><wbr><span class="phr">ITなんでも屋です。</span></h1>
+          <p class="free-line hero-rise"><span class="phr">診断・ご相談は</span><wbr><span class="phr">無料です。</span><wbr><span class="phr">まず</span><wbr><span class="phr">話を</span><wbr><span class="phr">聞きます。</span></p>
+          <p class="lede hero-rise"><span class="phr">電源が</span><wbr><span class="phr">入らない</span><wbr><span class="phr">パソコンを</span><wbr><span class="phr">見ています。</span><wbr><span class="phr">毎月の</span><wbr><span class="phr">Excel集計が</span><wbr><span class="phr">つらい、という</span><wbr><span class="phr">話も</span><wbr><span class="phr">多いです。</span></p>
           <div class="actions hero-rise">
-            <a class="btn btn--primary" href="#contact">無料で相談する</a>
-            <a class="btn btn--ghost" href="#prices">料金の目安を見る</a>
+            <a class="btn btn--primary" href="#contact">無料で<wbr>相談する</a>
+            <a class="btn btn--ghost" href="#prices">料金の<wbr>目安を<wbr>見る</a>
           </div>
-          <p class="fine hero-rise">見積もりも無料です。このページの金額は、まだ仮です。</p>
+          <p class="fine hero-rise"><span class="phr">見積もりも</span><wbr><span class="phr">無料です。</span><wbr><span class="phr">この</span><wbr><span class="phr">ページの</span><wbr><span class="phr">金額は、</span><wbr><span class="phr">まだ</span><wbr><span class="phr">仮です。</span></p>
           <ul class="hero-facts hero-rise">
-            <li>年中無休 9:00–17:00</li>
-            <li>熊本県菊池郡大津町</li>
+            <li><span class="phr">年中無休 9:00–17:00</span></li>
+            <li><span class="phr">熊本県菊池郡大津町</span></li>
             <li><a href="tel:0962828122">096-282-8122</a></li>
           </ul>
         </div>
@@ -119,99 +120,99 @@
 
     <section class="section" id="troubles">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">01</span>こんなことで困っていませんか</h2>
-        <p class="lead reveal">店でも畑でも、ひとりで仕事をしている人でも、紙の帳面のままでかまいません。当てはまるものがあれば、そこから話します。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">01</span></span><span class="ttl"><span class="phr">こんな</span><wbr><span class="phr">ことで</span><wbr><span class="phr">困っていませんか</span></span></h2>
+        <p class="lead reveal"><span class="phr">店でも</span><wbr><span class="phr">畑でも、</span><wbr><span class="phr">ひとりで</span><wbr><span class="phr">仕事を</span><wbr><span class="phr">している</span><wbr><span class="phr">人でも、</span><wbr><span class="phr">紙の</span><wbr><span class="phr">帳面の</span><wbr><span class="phr">ままでかまいません。</span><wbr><span class="phr">当てはまる</span><wbr><span class="phr">ものが</span><wbr><span class="phr">あれば、</span><wbr><span class="phr">そこから</span><wbr><span class="phr">話します。</span></p>
         <ul class="card-grid card-grid--2 indexed" data-stagger>
           <li class="trouble lift reveal-item">
-            <h3>スマホの操作が不安</h3>
-            <p>LINEで写真を送りたいのに、どのボタンか迷うことがあります。</p>
+            <h3><span class="phr">スマホの</span><wbr><span class="phr">操作が</span><wbr><span class="phr">不安</span></h3>
+            <p><span class="phr">LINEで</span><wbr><span class="phr">写真を</span><wbr><span class="phr">送りたいのに、</span><wbr><span class="phr">どの</span><wbr><span class="phr">ボタンか</span><wbr><span class="phr">迷うことがあります。</span></p>
           </li>
           <li class="trouble lift reveal-item">
-            <h3>パソコンが遅い、急に止まった</h3>
-            <p>仕事のファイルが入ったまま、電源が入らなくなった、という相談が多いです。</p>
+            <h3><span class="phr">パソコンが</span><wbr><span class="phr">遅い、</span><wbr><span class="phr">急に</span><wbr><span class="phr">止まった</span></h3>
+            <p><span class="phr">仕事の</span><wbr><span class="phr">ファイルが</span><wbr><span class="phr">入ったまま、</span><wbr><span class="phr">電源が</span><wbr><span class="phr">入らなくなった、という</span><wbr><span class="phr">相談が</span><wbr><span class="phr">多いです。</span></p>
           </li>
           <li class="trouble lift reveal-item">
-            <h3>毎日、同じ書き写しがある</h3>
-            <p>紙の伝票を、もう一度表計算に打ち直しています。</p>
+            <h3><span class="phr">毎日、</span><wbr><span class="phr">同じ</span><wbr><span class="phr">書き写しが</span><wbr><span class="phr">ある</span></h3>
+            <p><span class="phr">紙の</span><wbr><span class="phr">伝票を、</span><wbr><span class="phr">もう</span><wbr><span class="phr">一度</span><wbr><span class="phr">表計算に</span><wbr><span class="phr">打ち直しています。</span></p>
           </li>
           <li class="trouble lift reveal-item">
-            <h3>在庫・予約・売上が手書き</h3>
-            <p>帳面を開かないと、棚に今いくつあるかわかりません。</p>
+            <h3><span class="phr">在庫・予約・売上が</span><wbr><span class="phr">手書き</span></h3>
+            <p><span class="phr">帳面を</span><wbr><span class="phr">開かないと、</span><wbr><span class="phr">棚に</span><wbr><span class="phr">今いくつあるか</span><wbr><span class="phr">わかりません。</span></p>
           </li>
           <li class="trouble lift reveal-item">
-            <h3>AIが気になる</h3>
-            <p>文章の下書きに使えると聞きました。お客さんの名前を入れていいかは、まだ決めていません。</p>
+            <h3><span class="phr">AIが</span><wbr><span class="phr">気になる</span></h3>
+            <p><span class="phr">文章の</span><wbr><span class="phr">下書きに</span><wbr><span class="phr">使えると</span><wbr><span class="phr">聞きました。</span><wbr><span class="phr">お客さんの</span><wbr><span class="phr">名前を</span><wbr><span class="phr">入れていいかは、</span><wbr><span class="phr">まだ</span><wbr><span class="phr">決めていません。</span></p>
           </li>
           <li class="trouble lift reveal-item">
-            <h3>現場の数を、あとから見たい</h3>
-            <p>温度や、機械が止まった時刻を、あとから見られません。</p>
+            <h3><span class="phr">現場の</span><wbr><span class="phr">数を、</span><wbr><span class="phr">あとから</span><wbr><span class="phr">見たい</span></h3>
+            <p><span class="phr">温度や、</span><wbr><span class="phr">機械が</span><wbr><span class="phr">止まった</span><wbr><span class="phr">時刻を、</span><wbr><span class="phr">あとから</span><wbr><span class="phr">見られません。</span></p>
           </li>
           <li class="trouble lift reveal-item">
-            <h3>説明が、人によって違う</h3>
-            <p>新しい人に、毎回いちから口で教えています。</p>
+            <h3><span class="phr">説明が、</span><wbr><span class="phr">人に</span><wbr><span class="phr">よって</span><wbr><span class="phr">違う</span></h3>
+            <p><span class="phr">新しい</span><wbr><span class="phr">人に、</span><wbr><span class="phr">毎回いちから</span><wbr><span class="phr">口で</span><wbr><span class="phr">教えています。</span></p>
           </li>
           <li class="trouble lift reveal-item">
-            <h3>直せる人が、もういない</h3>
-            <p>作った人がいなくなって、昔の表計算を開ける人がいません。</p>
+            <h3><span class="phr">直せる</span><wbr><span class="phr">人が、</span><wbr><span class="phr">もういない</span></h3>
+            <p><span class="phr">作った</span><wbr><span class="phr">人が</span><wbr><span class="phr">いなくなって、</span><wbr><span class="phr">昔の</span><wbr><span class="phr">表計算を</span><wbr><span class="phr">開ける</span><wbr><span class="phr">人が</span><wbr><span class="phr">いません。</span></p>
           </li>
         </ul>
-        <p class="fine more">ひとつでも当てはまったら、その話だけで連絡してください。<a href="#contact">無料で相談する</a></p>
+        <p class="fine more"><span class="phr">ひとつでも</span><wbr><span class="phr">当てはまったら、</span><wbr><span class="phr">その</span><wbr><span class="phr">話だけで</span><wbr><span class="phr">連絡してください。</span><a href="#contact">無料で<wbr>相談する</a></p>
       </div>
     </section>
 
     <section class="section section--paper" id="services">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">02</span>サービス</h2>
-        <p class="lead reveal">全部を新しい仕組みにする話から始めません。今のやり方を見て、困っているところだけ直します。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">02</span></span><span class="ttl"><span class="phr">サービス</span></span></h2>
+        <p class="lead reveal"><span class="phr">全部を</span><wbr><span class="phr">新しい</span><wbr><span class="phr">仕組みに</span><wbr><span class="phr">する</span><wbr><span class="phr">話から</span><wbr><span class="phr">始めません。</span><wbr><span class="phr">今の</span><wbr><span class="phr">やり方を</span><wbr><span class="phr">見て、</span><wbr><span class="phr">困っている</span><wbr><span class="phr">ところだけ</span><wbr><span class="phr">直します。</span></p>
         <ul class="card-grid card-grid--3 indexed" data-stagger>
           <li class="service lift reveal-item">
-            <h3>スマホ・パソコン</h3>
-            <p>遅い原因を見たり、控えを取ったりします。買い替えが必要なら、理由を先に言います。</p>
-            <a class="service__link" href="#prices">料金の目安</a>
+            <h3><span class="phr">スマホ・パソコン</span></h3>
+            <p><span class="phr">遅い</span><wbr><span class="phr">原因を</span><wbr><span class="phr">見たり、</span><wbr><span class="phr">控えを</span><wbr><span class="phr">取ったりします。</span><wbr><span class="phr">買い</span><wbr><span class="phr">替えが</span><wbr><span class="phr">必要なら、</span><wbr><span class="phr">理由を</span><wbr><span class="phr">先に</span><wbr><span class="phr">言います。</span></p>
+            <a class="service__link" href="#prices">料金の<wbr>目安</a>
           </li>
           <li class="service lift reveal-item">
-            <h3>ツール・ソフトウェア・アプリ開発</h3>
-            <p>日報や在庫の画面を、紙やExcelの代わりに小さく作ります。毎月の集計がつらい、という相談が多いです。</p>
-            <a class="service__link" href="#prices">料金の目安</a>
+            <h3><span class="phr">ツール・</span><wbr><span class="phr">ソフトウェア・</span><wbr><span class="phr">アプリ開発</span></h3>
+            <p><span class="phr">日報や</span><wbr><span class="phr">在庫の</span><wbr><span class="phr">画面を、</span><wbr><span class="phr">紙や</span><wbr><span class="phr">Excelの</span><wbr><span class="phr">代わりに</span><wbr><span class="phr">小さく</span><wbr><span class="phr">作ります。</span><wbr><span class="phr">毎月の</span><wbr><span class="phr">集計が</span><wbr><span class="phr">つらい、という</span><wbr><span class="phr">相談が</span><wbr><span class="phr">多いです。</span></p>
+            <a class="service__link" href="#prices">料金の<wbr>目安</a>
           </li>
           <li class="service lift reveal-item">
-            <h3>AIを使ってみる</h3>
-            <p>案内文の下書きや、問い合わせの整理に使います。外に出していい情報は、先に一緒に決めます。</p>
-            <a class="service__link" href="#prices">料金の目安</a>
+            <h3><span class="phr">AIを</span><wbr><span class="phr">使ってみる</span></h3>
+            <p><span class="phr">案内文の</span><wbr><span class="phr">下書きや、</span><wbr><span class="phr">問い合わせの</span><wbr><span class="phr">整理に</span><wbr><span class="phr">使います。</span><wbr><span class="phr">外に</span><wbr><span class="phr">出していい</span><wbr><span class="phr">情報は、</span><wbr><span class="phr">先に</span><wbr><span class="phr">一緒に</span><wbr><span class="phr">決めます。</span></p>
+            <a class="service__link" href="#prices">料金の<wbr>目安</a>
           </li>
           <li class="service lift reveal-item">
-            <h3>現場の小さな機械</h3>
-            <p>売っている機械では合わないときに、温度を測る部品や、小さい表示、治具を作ります。</p>
-            <a class="service__link" href="#prices">料金の目安</a>
+            <h3><span class="phr">現場の</span><wbr><span class="phr">小さな</span><wbr><span class="phr">機械</span></h3>
+            <p><span class="phr">売っている</span><wbr><span class="phr">機械では</span><wbr><span class="phr">合わない</span><wbr><span class="phr">ときに、</span><wbr><span class="phr">温度を</span><wbr><span class="phr">測る</span><wbr><span class="phr">部品や、</span><wbr><span class="phr">小さい</span><wbr><span class="phr">表示、</span><wbr><span class="phr">治具を</span><wbr><span class="phr">作ります。</span></p>
+            <a class="service__link" href="#prices">料金の<wbr>目安</a>
           </li>
           <li class="service lift reveal-item">
-            <h3>画面を見ながら覚える</h3>
-            <p>少人数で、その店の画面を見ながらやります。</p>
-            <a class="service__link" href="#prices">料金の目安</a>
+            <h3><span class="phr">画面を</span><wbr><span class="phr">見ながら</span><wbr><span class="phr">覚える</span></h3>
+            <p><span class="phr">少人数で、</span><wbr><span class="phr">その</span><wbr><span class="phr">店の</span><wbr><span class="phr">画面を</span><wbr><span class="phr">見ながらやります。</span></p>
+            <a class="service__link" href="#prices">料金の<wbr>目安</a>
           </li>
           <li class="service lift reveal-item">
-            <h3>その後の保守</h3>
-            <p>使い始めてからの「これ、どうするんだっけ」を、月ごとに受けます。</p>
-            <a class="service__link" href="#prices">料金の目安</a>
+            <h3><span class="phr">その後の</span><wbr><span class="phr">保守</span></h3>
+            <p><span class="phr">使い始めてからの</span><wbr><span class="phr">「これ、</span><wbr><span class="phr">どうするんだっけ」を、</span><wbr><span class="phr">月ごとに</span><wbr><span class="phr">受けます。</span></p>
+            <a class="service__link" href="#prices">料金の<wbr>目安</a>
           </li>
         </ul>
-        <h3 class="price-block">仕事のようす</h3>
+        <h3 class="price-block"><span class="ttl"><span class="phr">仕事のようす</span></span></h3>
         <div class="film" data-stagger>
           <figure class="film__item reveal-item">
             <img src="assets/photos/pc-build-assembly.webp" srcset="assets/photos/pc-build-assembly-800.webp 800w, assets/photos/pc-build-assembly.webp 1400w" sizes="(max-width: 799px) 78vw, 24vw" width="1400" height="1050" alt="小さいパソコンの電源を、ねじで留めているところ" loading="lazy" decoding="async">
-            <figcaption>パソコンの組み立て</figcaption>
+            <figcaption><span class="phr">パソコンの</span><wbr><span class="phr">組み立て</span></figcaption>
           </figure>
           <figure class="film__item reveal-item">
             <img src="assets/photos/laptop-battery.webp" srcset="assets/photos/laptop-battery-800.webp 800w, assets/photos/laptop-battery.webp 1200w" sizes="(max-width: 799px) 78vw, 24vw" width="1200" height="1600" alt="裏ぶたを外したノートパソコン。バッテリーと、熱を逃がすファン" loading="lazy" decoding="async">
-            <figcaption>ノートパソコンのバッテリー</figcaption>
+            <figcaption><span class="phr">ノートパソコンの</span><wbr><span class="phr">バッテリー</span></figcaption>
           </figure>
           <figure class="film__item reveal-item">
             <img src="assets/photos/pc-build-mini-itx.webp" srcset="assets/photos/pc-build-mini-itx-800.webp 800w, assets/photos/pc-build-mini-itx.webp 1600w" sizes="(max-width: 799px) 78vw, 24vw" width="1600" height="1200" alt="小さいケースに、部品を載せる基板を入れたところ。計算する部品（CPU）を載せています" loading="lazy" decoding="async">
-            <figcaption>小さいパソコン</figcaption>
+            <figcaption><span class="phr">小さい</span><wbr><span class="phr">パソコン</span></figcaption>
           </figure>
           <figure class="film__item reveal-item">
             <img src="assets/photos/rpi-sensehat.webp" srcset="assets/photos/rpi-sensehat-800.webp 800w, assets/photos/rpi-sensehat.webp 1200w" sizes="(max-width: 799px) 78vw, 24vw" width="1200" height="1600" alt="教室で使う小さいコンピュータ。光るマスがいくつか点いています" loading="lazy" decoding="async">
-            <figcaption>小さいコンピュータ</figcaption>
+            <figcaption><span class="phr">小さい</span><wbr><span class="phr">コンピュータ</span></figcaption>
           </figure>
         </div>
       </div>
@@ -225,114 +226,114 @@
          ============================================================ -->
     <section class="section" id="prices">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">03</span>料金</h2>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">03</span></span><span class="ttl"><span class="phr">料金</span></span></h2>
         <div class="policy reveal">
-          <p><strong>診断・ご相談は無料です。</strong>話を聞くだけでもかまいません。見積もりも無料です。</p>
-          <p>下の金額は、まだ<strong>仮</strong>です。税込の目安なので、この数字のまま請求はしません。作業の前に、やることと金額を書きます。見てから頼まなくてもかまいません。こちらから伺うときは、「訪問して見る」の金額がかかります。</p>
+          <p><strong><span class="phr">診断・ご相談は</span><wbr><span class="phr">無料です。</span></strong><span class="phr">話を</span><wbr><span class="phr">聞くだけでもかまいません。</span><wbr><span class="phr">見積もりも</span><wbr><span class="phr">無料です。</span></p>
+          <p><span class="phr">下の</span><wbr><span class="phr">金額は、</span><wbr><span class="phr">まだ<strong>仮</strong>です。</span><wbr><span class="phr">税込の</span><wbr><span class="phr">目安なので、</span><wbr><span class="phr">この</span><wbr><span class="phr">数字の</span><wbr><span class="phr">まま</span><wbr><span class="phr">請求は</span><wbr><span class="phr">しません。</span><wbr><span class="phr">作業の</span><wbr><span class="phr">前に、</span><wbr><span class="phr">やる</span><wbr><span class="phr">ことと</span><wbr><span class="phr">金額を</span><wbr><span class="phr">書きます。</span><wbr><span class="phr">見てから</span><wbr><span class="phr">頼まなくてもかまいません。</span><wbr><span class="phr">こちらから</span><wbr><span class="phr">伺う</span><wbr><span class="phr">ときは、</span><wbr><span class="phr">「訪問して</span><wbr><span class="phr">見る」の</span><wbr><span class="phr">金額が</span><wbr><span class="phr">かかります。</span></p>
         </div>
 
         <div class="price-block">
-          <h3>はじめに</h3>
+          <h3><span class="ttl"><span class="phr">はじめに</span></span></h3>
           <ul class="price-grid price-grid--3" data-stagger>
             <li class="price-card price-card--lead lift reveal-item">
-              <h3>診断・ご相談</h3>
-              <p class="amount">無料 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>オンラインで30分くらい話します。</p>
+              <h3><span class="phr">診断・ご相談</span></h3>
+              <p class="amount"><span class="phr">無料 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">オンラインで</span><wbr><span class="phr">30分くらい</span><wbr><span class="phr">話します。</span></p>
             </li>
             <li class="price-card lift reveal-item">
-              <h3>訪問して見る</h3>
-              <p class="amount">1,000円 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>熊本県内で、60分くらい見に行きます。遠い場所は、下のオプションを足します。</p>
+              <h3><span class="phr">訪問して</span><wbr><span class="phr">見る</span></h3>
+              <p class="amount"><span class="phr">1,000円 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">熊本県内で、</span><wbr><span class="phr">60分くらい</span><wbr><span class="phr">見に</span><wbr><span class="phr">行きます。</span><wbr><span class="phr">遠い</span><wbr><span class="phr">場所は、</span><wbr><span class="phr">下の</span><wbr><span class="phr">オプションを</span><wbr><span class="phr">足します。</span></p>
             </li>
             <li class="price-card lift reveal-item">
-              <h3>スマホ・パソコンの設定</h3>
-              <p class="amount">5,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>LINEやメールの設定、控えの保存、つながらない原因を見ます。</p>
+              <h3><span class="phr">スマホ・パソコンの</span><wbr><span class="phr">設定</span></h3>
+              <p class="amount"><span class="phr">5,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">LINEや</span><wbr><span class="phr">メールの</span><wbr><span class="phr">設定、</span><wbr><span class="phr">控えの</span><wbr><span class="phr">保存、</span><wbr><span class="phr">つながらない</span><wbr><span class="phr">原因を</span><wbr><span class="phr">見ます。</span></p>
             </li>
           </ul>
         </div>
 
         <div class="price-block">
-          <h3>つくる・覚える</h3>
+          <h3><span class="ttl"><span class="phr">つくる・</span><wbr><span class="phr">覚える</span></span></h3>
           <ul class="price-grid" data-stagger>
             <li class="price-card lift reveal-item">
-              <h3>ツール・ソフトウェア・アプリ開発</h3>
-              <p class="amount">30,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>日報や在庫の画面を、今の紙やExcelの代わりに作ります。</p>
+              <h3><span class="phr">ツール・</span><wbr><span class="phr">ソフトウェア・</span><wbr><span class="phr">アプリ開発</span></h3>
+              <p class="amount"><span class="phr">30,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">日報や</span><wbr><span class="phr">在庫の</span><wbr><span class="phr">画面を、</span><wbr><span class="phr">今の</span><wbr><span class="phr">紙や</span><wbr><span class="phr">Excelの</span><wbr><span class="phr">代わりに</span><wbr><span class="phr">作ります。</span></p>
             </li>
             <li class="price-card lift reveal-item">
-              <h3>AIを使ってみる</h3>
-              <p class="amount">20,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>文章の下書きや、問い合わせの整理です。出していい情報は先に決めます。</p>
+              <h3><span class="phr">AIを</span><wbr><span class="phr">使ってみる</span></h3>
+              <p class="amount"><span class="phr">20,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">文章の</span><wbr><span class="phr">下書きや、</span><wbr><span class="phr">問い合わせの</span><wbr><span class="phr">整理です。</span><wbr><span class="phr">出していい</span><wbr><span class="phr">情報は</span><wbr><span class="phr">先に</span><wbr><span class="phr">決めます。</span></p>
             </li>
             <li class="price-card lift reveal-item">
-              <h3>現場の機械・基板・3Dプリンタ</h3>
-              <p class="amount">15,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>小さい表示や、温度を測る部品、治具です。部品代が別にかかるときは先に言います。</p>
+              <h3><span class="phr">現場の</span><wbr><span class="phr">機械・</span><wbr><span class="phr">基板・</span><wbr><span class="phr">3Dプリンタ</span></h3>
+              <p class="amount"><span class="phr">15,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">小さい</span><wbr><span class="phr">表示や、</span><wbr><span class="phr">温度を</span><wbr><span class="phr">測る</span><wbr><span class="phr">部品、</span><wbr><span class="phr">治具です。</span><wbr><span class="phr">部品代が</span><wbr><span class="phr">別に</span><wbr><span class="phr">かかる</span><wbr><span class="phr">ときは</span><wbr><span class="phr">先に</span><wbr><span class="phr">言います。</span></p>
             </li>
             <li class="price-card lift reveal-item">
-              <h3>画面を見ながら覚える</h3>
-              <p class="amount">10,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>90分くらいです。人数と場所は、そのとき決めます。</p>
+              <h3><span class="phr">画面を</span><wbr><span class="phr">見ながら</span><wbr><span class="phr">覚える</span></h3>
+              <p class="amount"><span class="phr">10,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">90分くらいです。</span><wbr><span class="phr">人数と</span><wbr><span class="phr">場所は、</span><wbr><span class="phr">そのとき</span><wbr><span class="phr">決めます。</span></p>
             </li>
           </ul>
         </div>
 
         <div class="price-block">
-          <h3>保守プラン（月額）</h3>
+          <h3><span class="ttl"><span class="phr">保守プラン（月額）</span></span></h3>
           <ul class="price-grid price-grid--3" data-stagger>
             <li class="price-card lift reveal-item">
-              <h3>ライト</h3>
-              <p class="amount">5,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>メッセージで質問できます。平日に返します。</p>
+              <h3><span class="phr">ライト</span></h3>
+              <p class="amount"><span class="phr">5,000円 / 月 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">メッセージで</span><wbr><span class="phr">質問できます。</span><wbr><span class="phr">平日に</span><wbr><span class="phr">返します。</span></p>
             </li>
             <li class="price-card lift reveal-item">
-              <h3>スタンダード</h3>
-              <p class="amount">12,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>ライトに加えて、月1回画面を見るか、現地に行きます。</p>
+              <h3><span class="phr">スタンダード</span></h3>
+              <p class="amount"><span class="phr">12,000円 / 月 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">ライトに</span><wbr><span class="phr">加えて、</span><wbr><span class="phr">月1回画面を</span><wbr><span class="phr">見るか、</span><wbr><span class="phr">現地に</span><wbr><span class="phr">行きます。</span></p>
             </li>
             <li class="price-card lift reveal-item">
-              <h3>おまかせ</h3>
-              <p class="amount">25,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
-              <p>こちらから先に見ます。小さい直しは、月2時間までです。</p>
+              <h3><span class="phr">おまかせ</span></h3>
+              <p class="amount"><span class="phr">25,000円 / 月 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></p>
+              <p><span class="phr">こちらから</span><wbr><span class="phr">先に</span><wbr><span class="phr">見ます。</span><wbr><span class="phr">小さい</span><wbr><span class="phr">直しは、</span><wbr><span class="phr">月2時間までです。</span></p>
             </li>
           </ul>
         </div>
 
         <div class="price-block">
-          <h3>オプション</h3>
+          <h3><span class="ttl"><span class="phr">オプション</span></span></h3>
           <dl class="options">
             <div>
-              <dt>追加の訪問（熊本県内）</dt>
-              <dd>1,000円 / 回 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">追加の</span><wbr><span class="phr">訪問</span><wbr><span class="phr">（熊本県内）</span></dt>
+              <dd><span class="phr">1,000円 / 回 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
             <div>
-              <dt>遠い場所（交通費の実費に日当を足す）</dt>
-              <dd>日当 8,000円 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">遠い</span><wbr><span class="phr">場所</span><wbr><span class="phr">（交通費の</span><wbr><span class="phr">実費に</span><wbr><span class="phr">日当を</span><wbr><span class="phr">足す）</span></dt>
+              <dd><span class="phr">日当 8,000円 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
             <div>
-              <dt>機能の追加</dt>
-              <dd>10,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">機能の</span><wbr><span class="phr">追加</span></dt>
+              <dd><span class="phr">10,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
             <div>
-              <dt>データの引っ越し</dt>
-              <dd>8,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">データの</span><wbr><span class="phr">引っ越し</span></dt>
+              <dd><span class="phr">8,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
             <div>
-              <dt>その場で操作を覚える</dt>
-              <dd>5,000円 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">その</span><wbr><span class="phr">場で</span><wbr><span class="phr">操作を</span><wbr><span class="phr">覚える</span></dt>
+              <dd><span class="phr">5,000円 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
             <div>
-              <dt>3Dプリンタの追加</dt>
-              <dd>材料費 + 1,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">3Dプリンタの</span><wbr><span class="phr">追加</span></dt>
+              <dd><span class="phr">材料費 + 1,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
             <div>
-              <dt>基板の追加</dt>
-              <dd>部品代 + 5,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">基板の</span><wbr><span class="phr">追加</span></dt>
+              <dd><span class="phr">部品代 + 5,000円〜 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
             <div>
-              <dt>急ぎ（3営業日以内に着手）</dt>
-              <dd>作業費の 50% 増 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+              <dt><span class="phr">急ぎ</span><wbr><span class="phr">（3営業日以内に</span><wbr><span class="phr">着手）</span></dt>
+              <dd><span class="phr">作業費の</span><wbr><span class="phr"> 50% 増 </span><span class="kari"><span class="phr">仮</span><span class="sr-only"><span class="phr">の</span><wbr><span class="phr">料金</span></span></span></dd>
             </div>
           </dl>
         </div>
@@ -341,9 +342,9 @@
 
     <section class="section section--paper" id="works">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">04</span>事例</h2>
-        <p class="lead reveal">自分たちで作っている機械と、店や畑でよく頼まれることです。</p>
-        <h3 class="price-block">自社の製品・道具</h3>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">04</span></span><span class="ttl"><span class="phr">事例</span></span></h2>
+        <p class="lead reveal"><span class="phr">自分たちで</span><wbr><span class="phr">作っている</span><wbr><span class="phr">機械と、</span><wbr><span class="phr">店や</span><wbr><span class="phr">畑で</span><wbr><span class="phr">よく</span><wbr><span class="phr">頼まれる</span><wbr><span class="phr">ことです。</span></p>
+        <h3 class="price-block"><span class="ttl"><span class="phr">自社の</span><wbr><span class="phr">製品・道具</span></span></h3>
         <ul class="card-grid card-grid--2" data-stagger>
           <li class="work lift reveal-item">
             <figure class="shot-grid">
@@ -352,12 +353,12 @@
                 <img src="assets/photos/pepper-chassis-front-closed.webp" srcset="assets/photos/pepper-chassis-front-closed-800.webp 800w, assets/photos/pepper-chassis-front-closed.webp 1200w" sizes="22vw" width="1200" height="900" alt="PEPPERの筐体。扉を閉め、メッシュの窓ごしに中が見える。右上に黄色い非常停止ボタンがある。" loading="lazy" decoding="async">
                 <img src="assets/photos/pepper-module-top-view-1.webp" srcset="assets/photos/pepper-module-top-view-1-800.webp 800w, assets/photos/pepper-module-top-view-1.webp 1200w" sizes="22vw" width="1200" height="900" alt="PEPPERのモジュール基板。ヒートシンクが並んだ上面。" loading="lazy" decoding="async">
               </div>
-              <figcaption>自社の装置。ラック、扉を閉めた姿、基板の上面。</figcaption>
+              <figcaption><span class="phr">自社の</span><wbr><span class="phr">装置。</span><wbr><span class="phr">ラック、</span><wbr><span class="phr">扉を</span><wbr><span class="phr">閉めた</span><wbr><span class="phr">姿、</span><wbr><span class="phr">基板の</span><wbr><span class="phr">上面。</span></figcaption>
             </figure>
-            <p class="work-label">自社製品</p>
-            <h3>PEPPER / PEPPER Server</h3>
-            <p>測ったり試したりする装置です。動かすサーバも、基板も、プログラムも、ここで作っています。</p>
-            <p><a href="https://amstester.com/" target="_blank" rel="noopener noreferrer">製品の紹介を見る（別サイト）</a></p>
+            <p class="work-label"><span class="phr">自社製品</span></p>
+            <h3><span class="phr">PEPPER / PEPPER Server</span></h3>
+            <p><span class="phr">測ったり試したりする</span><wbr><span class="phr">装置です。</span><wbr><span class="phr">動かす</span><wbr><span class="phr">サーバも、</span><wbr><span class="phr">基板も、</span><wbr><span class="phr">プログラムも、</span><wbr><span class="phr">ここで</span><wbr><span class="phr">作っています。</span></p>
+            <p><a href="https://amstester.com/" target="_blank" rel="noopener noreferrer">製品の<wbr>紹介を<wbr>見る<wbr>（別サイト）</a></p>
           </li>
           <li class="work lift reveal-item">
             <figure class="shot-grid">
@@ -365,50 +366,50 @@
                 <img src="assets/photos/toyako-board-top-view-v300.webp" srcset="assets/photos/toyako-board-top-view-v300-800.webp 800w, assets/photos/toyako-board-top-view-v300.webp 1200w" sizes="22vw" width="1200" height="900" alt="Toyako基板の部品面。電源部と、測定用の回路、端のコネクタが載っている。" loading="lazy" decoding="async">
                 <img src="assets/photos/toyako-board-bottom-view.webp" srcset="assets/photos/toyako-board-bottom-view-800.webp 800w, assets/photos/toyako-board-bottom-view.webp 1200w" sizes="22vw" width="1200" height="900" alt="Toyako基板の裏面。黒い部品が2列に並び、端にコネクタがある。" loading="lazy" decoding="async">
               </div>
-              <figcaption>Toyako。部品面と、裏面。</figcaption>
+              <figcaption><span class="phr">Toyako。</span><wbr><span class="phr">部品面と、</span><wbr><span class="phr">裏面。</span></figcaption>
             </figure>
-            <p class="work-label">自社の基板</p>
-            <h3>Toyako</h3>
-            <p>電圧を数字にして試す、小さい基板です。8か所を同時に測って、結果を返します。測るタイミングは、専用の部品（FPGA）でそろえています。</p>
+            <p class="work-label"><span class="phr">自社の</span><wbr><span class="phr">基板</span></p>
+            <h3><span class="phr">Toyako</span></h3>
+            <p><span class="phr">電圧を</span><wbr><span class="phr">数字に</span><wbr><span class="phr">して</span><wbr><span class="phr">試す、</span><wbr><span class="phr">小さい</span><wbr><span class="phr">基板です。</span><wbr><span class="phr">8か所を</span><wbr><span class="phr">同時に</span><wbr><span class="phr">測って、</span><wbr><span class="phr">結果を</span><wbr><span class="phr">返します。</span><wbr><span class="phr">測る</span><wbr><span class="phr">タイミングは、</span><wbr><span class="phr">専用の</span><wbr><span class="phr">部品</span><wbr><span class="phr">（FPGA）で</span><wbr><span class="phr">そろえています。</span></p>
           </li>
           <li class="work lift reveal-item">
             <figure class="shot-grid">
               <img src="assets/photos/debugtool-shmoo.webp" width="1229" height="891" alt="確認ソフトの画面。二つの条件を変えた、通ったマスと落ちたマス。ファイル名は伏せてある。" loading="lazy" decoding="async">
-              <figcaption>自社の確認ソフト。条件を変えた地図。</figcaption>
+              <figcaption><span class="phr">自社の</span><wbr><span class="phr">確認ソフト。</span><wbr><span class="phr">条件を</span><wbr><span class="phr">変えた</span><wbr><span class="phr">地図。</span></figcaption>
             </figure>
-            <p class="work-label">自社の道具</p>
-            <h3>MwsDebugTool</h3>
-            <p>動きがおかしいとき、配線の問題かプログラムの問題かを分けます。ピンの今の値と、条件を変えた結果の地図を、その場で見ます。</p>
-            <p><a href="#debug">画面の説明を見る</a></p>
+            <p class="work-label"><span class="phr">自社の</span><wbr><span class="phr">道具</span></p>
+            <h3><span class="phr">MwsDebugTool</span></h3>
+            <p><span class="phr">動きが</span><wbr><span class="phr">おかしい</span><wbr><span class="phr">とき、</span><wbr><span class="phr">配線の</span><wbr><span class="phr">問題か</span><wbr><span class="phr">プログラムの</span><wbr><span class="phr">問題かを</span><wbr><span class="phr">分けます。</span><wbr><span class="phr">ピンの</span><wbr><span class="phr">今の</span><wbr><span class="phr">値と、</span><wbr><span class="phr">条件を</span><wbr><span class="phr">変えた</span><wbr><span class="phr">結果の</span><wbr><span class="phr">地図を、</span><wbr><span class="phr">その</span><wbr><span class="phr">場で</span><wbr><span class="phr">見ます。</span></p>
+            <p><a href="#debug">画面の<wbr>説明を<wbr>見る</a></p>
           </li>
           <li class="work lift reveal-item">
-            <p class="work-label">教室の基板</p>
-            <h3>キーホルダー基板</h3>
-            <p>光る小さい基板に、自分で書いたプログラムを入れて動かします。教室で使っています。</p>
-            <p><a href="https://keychain.mowasol.com/" target="_blank" rel="noopener noreferrer">書き込みページを見る（別サイト）</a></p>
+            <p class="work-label"><span class="phr">教室の</span><wbr><span class="phr">基板</span></p>
+            <h3><span class="phr">キーホルダー基板</span></h3>
+            <p><span class="phr">光る</span><wbr><span class="phr">小さい</span><wbr><span class="phr">基板に、</span><wbr><span class="phr">自分で</span><wbr><span class="phr">書いた</span><wbr><span class="phr">プログラムを</span><wbr><span class="phr">入れて</span><wbr><span class="phr">動かします。</span><wbr><span class="phr">教室で</span><wbr><span class="phr">使っています。</span></p>
+            <p><a href="https://keychain.mowasol.com/" target="_blank" rel="noopener noreferrer">書き込みページを<wbr>見る<wbr>（別サイト）</a></p>
           </li>
         </ul>
-        <h3 class="price-block">こういう手伝いもします</h3>
+        <h3 class="price-block"><span class="ttl"><span class="phr">こういう</span><wbr><span class="phr">手伝いもします</span></span></h3>
         <ul class="card-grid card-grid--2" data-stagger>
           <li class="work lift reveal-item">
-            <p class="work-label">例</p>
-            <h3>農場の日報</h3>
-            <p>紙の日報を、スマホから送れるようにして、あとから表で見ます。</p>
+            <p class="work-label"><span class="phr">例</span></p>
+            <h3><span class="phr">農場の</span><wbr><span class="phr">日報</span></h3>
+            <p><span class="phr">紙の</span><wbr><span class="phr">日報を、</span><wbr><span class="phr">スマホから</span><wbr><span class="phr">送れるように</span><wbr><span class="phr">して、</span><wbr><span class="phr">あとから</span><wbr><span class="phr">表で</span><wbr><span class="phr">見ます。</span></p>
           </li>
           <li class="work lift reveal-item">
-            <p class="work-label">例</p>
-            <h3>商店の在庫</h3>
-            <p>棚の数を、閉じた帳面ではなく、その日のうちに直せる表にします。</p>
+            <p class="work-label"><span class="phr">例</span></p>
+            <h3><span class="phr">商店の</span><wbr><span class="phr">在庫</span></h3>
+            <p><span class="phr">棚の</span><wbr><span class="phr">数を、</span><wbr><span class="phr">閉じた</span><wbr><span class="phr">帳面ではなく、</span><wbr><span class="phr">その</span><wbr><span class="phr">日の</span><wbr><span class="phr">うちに</span><wbr><span class="phr">直せる</span><wbr><span class="phr">表に</span><wbr><span class="phr">します。</span></p>
           </li>
           <li class="work lift reveal-item">
-            <p class="work-label">例</p>
-            <h3>問い合わせの下書き</h3>
-            <p>よくある返事の下書きを作ります。送る前に人が読みます。</p>
+            <p class="work-label"><span class="phr">例</span></p>
+            <h3><span class="phr">問い合わせの</span><wbr><span class="phr">下書き</span></h3>
+            <p><span class="phr">よく</span><wbr><span class="phr">ある</span><wbr><span class="phr">返事の</span><wbr><span class="phr">下書きを</span><wbr><span class="phr">作ります。</span><wbr><span class="phr">送る</span><wbr><span class="phr">前に</span><wbr><span class="phr">人が</span><wbr><span class="phr">読みます。</span></p>
           </li>
           <li class="work lift reveal-item">
-            <p class="work-label">例</p>
-            <h3>急に止まったパソコン</h3>
-            <p>中のファイルを残すほうを先に見て、直すか入れ替えるかを一緒に決めます。</p>
+            <p class="work-label"><span class="phr">例</span></p>
+            <h3><span class="phr">急に</span><wbr><span class="phr">止まった</span><wbr><span class="phr">パソコン</span></h3>
+            <p><span class="phr">中の</span><wbr><span class="phr">ファイルを</span><wbr><span class="phr">残す</span><wbr><span class="phr">ほうを</span><wbr><span class="phr">先に</span><wbr><span class="phr">見て、</span><wbr><span class="phr">直すか</span><wbr><span class="phr">入れ替えるかを</span><wbr><span class="phr">一緒に</span><wbr><span class="phr">決めます。</span></p>
           </li>
         </ul>
       </div>
@@ -416,184 +417,184 @@
 
     <section class="section section--ink" id="debug">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">05</span>現場に合わせたソフトを、ここで作れます</h2>
-        <p class="lead reveal">売っているソフトでは足りない仕事は、その場用の道具を自分たちで作ります。下の画面は、自分たちの試験装置を見るために作ったソフトです。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">05</span></span><span class="ttl"><span class="phr">現場に</span><wbr><span class="phr">合わせた</span><wbr><span class="phr">ソフトを、</span><wbr><span class="phr">ここで</span><wbr><span class="phr">作れます</span></span></h2>
+        <p class="lead reveal"><span class="phr">売っている</span><wbr><span class="phr">ソフトでは</span><wbr><span class="phr">足りない</span><wbr><span class="phr">仕事は、</span><wbr><span class="phr">その</span><wbr><span class="phr">場用の</span><wbr><span class="phr">道具を</span><wbr><span class="phr">自分たちで</span><wbr><span class="phr">作ります。</span><wbr><span class="phr">下の</span><wbr><span class="phr">画面は、</span><wbr><span class="phr">自分たちの</span><wbr><span class="phr">試験装置を</span><wbr><span class="phr">見る</span><wbr><span class="phr">ために</span><wbr><span class="phr">作った</span><wbr><span class="phr">ソフトです。</span></p>
         <div class="debug-layout">
           <div class="debug-copy">
-            <p class="debug-kicker">自社のソフト</p>
-            <h3>MwsDebugTool</h3>
-            <p>部品を試すプログラムのとなりで動く、Windowsのソフトです。サーバが次の命令を待っているあいだに、ピンの今の値を読みます。</p>
+            <p class="debug-kicker"><span class="phr">自社の</span><wbr><span class="phr">ソフト</span></p>
+            <h3><span class="phr">MwsDebugTool</span></h3>
+            <p><span class="phr">部品を</span><wbr><span class="phr">試す</span><wbr><span class="phr">プログラムのとなりで</span><wbr><span class="phr">動く、</span><wbr><span class="phr">Windowsの</span><wbr><span class="phr">ソフトです。</span><wbr><span class="phr">サーバが</span><wbr><span class="phr">次の</span><wbr><span class="phr">命令を</span><wbr><span class="phr">待っている</span><wbr><span class="phr">あいだに、</span><wbr><span class="phr">ピンの</span><wbr><span class="phr">今の</span><wbr><span class="phr">値を</span><wbr><span class="phr">読みます。</span></p>
             <div class="debug-points" data-stagger>
               <button type="button" class="debug-point lift reveal-item" data-debug="snapshot" aria-pressed="true">
-                <h3>ピンの今の値を一覧にする</h3>
-                <p>今の画面（SnapShot）です。選んでいる場所のピンを、その時点の値で読みます。電圧や電流、信号のタイミングが並びます。</p>
+                <h3><span class="phr">ピンの</span><wbr><span class="phr">今の</span><wbr><span class="phr">値を</span><wbr><span class="phr">一覧に</span><wbr><span class="phr">する</span></h3>
+                <p><span class="phr">今の</span><wbr><span class="phr">画面</span><wbr><span class="phr">（SnapShot）です。</span><wbr><span class="phr">選んでいる</span><wbr><span class="phr">場所の</span><wbr><span class="phr">ピンを、</span><wbr><span class="phr">その</span><wbr><span class="phr">時点の</span><wbr><span class="phr">値で</span><wbr><span class="phr">読みます。</span><wbr><span class="phr">電圧や</span><wbr><span class="phr">電流、</span><wbr><span class="phr">信号の</span><wbr><span class="phr">タイミングが</span><wbr><span class="phr">並びます。</span></p>
               </button>
               <button type="button" class="debug-point lift reveal-item" data-debug="warn" aria-pressed="false">
-                <h3>おかしい設定を色で出す</h3>
-                <p>決めた範囲を外れているものは赤、確認した方がいいものは警告の色です。気になるピンだけに絞れます。</p>
+                <h3><span class="phr">おかしい</span><wbr><span class="phr">設定を</span><wbr><span class="phr">色で</span><wbr><span class="phr">出す</span></h3>
+                <p><span class="phr">決めた</span><wbr><span class="phr">範囲を</span><wbr><span class="phr">外れている</span><wbr><span class="phr">ものは</span><wbr><span class="phr">赤、</span><wbr><span class="phr">確認した</span><wbr><span class="phr">方が</span><wbr><span class="phr">いい</span><wbr><span class="phr">ものは</span><wbr><span class="phr">警告の</span><wbr><span class="phr">色です。</span><wbr><span class="phr">気になる</span><wbr><span class="phr">ピンだけに</span><wbr><span class="phr">絞れます。</span></p>
               </button>
               <button type="button" class="debug-point lift reveal-item" data-debug="shmoo" aria-pressed="false">
-                <h3>二つの条件を振って、地図にする</h3>
-                <p>地図（Shmoo）です。たとえば高いときの電圧と、信号を読むタイミングを少しずつ変えます。通ったマスと落ちたマスが並びます。画像と表で残せます。</p>
+                <h3><span class="phr">二つの</span><wbr><span class="phr">条件を</span><wbr><span class="phr">振って、</span><wbr><span class="phr">地図に</span><wbr><span class="phr">する</span></h3>
+                <p><span class="phr">地図</span><wbr><span class="phr">（Shmoo）です。</span><wbr><span class="phr">たとえば</span><wbr><span class="phr">高いときの</span><wbr><span class="phr">電圧と、</span><wbr><span class="phr">信号を</span><wbr><span class="phr">読む</span><wbr><span class="phr">タイミングを</span><wbr><span class="phr">少しずつ</span><wbr><span class="phr">変えます。</span><wbr><span class="phr">通った</span><wbr><span class="phr">マスと</span><wbr><span class="phr">落ちた</span><wbr><span class="phr">マスが</span><wbr><span class="phr">並びます。</span><wbr><span class="phr">画像と</span><wbr><span class="phr">表で</span><wbr><span class="phr">残せます。</span></p>
               </button>
             </div>
           </div>
           <div class="debug-stage reveal">
             <div class="debug-tabs" role="tablist" aria-label="MwsDebugToolの画面">
-              <button type="button" class="chip" role="tab" id="tab-snapshot" aria-controls="debug-panel" aria-selected="true" data-debug="snapshot" data-src="assets/photos/debugtool-snapshot.webp" data-alt="確認ソフトの画面。ピンの電圧とタイミングの一覧。" data-w="1239" data-h="901" data-cap="サーバが待っているあいだに読んだ、ピンの今の値です。">今の値</button>
-              <button type="button" class="chip" role="tab" id="tab-warn" aria-controls="debug-panel" aria-selected="false" tabindex="-1" data-debug="warn" data-src="assets/photos/debugtool-pmu.webp" data-alt="確認ソフトの画面。範囲を外れた測定値を警告の色で示している。" data-w="714" data-h="446" data-cap="範囲を外れた値は、警告の色になります。">警告</button>
-              <button type="button" class="chip" role="tab" id="tab-shmoo" aria-controls="debug-panel" aria-selected="false" tabindex="-1" data-debug="shmoo" data-src="assets/photos/debugtool-shmoo.webp" data-alt="確認ソフトの画面。二つの条件を変えた、通ったマスと落ちたマス。ファイル名は伏せてある。" data-w="1229" data-h="891" data-cap="二つの条件を変えた結果です。通ったマスと落ちたマスが並びます。ファイル名は伏せてあります。画像と表で残せます。">地図</button>
+              <button type="button" class="chip" role="tab" id="tab-snapshot" aria-controls="debug-panel" aria-selected="true" data-debug="snapshot" data-src="assets/photos/debugtool-snapshot.webp" data-alt="確認ソフトの画面。ピンの電圧とタイミングの一覧。" data-w="1239" data-h="901" data-cap="サーバが&#8203;待っている&#8203;あいだに&#8203;読んだ、&#8203;ピンの&#8203;今の&#8203;値です。">今の<wbr>値</button>
+              <button type="button" class="chip" role="tab" id="tab-warn" aria-controls="debug-panel" aria-selected="false" tabindex="-1" data-debug="warn" data-src="assets/photos/debugtool-pmu.webp" data-alt="確認ソフトの画面。範囲を外れた測定値を警告の色で示している。" data-w="714" data-h="446" data-cap="範囲を&#8203;外れた&#8203;値は、&#8203;警告の&#8203;色に&#8203;なります。">警告</button>
+              <button type="button" class="chip" role="tab" id="tab-shmoo" aria-controls="debug-panel" aria-selected="false" tabindex="-1" data-debug="shmoo" data-src="assets/photos/debugtool-shmoo.webp" data-alt="確認ソフトの画面。二つの条件を変えた、通ったマスと落ちたマス。ファイル名は伏せてある。" data-w="1229" data-h="891" data-cap="二つの&#8203;条件を&#8203;変えた&#8203;結果です。&#8203;通った&#8203;マスと&#8203;落ちた&#8203;マスが&#8203;並びます。&#8203;ファイル名は&#8203;伏せてあります。&#8203;画像と&#8203;表で&#8203;残せます。">地図</button>
             </div>
             <figure class="window" id="debug-panel" role="tabpanel" aria-labelledby="tab-snapshot">
-              <div class="window__bar" aria-hidden="true"><span></span><span></span><span></span><em>MwsDebugTool</em></div>
+              <div class="window__bar" aria-hidden="true"><span></span><span></span><span></span><em><span class="phr">MwsDebugTool</span></em></div>
               <img id="debug-shot" src="assets/photos/debugtool-snapshot.webp" width="1239" height="901" alt="確認ソフトの画面。ピンの電圧とタイミングの一覧。">
-              <figcaption class="debug-cap" id="debug-cap">サーバが待っているあいだに読んだ、ピンの今の値です。</figcaption>
+              <figcaption class="debug-cap" id="debug-cap"><span class="phr">サーバが</span><wbr><span class="phr">待っている</span><wbr><span class="phr">あいだに</span><wbr><span class="phr">読んだ、</span><wbr><span class="phr">ピンの</span><wbr><span class="phr">今の</span><wbr><span class="phr">値です。</span></figcaption>
             </figure>
           </div>
         </div>
-        <p class="fine more">このソフトは、自社の装置PEPPERと、それを動かすPEPPER Serverのために作りました。店の在庫や畑の記録も、同じようにその仕事の画面から作れます。</p>
+        <p class="fine more"><span class="phr">この</span><wbr><span class="phr">ソフトは、</span><wbr><span class="phr">自社の</span><wbr><span class="phr">装置PEPPERと、</span><wbr><span class="phr">それを</span><wbr><span class="phr">動かすPEPPER Serverの</span><wbr><span class="phr">ために</span><wbr><span class="phr">作りました。</span><wbr><span class="phr">店の</span><wbr><span class="phr">在庫や</span><wbr><span class="phr">畑の</span><wbr><span class="phr">記録も、</span><wbr><span class="phr">同じように</span><wbr><span class="phr">その</span><wbr><span class="phr">仕事の</span><wbr><span class="phr">画面から</span><wbr><span class="phr">作れます。</span></p>
       </div>
     </section>
 
     <section class="section" id="photos">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">06</span>仕事の写真</h2>
-        <p class="lead reveal">組み立て、修理、教室、自社の装置の写真です。写真を押すと大きく見られます。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">06</span></span><span class="ttl"><span class="phr">仕事の</span><wbr><span class="phr">写真</span></span></h2>
+        <p class="lead reveal"><span class="phr">組み立て、</span><wbr><span class="phr">修理、</span><wbr><span class="phr">教室、</span><wbr><span class="phr">自社の</span><wbr><span class="phr">装置の</span><wbr><span class="phr">写真です。</span><wbr><span class="phr">写真を</span><wbr><span class="phr">押すと</span><wbr><span class="phr">大きく</span><wbr><span class="phr">見られます。</span></p>
         <div class="filters" role="group" aria-label="写真の絞り込み">
           <button type="button" class="chip" data-filter="all" aria-pressed="true">すべて</button>
           <button type="button" class="chip" data-filter="pc" aria-pressed="false">組み立て</button>
           <button type="button" class="chip" data-filter="repair" aria-pressed="false">修理・増設</button>
           <button type="button" class="chip" data-filter="make" aria-pressed="false">電子工作・教室</button>
-          <button type="button" class="chip" data-filter="product" aria-pressed="false">自社の装置</button>
+          <button type="button" class="chip" data-filter="product" aria-pressed="false">自社の<wbr>装置</button>
         </div>
         <div class="gallery-grid" id="gallery" data-stagger>
           <button type="button" class="g-card reveal-item lift" data-cat="pc">
             <img src="assets/photos/pc-build-white-complete.webp" srcset="assets/photos/pc-build-white-complete-800.webp 800w, assets/photos/pc-build-white-complete.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="組み立てた白いパソコン。水で冷やす装置と、画面を描く部品、光るファン" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>組み立てた白いパソコン</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">組み立て</span></span><span class="ttl"><span class="phr">組み立てた</span><wbr><span class="phr">白い</span><wbr><span class="phr">パソコン</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="pc">
             <img src="assets/photos/pc-build-white-board.webp" srcset="assets/photos/pc-build-white-board-800.webp 800w, assets/photos/pc-build-white-board.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="白いケースに載せた、部品を載せる大きな基板。計算する部品（CPU）と白いファン" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>部品を載せる基板</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">組み立て</span></span><span class="ttl"><span class="phr">部品を</span><wbr><span class="phr">載せる</span><wbr><span class="phr">基板</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="pc">
             <img src="assets/photos/pc-build-cpu.webp" srcset="assets/photos/pc-build-cpu-800.webp 800w, assets/photos/pc-build-cpu.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="計算する部品（CPU）を、受けの金具に載せたところ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>計算する部品を載せる</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">組み立て</span></span><span class="ttl"><span class="phr">計算する</span><wbr><span class="phr">部品を</span><wbr><span class="phr">載せる</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="pc">
             <img src="assets/photos/pc-build-mini-itx.webp" srcset="assets/photos/pc-build-mini-itx-800.webp 800w, assets/photos/pc-build-mini-itx.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="小さいケースに、部品を載せる基板を入れたところ。計算する部品（CPU）を載せています" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>小さいパソコンの途中</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">組み立て</span></span><span class="ttl"><span class="phr">小さい</span><wbr><span class="phr">パソコンの</span><wbr><span class="phr">途中</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="pc">
             <img src="assets/photos/pc-build-assembly.webp" srcset="assets/photos/pc-build-assembly-800.webp 800w, assets/photos/pc-build-assembly.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="小さいパソコンの電源を、ねじで留めているところ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>電源を留める</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">組み立て</span></span><span class="ttl"><span class="phr">電源を</span><wbr><span class="phr">留める</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="pc">
             <img src="assets/photos/pc-build-desktop-ram.webp" srcset="assets/photos/pc-build-desktop-ram-800.webp 800w, assets/photos/pc-build-desktop-ram.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="パソコンに、作業用の部品（メモリ）を足しているところ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>作業用の部品を足す</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">組み立て</span></span><span class="ttl"><span class="phr">作業用の</span><wbr><span class="phr">部品を</span><wbr><span class="phr">足す</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="repair">
             <img src="assets/photos/laptop-ram.webp" srcset="assets/photos/laptop-ram-800.webp 800w, assets/photos/laptop-ram.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="ノートパソコンのメモリ（作業用の部品）。基板のそばで持っている" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>ノートパソコンのメモリ</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">修理・増設</span></span><span class="ttl"><span class="phr">ノートパソコンの</span><wbr><span class="phr">メモリ</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="repair">
             <img src="assets/photos/laptop-ram-slot.webp" width="900" height="1600" alt="裏ぶたを外したノートパソコン。作業用の部品（メモリ）とバッテリーが見える" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>容量を増やす前</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">修理・増設</span></span><span class="ttl"><span class="phr">容量を</span><wbr><span class="phr">増やす前</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="repair">
             <img src="assets/photos/laptop-battery.webp" srcset="assets/photos/laptop-battery-800.webp 800w, assets/photos/laptop-battery.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="裏ぶたを外したノートパソコン。バッテリーと、熱を逃がすファン" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>ノートパソコンのバッテリー</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">修理・増設</span></span><span class="ttl"><span class="phr">ノートパソコンの</span><wbr><span class="phr">バッテリー</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="repair">
             <img src="assets/photos/laptop-board.webp" srcset="assets/photos/laptop-board-800.webp 800w, assets/photos/laptop-board.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="ノートパソコンの基板。熱を逃がす銅の板と、細かい部品" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>基板を見る</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">修理・増設</span></span><span class="ttl"><span class="phr">基板を</span><wbr><span class="phr">見る</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="repair">
             <img src="assets/photos/laptop-teardown.webp" srcset="assets/photos/laptop-teardown-800.webp 800w, assets/photos/laptop-teardown.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="900" alt="裏ぶたを外したノートパソコン。バッテリーと、熱を逃がすファン、基板" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>ばらしたノートパソコン</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">修理・増設</span></span><span class="ttl"><span class="phr">ばらした</span><wbr><span class="phr">ノートパソコン</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="repair">
             <img src="assets/photos/laptop-repair-board.webp" srcset="assets/photos/laptop-repair-board-800.webp 800w, assets/photos/laptop-repair-board.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="ノートパソコンを分解して、基板を確認しているところ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>基板の確認</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">修理・増設</span></span><span class="ttl"><span class="phr">基板の</span><wbr><span class="phr">確認</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift g-card--wide" data-cat="repair">
             <img src="assets/photos/parts-m2-ssd.webp" srcset="assets/photos/parts-m2-ssd-800.webp 800w, assets/photos/parts-m2-ssd.webp 1490w" sizes="(max-width: 700px) 92vw, 60vw" width="1490" height="330" alt="ノートパソコンの保存場所になる細い基板。番号の一部は伏せてある" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>保存場所の交換</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">修理・増設</span></span><span class="ttl"><span class="phr">保存場所の</span><wbr><span class="phr">交換</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="make">
             <img src="assets/photos/rpi-sensehat.webp" srcset="assets/photos/rpi-sensehat-800.webp 800w, assets/photos/rpi-sensehat.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="教室で使う小さいコンピュータ。光るマスがいくつか点いています" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">電子工作</span>光る小さいコンピュータ</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">電子工作</span></span><span class="ttl"><span class="phr">光る</span><wbr><span class="phr">小さい</span><wbr><span class="phr">コンピュータ</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="make">
             <img src="assets/photos/rpi-case.webp" srcset="assets/photos/rpi-case-800.webp 800w, assets/photos/rpi-case.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="900" alt="透明なケースに入った小さいコンピュータ。ケーブルをつないだところ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">電子工作</span>ケースに入れた小さいコンピュータ</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">電子工作</span></span><span class="ttl"><span class="phr">ケースに</span><wbr><span class="phr">入れた</span><wbr><span class="phr">小さい</span><wbr><span class="phr">コンピュータ</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="make">
             <img src="assets/photos/lemon-battery.webp" width="900" height="1600" alt="レモンに金属を刺して、テスタで電圧を見ている" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">電子工作</span>レモン電池</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">電子工作</span></span><span class="ttl"><span class="phr">レモン電池</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="make">
             <img src="assets/photos/block-robot.webp" srcset="assets/photos/block-robot-800.webp 800w, assets/photos/block-robot.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="ブロックで組んだ恐竜の形のロボット。上に小さい基板と電池" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">教室</span>ブロックのロボット</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">教室</span></span><span class="ttl"><span class="phr">ブロックの</span><wbr><span class="phr">ロボット</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="make">
             <img src="assets/photos/classroom-rpi.webp" srcset="assets/photos/classroom-rpi-800.webp 800w, assets/photos/classroom-rpi.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="机に並べた画面と、ケースに入った小さいコンピュータ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">教室</span>教室の机</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">教室</span></span><span class="ttl"><span class="phr">教室の</span><wbr><span class="phr">机</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-front-panel.webp" srcset="assets/photos/pepper-front-panel-800.webp 800w, assets/photos/pepper-front-panel.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="PEPPERの前面。電源のつまみと、基板を挿すスロット" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>PEPPERの前面</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">PEPPERの</span><wbr><span class="phr">前面</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-rack-close.webp" srcset="assets/photos/pepper-rack-close-800.webp 800w, assets/photos/pepper-rack-close.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="PEPPERの内部。光っている基板と、青いマーク" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>PEPPERの中</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">PEPPERの</span><wbr><span class="phr">中</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-chassis-front-open-modules.webp" srcset="assets/photos/pepper-chassis-front-open-modules-800.webp 800w, assets/photos/pepper-chassis-front-open-modules.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの筐体。扉を開け、スロットにモジュールを挿した正面" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>モジュールを挿した正面</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">モジュールを</span><wbr><span class="phr">挿した</span><wbr><span class="phr">正面</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-chassis-front-open-empty.webp" srcset="assets/photos/pepper-chassis-front-open-empty-800.webp 800w, assets/photos/pepper-chassis-front-open-empty.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの筐体。扉を開け、モジュールを挿す前の空いたスロット" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>モジュールを挿す前</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">モジュールを</span><wbr><span class="phr">挿す前</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-chassis-rear-closed-window.webp" srcset="assets/photos/pepper-chassis-rear-closed-window-800.webp 800w, assets/photos/pepper-chassis-rear-closed-window.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの背面。扉の小窓から、中の基板が見える" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>背面の小窓</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">背面の</span><wbr><span class="phr">小窓</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-chassis-side-left.webp" srcset="assets/photos/pepper-chassis-side-left-800.webp 800w, assets/photos/pepper-chassis-side-left.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの筐体を横から見たところ。通気口がある" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>横から見た筐体</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">横から</span><wbr><span class="phr">見た筐体</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-chassis-inside-backplane.webp" srcset="assets/photos/pepper-chassis-inside-backplane-800.webp 800w, assets/photos/pepper-chassis-inside-backplane.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの内部。コネクタが並んだ基板と、下のファン" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>内部の基板とファン</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">内部の</span><wbr><span class="phr">基板と</span><wbr><span class="phr">ファン</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/pepper-module-front-panel-labels-blurred.webp" srcset="assets/photos/pepper-module-front-panel-labels-blurred-800.webp 800w, assets/photos/pepper-module-front-panel-labels-blurred.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="675" alt="PEPPERモジュールの前面パネル。コネクタが並ぶ。表記の一部は伏せてある" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>モジュールの前面</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">モジュールの</span><wbr><span class="phr">前面</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/toyako-board-top-view-v300.webp" srcset="assets/photos/toyako-board-top-view-v300-800.webp 800w, assets/photos/toyako-board-top-view-v300.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="Toyako基板の部品面。電源部と、測定用の回路、端のコネクタ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>Toyakoの部品面</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">Toyakoの</span><wbr><span class="phr">部品面</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/toyako-board-bottom-view.webp" srcset="assets/photos/toyako-board-bottom-view-800.webp 800w, assets/photos/toyako-board-bottom-view.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="Toyako基板の裏面。部品が並び、端にコネクタがある" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>Toyakoの裏面</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">Toyakoの</span><wbr><span class="phr">裏面</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/eval-board-8site-top.webp" srcset="assets/photos/eval-board-8site-top-800.webp 800w, assets/photos/eval-board-8site-top.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="675" alt="mowa solutionsのロゴが入った評価ボードの表" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>評価ボード</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">評価ボード</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/board-pair-mowa.webp" srcset="assets/photos/board-pair-mowa-800.webp 800w, assets/photos/board-pair-mowa.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="mowa solutionsの基板が2枚" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>自社の基板</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">自社の</span><wbr><span class="phr">基板</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/exhibition-booth-01.webp" srcset="assets/photos/exhibition-booth-01-800.webp 800w, assets/photos/exhibition-booth-01.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="展示会のブース。PEPPERのポスターと実機、測定器" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>展示会のブース</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">展示会の</span><wbr><span class="phr">ブース</span></span></span>
           </button>
           <button type="button" class="g-card reveal-item lift" data-cat="product">
             <img src="assets/photos/workspace-bench-work.webp" srcset="assets/photos/workspace-bench-work-800.webp 800w, assets/photos/workspace-bench-work.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="社内の作業台。基板を測っているところ" loading="lazy" decoding="async">
-            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>作業台</span>
+            <span class="g-card__cap"><span class="g-card__tag"><span class="phr">自社の</span><wbr><span class="phr">装置</span></span><span class="ttl"><span class="phr">作業台</span></span></span>
           </button>
         </div>
       </div>
@@ -601,38 +602,38 @@
 
     <section class="section section--paper" id="about">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">07</span>会社のこと</h2>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">07</span></span><span class="ttl"><span class="phr">会社の</span><wbr><span class="phr">こと</span></span></h2>
         <div class="about-grid">
           <div class="reveal">
-            <h3>代表あいさつ</h3>
-            <p>代表のたまきです。大津町で、パソコンの修理や組み立て、基板、試験の装置を作っています。</p>
-            <p>店のレジ周りや畑の記録で困ったことがあれば、電話かメールをください。診断・ご相談は無料です。事務所は年中無休の9時から17時です。</p>
-            <p><a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">プログラミング教室のサイト（別サイト）</a></p>
+            <h3><span class="phr">代表あいさつ</span></h3>
+            <p><span class="phr">代表の</span><wbr><span class="phr">たまきです。</span><wbr><span class="phr">大津町で、</span><wbr><span class="phr">パソコンの</span><wbr><span class="phr">修理や</span><wbr><span class="phr">組み立て、</span><wbr><span class="phr">基板、</span><wbr><span class="phr">試験の</span><wbr><span class="phr">装置を</span><wbr><span class="phr">作っています。</span></p>
+            <p><span class="phr">店の</span><wbr><span class="phr">レジ周りや</span><wbr><span class="phr">畑の</span><wbr><span class="phr">記録で</span><wbr><span class="phr">困った</span><wbr><span class="phr">ことが</span><wbr><span class="phr">あれば、</span><wbr><span class="phr">電話か</span><wbr><span class="phr">メールを</span><wbr><span class="phr">ください。</span><wbr><span class="phr">診断・ご相談は</span><wbr><span class="phr">無料です。</span><wbr><span class="phr">事務所は</span><wbr><span class="phr">年中無休の</span><wbr><span class="phr">9時から</span><wbr><span class="phr">17時です。</span></p>
+            <p><a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">プログラミング教室の<wbr>サイト<wbr>（別サイト）</a></p>
           </div>
           <ul class="strengths" data-stagger>
             <li class="strength lift reveal-item">
-              <h3>基板も、動かすプログラムも</h3>
-              <p>測る基板と、試験のプログラムを自分で作ります。調子が悪いとき、回路かプログラムかをその場で見ます。</p>
+              <h3><span class="phr">基板も、</span><wbr><span class="phr">動かす</span><wbr><span class="phr">プログラムも</span></h3>
+              <p><span class="phr">測る</span><wbr><span class="phr">基板と、</span><wbr><span class="phr">試験の</span><wbr><span class="phr">プログラムを</span><wbr><span class="phr">自分で</span><wbr><span class="phr">作ります。</span><wbr><span class="phr">調子が</span><wbr><span class="phr">悪いとき、</span><wbr><span class="phr">回路か</span><wbr><span class="phr">プログラムかを</span><wbr><span class="phr">その</span><wbr><span class="phr">場で</span><wbr><span class="phr">見ます。</span></p>
             </li>
             <li class="strength lift reveal-item">
-              <h3>仕事の画面</h3>
-              <p>日報や在庫のように、毎日開く画面を小さく作れます。</p>
+              <h3><span class="phr">仕事の</span><wbr><span class="phr">画面</span></h3>
+              <p><span class="phr">日報や</span><wbr><span class="phr">在庫のように、</span><wbr><span class="phr">毎日</span><wbr><span class="phr">開く</span><wbr><span class="phr">画面を</span><wbr><span class="phr">小さく</span><wbr><span class="phr">作れます。</span></p>
             </li>
             <li class="strength lift reveal-item">
-              <h3>AI</h3>
-              <p>文章の下書きや、問い合わせの整理です。使い始めの設定から一緒にやります。</p>
+              <h3><span class="phr">AI</span></h3>
+              <p><span class="phr">文章の</span><wbr><span class="phr">下書きや、</span><wbr><span class="phr">問い合わせの</span><wbr><span class="phr">整理です。</span><wbr><span class="phr">使い始めの</span><wbr><span class="phr">設定から</span><wbr><span class="phr">一緒に</span><wbr><span class="phr">やります。</span></p>
             </li>
             <li class="strength lift reveal-item">
-              <h3>基板と、パソコンまわり</h3>
-              <p>小さい基板を設計します。パソコンやネット、控えの保存も整えます。</p>
+              <h3><span class="phr">基板と、</span><wbr><span class="phr">パソコンまわり</span></h3>
+              <p><span class="phr">小さい</span><wbr><span class="phr">基板を</span><wbr><span class="phr">設計します。</span><wbr><span class="phr">パソコンや</span><wbr><span class="phr">ネット、</span><wbr><span class="phr">控えの</span><wbr><span class="phr">保存も</span><wbr><span class="phr">整えます。</span></p>
             </li>
             <li class="strength lift reveal-item">
-              <h3>3Dプリント</h3>
-              <p>3Dプリンタが3台あります。治具やケースを、形にして渡せます。</p>
+              <h3><span class="phr">3Dプリント</span></h3>
+              <p><span class="phr">3Dプリンタが</span><wbr><span class="phr">3台あります。</span><wbr><span class="phr">治具や</span><wbr><span class="phr">ケースを、</span><wbr><span class="phr">形に</span><wbr><span class="phr">して</span><wbr><span class="phr">渡せます。</span></p>
             </li>
             <li class="strength lift reveal-item">
-              <h3>教室</h3>
-              <p>プログラミングを少人数で教えています。仕事の研修とは別です。</p>
+              <h3><span class="phr">教室</span></h3>
+              <p><span class="phr">プログラミングを</span><wbr><span class="phr">少人数で</span><wbr><span class="phr">教えています。</span><wbr><span class="phr">仕事の</span><wbr><span class="phr">研修とは</span><wbr><span class="phr">別です。</span></p>
             </li>
           </ul>
         </div>
@@ -647,37 +648,37 @@
           <li class="reveal-item">
             <figure>
               <img class="owner" src="assets/photos/owner-tamaki.webp" srcset="assets/photos/owner-tamaki-800.webp 800w, assets/photos/owner-tamaki.webp 1080w" sizes="(max-width: 700px) 92vw, 30vw" width="1080" height="1080" alt="代表のたまき。作業着でピースをしている" loading="lazy" decoding="async">
-              <figcaption>代表のたまき</figcaption>
+              <figcaption><span class="phr">代表の</span><wbr><span class="phr">たまき</span></figcaption>
             </figure>
           </li>
           <li class="reveal-item">
             <figure>
               <img src="images/p2s-placeholder.svg" width="800" height="600" alt="3Dプリンタ P2S の写真はまだ入っていません" loading="lazy" decoding="async">
-              <figcaption>3Dプリンタ（P2S が3台） <span class="kari">仮</span></figcaption>
+              <figcaption><span class="phr">3Dプリンタ</span><wbr><span class="phr">（P2S が</span><wbr><span class="phr">3台）</span> <span class="kari"><span class="phr">仮</span></span></figcaption>
             </figure>
           </li>
           <li class="reveal-item">
             <figure>
               <img class="photo" src="assets/photos/classroom-rpi.webp" srcset="assets/photos/classroom-rpi-800.webp 800w, assets/photos/classroom-rpi.webp 1600w" sizes="(max-width: 700px) 92vw, 24vw" width="1600" height="1200" alt="机に並べた画面と、ケースに入った小さいコンピュータ" loading="lazy" decoding="async">
-              <figcaption>教室の机</figcaption>
+              <figcaption><span class="phr">教室の</span><wbr><span class="phr">机</span></figcaption>
             </figure>
           </li>
           <li class="reveal-item">
             <figure>
               <img class="photo" src="assets/photos/lemon-battery.webp" width="900" height="1600" alt="レモンに金属を刺して、テスタで電圧を見ている" loading="lazy" decoding="async">
-              <figcaption>レモン電池</figcaption>
+              <figcaption><span class="phr">レモン電池</span></figcaption>
             </figure>
           </li>
           <li class="reveal-item">
             <figure>
               <img class="photo" src="assets/photos/block-robot.webp" srcset="assets/photos/block-robot-800.webp 800w, assets/photos/block-robot.webp 1400w" sizes="(max-width: 700px) 92vw, 24vw" width="1400" height="1050" alt="ブロックで組んだ恐竜の形のロボット。上に小さい基板と電池" loading="lazy" decoding="async">
-              <figcaption>教室のロボット</figcaption>
+              <figcaption><span class="phr">教室の</span><wbr><span class="phr">ロボット</span></figcaption>
             </figure>
           </li>
           <li class="reveal-item">
             <figure>
               <img class="photo" src="assets/photos/workspace-bench-work.webp" srcset="assets/photos/workspace-bench-work-800.webp 800w, assets/photos/workspace-bench-work.webp 1200w" sizes="(max-width: 700px) 92vw, 24vw" width="1200" height="900" alt="社内の作業風景。基板を測定する様子" loading="lazy" decoding="async">
-              <figcaption>作業場</figcaption>
+              <figcaption><span class="phr">作業場</span></figcaption>
             </figure>
           </li>
         </ul>
@@ -686,49 +687,49 @@
 
     <section class="section section--deep" id="flow">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">08</span>ご依頼の流れ</h2>
-        <p class="lead reveal">先に契約はしません。話を聞いて、金額を見てから決めてください。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">08</span></span><span class="ttl"><span class="phr">ご依頼の</span><wbr><span class="phr">流れ</span></span></h2>
+        <p class="lead reveal"><span class="phr">先に</span><wbr><span class="phr">契約は</span><wbr><span class="phr">しません。</span><wbr><span class="phr">話を</span><wbr><span class="phr">聞いて、</span><wbr><span class="phr">金額を</span><wbr><span class="phr">見てから</span><wbr><span class="phr">決めてください。</span></p>
         <ol class="steps" data-stagger>
           <li class="reveal-item">
-            <span class="step-no" aria-hidden="true">1</span>
+            <span class="step-no" aria-hidden="true"><span class="phr">1</span></span>
             <div>
-              <h3>困っていることを送る</h3>
-              <p>フォームに、今困っていることを書いてください。上手な文章でなくてかまいません。</p>
+              <h3><span class="phr">困っている</span><wbr><span class="phr">ことを</span><wbr><span class="phr">送る</span></h3>
+              <p><span class="phr">フォームに、</span><wbr><span class="phr">今困っている</span><wbr><span class="phr">ことを</span><wbr><span class="phr">書いてください。</span><wbr><span class="phr">上手な</span><wbr><span class="phr">文章でなくてかまいません。</span></p>
             </div>
           </li>
           <li class="reveal-item">
-            <span class="step-no" aria-hidden="true">2</span>
+            <span class="step-no" aria-hidden="true"><span class="phr">2</span></span>
             <div>
-              <h3>今のやり方を聞く</h3>
-              <p>画面ごしか、こちらから伺うかです。最初は今のやり方を見せてもらいます。診断・ご相談は無料です。</p>
+              <h3><span class="phr">今の</span><wbr><span class="phr">やり方を</span><wbr><span class="phr">聞く</span></h3>
+              <p><span class="phr">画面ごしか、</span><wbr><span class="phr">こちらから</span><wbr><span class="phr">伺うかです。</span><wbr><span class="phr">最初は</span><wbr><span class="phr">今の</span><wbr><span class="phr">やり方を</span><wbr><span class="phr">見せてもらいます。</span><wbr><span class="phr">診断・ご相談は</span><wbr><span class="phr">無料です。</span></p>
             </div>
           </li>
           <li class="reveal-item">
-            <span class="step-no" aria-hidden="true">3</span>
+            <span class="step-no" aria-hidden="true"><span class="phr">3</span></span>
             <div>
-              <h3>やることと金額を書く</h3>
-              <p>やることと、やらないこと、金額を書きます。見てから断ってもかまいません。見積もりは無料です。</p>
+              <h3><span class="phr">やる</span><wbr><span class="phr">ことと</span><wbr><span class="phr">金額を</span><wbr><span class="phr">書く</span></h3>
+              <p><span class="phr">やる</span><wbr><span class="phr">ことと、</span><wbr><span class="phr">やらない</span><wbr><span class="phr">こと、</span><wbr><span class="phr">金額を</span><wbr><span class="phr">書きます。</span><wbr><span class="phr">見てから</span><wbr><span class="phr">断ってもかまいません。</span><wbr><span class="phr">見積もりは</span><wbr><span class="phr">無料です。</span></p>
             </div>
           </li>
           <li class="reveal-item">
-            <span class="step-no" aria-hidden="true">4</span>
+            <span class="step-no" aria-hidden="true"><span class="phr">4</span></span>
             <div>
-              <h3>作業に入る</h3>
-              <p>納得してから始めます。途中でやり方を変えるときは、先に言います。</p>
+              <h3><span class="phr">作業に</span><wbr><span class="phr">入る</span></h3>
+              <p><span class="phr">納得してから</span><wbr><span class="phr">始めます。</span><wbr><span class="phr">途中で</span><wbr><span class="phr">やり方を</span><wbr><span class="phr">変える</span><wbr><span class="phr">ときは、</span><wbr><span class="phr">先に</span><wbr><span class="phr">言います。</span></p>
             </div>
           </li>
           <li class="reveal-item">
-            <span class="step-no" aria-hidden="true">5</span>
+            <span class="step-no" aria-hidden="true"><span class="phr">5</span></span>
             <div>
-              <h3>一緒に触って確認する</h3>
-              <p>できたものを、その場で触って確認します。質問もそこで受けます。</p>
+              <h3><span class="phr">一緒に</span><wbr><span class="phr">触って</span><wbr><span class="phr">確認する</span></h3>
+              <p><span class="phr">できた</span><wbr><span class="phr">ものを、</span><wbr><span class="phr">その</span><wbr><span class="phr">場で</span><wbr><span class="phr">触って</span><wbr><span class="phr">確認します。</span><wbr><span class="phr">質問も</span><wbr><span class="phr">そこで</span><wbr><span class="phr">受けます。</span></p>
             </div>
           </li>
           <li class="reveal-item">
-            <span class="step-no" aria-hidden="true">6</span>
+            <span class="step-no" aria-hidden="true"><span class="phr">6</span></span>
             <div>
-              <h3>続けるなら月額</h3>
-              <p>使い続けたいときは、月額に移れます。一度きりでもかまいません。</p>
+              <h3><span class="phr">続けるなら</span><wbr><span class="phr">月額</span></h3>
+              <p><span class="phr">使い続けたい</span><wbr><span class="phr">ときは、</span><wbr><span class="phr">月額に</span><wbr><span class="phr">移れます。</span><wbr><span class="phr">一度きりでもかまいません。</span></p>
             </div>
           </li>
         </ol>
@@ -737,39 +738,39 @@
 
     <section class="section section--paper" id="faq">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">09</span>よくある質問</h2>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">09</span></span><span class="ttl"><span class="phr">よく</span><wbr><span class="phr">ある</span><wbr><span class="phr">質問</span></span></h2>
         <div class="faq-list" data-stagger>
           <details class="faq reveal-item">
-            <summary><h3>パソコンがほとんどわかりません。</h3></summary>
-            <p>画面を一緒に見ます。ふだんの言葉で話します。</p>
+            <summary><h3><span class="phr">パソコンが</span><wbr><span class="phr">ほとんど</span><wbr><span class="phr">わかりません。</span></h3></summary>
+            <p><span class="phr">画面を</span><wbr><span class="phr">一緒に</span><wbr><span class="phr">見ます。</span><wbr><span class="phr">ふだんの</span><wbr><span class="phr">言葉で</span><wbr><span class="phr">話します。</span></p>
           </details>
           <details class="faq reveal-item">
-            <summary><h3>どこまで来てもらえますか。</h3></summary>
-            <p>熊本県内が中心です。遠いところは、電話で聞いてください。画面だけでもできます。</p>
+            <summary><h3><span class="phr">どこまで</span><wbr><span class="phr">来て</span><wbr><span class="phr">もらえますか。</span></h3></summary>
+            <p><span class="phr">熊本県内が</span><wbr><span class="phr">中心です。</span><wbr><span class="phr">遠い</span><wbr><span class="phr">ところは、</span><wbr><span class="phr">電話で</span><wbr><span class="phr">聞いてください。</span><wbr><span class="phr">画面だけでも</span><wbr><span class="phr">できます。</span></p>
           </details>
           <details class="faq reveal-item">
-            <summary><h3>新しい機械を買わされますか。</h3></summary>
-            <p>今のスマホやパソコンで足りるなら、買い足しません。いるときだけ、理由を言います。</p>
+            <summary><h3><span class="phr">新しい</span><wbr><span class="phr">機械を</span><wbr><span class="phr">買わされますか。</span></h3></summary>
+            <p><span class="phr">今の</span><wbr><span class="phr">スマホや</span><wbr><span class="phr">パソコンで</span><wbr><span class="phr">足りるなら、</span><wbr><span class="phr">買い足しません。</span><wbr><span class="phr">いる</span><wbr><span class="phr">ときだけ、</span><wbr><span class="phr">理由を</span><wbr><span class="phr">言います。</span></p>
           </details>
           <details class="faq reveal-item">
-            <summary><h3>いくらかかりますか。</h3></summary>
-            <p>診断・ご相談と見積もりは無料です。このページの作業の金額は仮です。作業の前に、やることと金額を書きます。見てから断ってもかまいません。請求書も出します。</p>
+            <summary><h3><span class="phr">いくらかかりますか。</span></h3></summary>
+            <p><span class="phr">診断・ご相談と</span><wbr><span class="phr">見積もりは</span><wbr><span class="phr">無料です。</span><wbr><span class="phr">この</span><wbr><span class="phr">ページの</span><wbr><span class="phr">作業の</span><wbr><span class="phr">金額は</span><wbr><span class="phr">仮です。</span><wbr><span class="phr">作業の</span><wbr><span class="phr">前に、</span><wbr><span class="phr">やる</span><wbr><span class="phr">ことと</span><wbr><span class="phr">金額を</span><wbr><span class="phr">書きます。</span><wbr><span class="phr">見てから</span><wbr><span class="phr">断ってもかまいません。</span><wbr><span class="phr">請求書も</span><wbr><span class="phr">出します。</span></p>
           </details>
           <details class="faq reveal-item">
-            <summary><h3>AIに、帳簿やお客さんの情報を送るのですか。</h3></summary>
-            <p>送っていいかを、先に決めます。出したくないものは、出さないやり方にします。</p>
+            <summary><h3><span class="phr">AIに、</span><wbr><span class="phr">帳簿や</span><wbr><span class="phr">お客さんの</span><wbr><span class="phr">情報を</span><wbr><span class="phr">送るのですか。</span></h3></summary>
+            <p><span class="phr">送っていいかを、</span><wbr><span class="phr">先に</span><wbr><span class="phr">決めます。</span><wbr><span class="phr">出したくない</span><wbr><span class="phr">ものは、</span><wbr><span class="phr">出さない</span><wbr><span class="phr">やり方にします。</span></p>
           </details>
           <details class="faq reveal-item">
-            <summary><h3>直したあとも見てくれますか。</h3></summary>
-            <p>月額で見続けるコースがあります。「これ、どうするんだっけ」も、そこで聞けます。</p>
+            <summary><h3><span class="phr">直した</span><wbr><span class="phr">あとも</span><wbr><span class="phr">見てくれますか。</span></h3></summary>
+            <p><span class="phr">月額で</span><wbr><span class="phr">見続ける</span><wbr><span class="phr">コースが</span><wbr><span class="phr">あります。</span><wbr><span class="phr">「これ、</span><wbr><span class="phr">どうするんだっけ」も、</span><wbr><span class="phr">そこで</span><wbr><span class="phr">聞けます。</span></p>
           </details>
           <details class="faq reveal-item">
-            <summary><h3>基板や3Dプリントだけでも頼めますか。</h3></summary>
-            <p>はい。小さな部品や、ケース、治具だけでもどうぞ。</p>
+            <summary><h3><span class="phr">基板や</span><wbr><span class="phr">3Dプリントだけでも</span><wbr><span class="phr">頼めますか。</span></h3></summary>
+            <p><span class="phr">はい。</span><wbr><span class="phr">小さな</span><wbr><span class="phr">部品や、</span><wbr><span class="phr">ケース、</span><wbr><span class="phr">治具だけでも</span><wbr><span class="phr">どうぞ。</span></p>
           </details>
           <details class="faq reveal-item">
-            <summary><h3>教室とは何が違いますか。</h3></summary>
-            <p>同じ会社です。教室は子ども向けで、サイトは <a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">mowaschool.com（別サイト）</a> です。このページは、店や畑や仕事の相談です。</p>
+            <summary><h3><span class="phr">教室とは</span><wbr><span class="phr">何が</span><wbr><span class="phr">違いますか。</span></h3></summary>
+            <p><span class="phr">同じ</span><wbr><span class="phr">会社です。</span><wbr><span class="phr">教室は</span><wbr><span class="phr">子ども</span><wbr><span class="phr">向けで、</span><wbr><span class="phr">サイトは</span> <a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">mowaschool.com<wbr>（別サイト）</a><span class="phr"> です。</span><wbr><span class="phr">この</span><wbr><span class="phr">ページは、</span><wbr><span class="phr">店や</span><wbr><span class="phr">畑や</span><wbr><span class="phr">仕事の</span><wbr><span class="phr">相談です。</span></p>
           </details>
         </div>
       </div>
@@ -777,8 +778,8 @@
 
     <section class="section" id="contact">
       <div class="wrap">
-        <h2 class="reveal"><span class="stamp" aria-hidden="true">10</span>お問い合わせ</h2>
-        <p class="lead reveal"><strong>診断・ご相談は無料です。</strong>話を聞くだけでもかまいません。見積もりも無料です。困っていることを、短く書いてください。届いた話は、返事以外には使いません。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true"><span class="phr">10</span></span><span class="ttl"><span class="phr">お問い合わせ</span></span></h2>
+        <p class="lead reveal"><strong><span class="phr">診断・ご相談は</span><wbr><span class="phr">無料です。</span></strong><span class="phr">話を</span><wbr><span class="phr">聞くだけでもかまいません。</span><wbr><span class="phr">見積もりも</span><wbr><span class="phr">無料です。</span><wbr><span class="phr">困っている</span><wbr><span class="phr">ことを、</span><wbr><span class="phr">短く</span><wbr><span class="phr">書いてください。</span><wbr><span class="phr">届いた</span><wbr><span class="phr">話は、</span><wbr><span class="phr">返事以外には</span><wbr><span class="phr">使いません。</span></p>
         <div class="contact-grid">
           <!-- ============================================================
                会社情報
@@ -788,53 +789,53 @@
                ============================================================ -->
           <dl class="facts reveal" id="company-info">
             <div>
-              <dt>名前</dt>
-              <dd data-site="name">mowaソリューションズ</dd>
+              <dt><span class="phr">名前</span></dt>
+              <dd data-site="name" class="phr">mowaソリューションズ</dd>
             </div>
             <div>
-              <dt>サービス</dt>
-              <dd data-site="service">ITなんでも屋</dd>
+              <dt><span class="phr">サービス</span></dt>
+              <dd data-site="service" class="phr">ITなんでも屋</dd>
             </div>
             <div>
-              <dt>代表</dt>
-              <dd>たまき</dd>
+              <dt><span class="phr">代表</span></dt>
+              <dd><span class="phr">たまき</span></dd>
             </div>
             <div>
-              <dt>電話</dt>
+              <dt><span class="phr">電話</span></dt>
               <dd><a href="tel:0962828122">096-282-8122</a></dd>
             </div>
             <div>
-              <dt>メール</dt>
+              <dt><span class="phr">メール</span></dt>
               <dd><a href="mailto:ttamaki@mowasol.com">ttamaki@mowasol.com</a></dd>
             </div>
             <div>
-              <dt>住所</dt>
-              <dd>〒869-1217<br>熊本県菊池郡大津町森729-41</dd>
+              <dt><span class="phr">住所</span></dt>
+              <dd><span class="phr">〒869-1217</span><br><span class="phr">熊本県菊池郡大津町森729-41</span></dd>
             </div>
             <div>
-              <dt>受付</dt>
-              <dd>メール・SNSは24時間365日<br>事務所は年中無休 9:00〜17:00</dd>
+              <dt><span class="phr">受付</span></dt>
+              <dd><span class="phr">メール・SNSは</span><wbr><span class="phr">24時間365日</span><br><span class="phr">事務所は</span><wbr><span class="phr">年中無休 9:00〜17:00</span></dd>
             </div>
             <div>
-              <dt>エリア</dt>
-              <dd>熊本県（画面だけでもできます）</dd>
+              <dt><span class="phr">エリア</span></dt>
+              <dd><span class="phr">熊本県</span><wbr><span class="phr">（画面だけでも</span><wbr><span class="phr">できます）</span></dd>
             </div>
           </dl>
           <div class="form-card reveal">
             <div id="form-slot">
-              <h3>フォームは、まだ仮の場所です <span class="kari">仮</span></h3>
-              <p>GoogleフォームなどのURLを入れると、ここに表示されます。回答の通知は、次の両方に届くようにフォーム側で設定してください。</p>
+              <h3><span class="phr">フォームは、</span><wbr><span class="phr">まだ仮の</span><wbr><span class="phr">場所です </span><span class="kari"><span class="phr">仮</span></span></h3>
+              <p><span class="phr">Googleフォームなどの</span><wbr><span class="phr">URLを</span><wbr><span class="phr">入れると、</span><wbr><span class="phr">ここに</span><wbr><span class="phr">表示されます。</span><wbr><span class="phr">回答の</span><wbr><span class="phr">通知は、</span><wbr><span class="phr">次の</span><wbr><span class="phr">両方に</span><wbr><span class="phr">届くように</span><wbr><span class="phr">フォーム側で</span><wbr><span class="phr">設定してください。</span></p>
               <ul class="notify-list" id="form-notify">
-                <li>ttamaki@mowasol.com</li>
-                <li>satokana@mowasol.com</li>
+                <li><span class="phr">ttamaki@mowasol.com</span></li>
+                <li><span class="phr">satokana@mowasol.com</span></li>
               </ul>
               <ol class="form-steps">
-                <li>フォームを作る</li>
-                <li>通知先に、上の2つのメールアドレスを両方追加する</li>
-                <li>埋め込み用のURLを、<code>site.js</code> の <code>FORM_URL</code> に貼る</li>
+                <li><span class="phr">フォームを</span><wbr><span class="phr">作る</span></li>
+                <li><span class="phr">通知先に、</span><wbr><span class="phr">上の</span><wbr><span class="phr">2つの</span><wbr><span class="phr">メールアドレスを</span><wbr><span class="phr">両方追加する</span></li>
+                <li><span class="phr">埋め込み用の</span><wbr><span class="phr">URLを、</span><code>site.js</code><span class="phr"> の</span> <code>FORM_URL</code><span class="phr"> に</span><wbr><span class="phr">貼る</span></li>
               </ol>
             </div>
-            <p class="mail-fallback">フォームが使えないときは、メールでもかまいません。<a href="mailto:ttamaki@mowasol.com">ttamaki@mowasol.com</a>（24時間365日）。見積もりも無料です。</p>
+            <p class="mail-fallback"><span class="phr">フォームが</span><wbr><span class="phr">使えない</span><wbr><span class="phr">ときは、</span><wbr><span class="phr">メールでもかまいません。</span><a href="mailto:ttamaki@mowasol.com">ttamaki@mowasol.com</a><span class="phr">（24時間365日）。</span><wbr><span class="phr">見積もりも</span><wbr><span class="phr">無料です。</span></p>
           </div>
         </div>
         <!-- 会社情報と同じ内容。検索向けの LocalBusiness です。 -->
@@ -913,52 +914,52 @@
   <footer class="site-footer">
     <div class="wrap footer-cta">
       <div>
-        <p class="footer-cta__kicker">診断・ご相談は無料</p>
-        <p class="footer-cta__lead">見積もりも無料です。</p>
+        <p class="footer-cta__kicker"><span class="phr">診断・ご相談は</span><wbr><span class="phr">無料</span></p>
+        <p class="footer-cta__lead"><span class="phr">見積もりも</span><wbr><span class="phr">無料です。</span></p>
       </div>
       <div class="footer-cta__actions">
-        <a class="btn btn--primary" href="#contact">無料で相談する</a>
+        <a class="btn btn--primary" href="#contact">無料で<wbr>相談する</a>
         <a class="btn btn--line" href="tel:0962828122">096-282-8122</a>
       </div>
     </div>
     <div class="wrap footer-grid">
       <div>
-        <p class="footer-brand"><img src="assets/mowa_logomark.png" alt="" width="116" height="109"><span class="brand__name"><span data-site="name">mowaソリューションズ</span><small data-site="service">ITなんでも屋</small></span></p>
-        <p>熊本で機械もプログラムも作ってきました。店や畑の相談も、ここで見ます。</p>
-        <p>年中無休 9:00–17:00<br><a href="tel:0962828122">096-282-8122</a></p>
+        <p class="footer-brand"><img src="assets/mowa_logomark.png" alt="" width="116" height="109"><span class="brand__name"><span data-site="name" class="phr">mowaソリューションズ</span><small data-site="service" class="phr">ITなんでも屋</small></span></p>
+        <p><span class="phr">熊本で</span><wbr><span class="phr">機械も</span><wbr><span class="phr">プログラムも</span><wbr><span class="phr">作ってきました。</span><wbr><span class="phr">店や</span><wbr><span class="phr">畑の</span><wbr><span class="phr">相談も、</span><wbr><span class="phr">ここで</span><wbr><span class="phr">見ます。</span></p>
+        <p><span class="phr">年中無休 9:00–17:00</span><br><a href="tel:0962828122">096-282-8122</a></p>
       </div>
       <div>
-        <h2>このページ</h2>
+        <h2><span class="phr">この</span><wbr><span class="phr">ページ</span></h2>
         <ul>
           <li><a href="#troubles">困りごと</a></li>
           <li><a href="#services">サービス</a></li>
           <li><a href="#prices">料金</a></li>
           <li><a href="#works">事例</a></li>
-          <li><a href="#debug">自社のソフト</a></li>
+          <li><a href="#debug">自社の<wbr>ソフト</a></li>
           <li><a href="#photos">写真</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
-          <li><a href="#top">ページの上へ戻る</a></li>
+          <li><a href="#top">ページの<wbr>上へ<wbr>戻る</a></li>
         </ul>
       </div>
       <div>
-        <h2>関連サイト</h2>
+        <h2><span class="phr">関連</span><wbr><span class="phr">サイト</span></h2>
         <ul>
-          <li><a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">プログラミング教室（別サイト）</a></li>
-          <li><a href="https://amstester.com/" target="_blank" rel="noopener noreferrer">PEPPER の紹介（別サイト）</a></li>
-          <li><a href="https://keychain.mowasol.com/" target="_blank" rel="noopener noreferrer">キーホルダー基板（別サイト）</a></li>
+          <li><a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">プログラミング教室<wbr>（別サイト）</a></li>
+          <li><a href="https://amstester.com/" target="_blank" rel="noopener noreferrer">PEPPER の<wbr>紹介<wbr>（別サイト）</a></li>
+          <li><a href="https://keychain.mowasol.com/" target="_blank" rel="noopener noreferrer">キーホルダー基板<wbr>（別サイト）</a></li>
         </ul>
       </div>
     </div>
     <div class="wrap legal">
-      <p>料金の数字は仮です。見積もりは無料で、作業の前に金額を出します。診断・ご相談は無料です。</p>
-      <p>© <span data-site="name">mowaソリューションズ</span></p>
+      <p><span class="phr">料金の</span><wbr><span class="phr">数字は</span><wbr><span class="phr">仮です。</span><wbr><span class="phr">見積もりは</span><wbr><span class="phr">無料で、</span><wbr><span class="phr">作業の</span><wbr><span class="phr">前に</span><wbr><span class="phr">金額を</span><wbr><span class="phr">出します。</span><wbr><span class="phr">診断・ご相談は</span><wbr><span class="phr">無料です。</span></p>
+      <p><span class="phr">© </span><span data-site="name" class="phr">mowaソリューションズ</span></p>
     </div>
   </footer>
 
   <dialog class="lightbox" id="lightbox" aria-label="写真の拡大">
     <div class="lightbox__panel">
       <div class="lightbox__top">
-        <p class="lightbox__count" id="light-count">1 / 1</p>
+        <p class="lightbox__count" id="light-count"><span class="phr">1 / 1</span></p>
         <button type="button" id="light-close">閉じる</button>
       </div>
       <figure>
@@ -966,15 +967,15 @@
         <figcaption id="light-cap"></figcaption>
       </figure>
       <div class="lightbox__nav">
-        <button type="button" id="light-prev">前の写真</button>
-        <button type="button" id="light-next">次の写真</button>
+        <button type="button" id="light-prev">前の<wbr>写真</button>
+        <button type="button" id="light-next">次の<wbr>写真</button>
       </div>
     </div>
   </dialog>
 
   <div class="dock" id="dock">
     <a class="btn btn--ghost" href="tel:0962828122">電話する</a>
-    <a class="btn btn--primary" href="#contact">無料で相談する</a>
+    <a class="btn btn--primary" href="#contact">無料で<wbr>相談する</a>
   </div>
 
   <script src="site.js"></script>

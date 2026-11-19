@@ -96,7 +96,7 @@ var FORM_NOTIFY = [
         var warn = document.createElement("p");
         warn.className = "form-warn";
         warn.setAttribute("role", "alert");
-        warn.textContent = "フォームの URL は、https から始まるものにしてください。いまの値は表示していません。";
+        warn.textContent = "フォームの\u200b URL は、\u200bhttps から\u200b始まる\u200bものに\u200bしてください。\u200bいまの\u200b値は\u200b表示していません。";
         slot.insertBefore(warn, slot.firstChild);
       } else {
         var frame = document.createElement("iframe");
@@ -113,7 +113,7 @@ var FORM_NOTIFY = [
         link.href = url;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
-        link.textContent = "フォームを別のタブで開く（別サイト）";
+        link.textContent = "フォームを\u200b別の\u200bタブで\u200b開く\u200b（別サイト）";
         open.appendChild(link);
         slot.appendChild(open);
       }
@@ -225,7 +225,17 @@ var FORM_NOTIFY = [
       function apply() {
         lightImg.src = pic.getAttribute("src");
         lightImg.alt = pic.alt;
-        lightCap.textContent = caption ? caption.innerText.replace(/\s+/g, " ").trim() : pic.alt;
+        if (caption) {
+          var capTitle = caption.querySelector(".ttl");
+          var capTag = caption.querySelector(".g-card__tag");
+          if (capTitle) {
+            lightCap.innerHTML = (capTag ? capTag.textContent + " " : "") + capTitle.innerHTML;
+          } else {
+            lightCap.textContent = caption.innerText.replace(/\s+/g, " ").trim();
+          }
+        } else {
+          lightCap.textContent = pic.alt;
+        }
         if (lightCount) lightCount.textContent = (current + 1) + " / " + list.length;
       }
 
