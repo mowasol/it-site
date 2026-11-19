@@ -47,8 +47,10 @@ if cname != "it.mowasol.com":
 visible = re.sub(r"<[^>]+>", "", (root / "index.html").read_text(encoding="utf-8"))
 if "診断・ご相談は無料" not in visible:
     named.append("missing 診断・ご相談は無料")
-if "熊本の" not in visible or "ITなんでも屋です。" not in visible:
-    named.append("hero title phrases missing")
+if "AIとデジタルのmowa" not in visible or "パソコン・スマホの困りごとから、アプリ開発まで" not in visible:
+    named.append("brand name or tagline missing")
+if "ITなんでも屋" in visible or "なんでも屋" in visible:
+    named.append("old shop name still visible")
 
 if missing or named:
     print("\n".join(missing + named))

@@ -1,4 +1,4 @@
-/* mowa ITなんでも屋
+/* AIとデジタルのmowa
    書体は丸ゴシック。色は公式ロゴ。
    明るい緑は猫の体（#63ed4a）、濃い緑はロゴの s（#0d683e）。
    明るい緑の上の文字は墨色。 */
@@ -58,7 +58,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  /* 2段目の「ITなんでも屋です。」が、スマホでも2カラムの見出し幅にも収まるサイズ。 */
+  /* 「AIとデジタルの」が、スマホでも2カラムの見出し幅にも収まるサイズ。 */
   font-size: clamp(2.05rem, 3.3vw + 1.1rem, 3.75rem);
   font-weight: 800;
   letter-spacing: -0.03em;
@@ -252,9 +252,10 @@ a:hover { color: var(--green-dark); }
   font-family: var(--display);
   font-weight: 800;
   font-size: 0.92rem;
-  line-height: 1.2;
+  line-height: 1.25;
   padding-left: 10px;
   border-left: 2px solid var(--line);
+  max-width: 8.6rem;
 }
 .brand__name {
   font-family: var(--display);
@@ -392,7 +393,10 @@ a:hover { color: var(--green-dark); }
   text-wrap: balance;
 }
 .lede {
-  font-size: 1.12rem;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.55;
   max-width: 38rem;
   margin-top: 0.85rem;
   line-break: strict;
