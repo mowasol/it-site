@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>熊本のITなんでも屋｜mowaソリューションズ</title>
+  <meta name="description" content="熊本県の商店・農場・個人の方へ。スマホ、パソコン、業務の道具、AI、基板や3Dプリントを、わかりやすい言葉で手伝うITなんでも屋です。">
+  <link rel="canonical" href="https://it.mowasol.com/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0d683e">
+  <meta name="color-scheme" content="light">
+  <meta name="geo.region" content="JP-43">
+  <meta name="geo.placename" content="熊本県菊池郡大津町">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="mowaソリューションズ">
+  <meta property="og:title" content="熊本のITなんでも屋｜mowaソリューションズ">
+  <meta property="og:description" content="スマホも、パソコンも、AIも、現場の道具も。熊本の商店・農場・個人の方へ、わかりやすい言葉で手伝います。">
+  <meta property="og:url" content="https://it.mowasol.com/">
+  <meta property="og:image" content="https://it.mowasol.com/assets/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="mowaソリューションズのマーク。熊本のITなんでも屋">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="熊本のITなんでも屋｜mowaソリューションズ">
+  <meta name="twitter:description" content="スマホも、パソコンも、AIも、現場の道具も。わかりやすい言葉で手伝います。">
+  <meta name="twitter:image" content="https://it.mowasol.com/assets/ogp.png">
+  <link rel="icon" href="assets/mowa_logomark.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/mowa_logomark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <!--
+    編集する場所
+      料金（仮）        … 下の section#prices だけ
+      連絡先            … section#contact の会社情報と、その直後の JSON-LD
+      フォームURL・通知先 … site.js の FORM_URL と FORM_NOTIFY
+      写真・ロゴ（仮）  … images/ を置き、このファイルの img の src を変える
+    詳しくは README.md
+  -->
+</head>
+<body>
+  <a class="skip" href="#main">本文へ進む</a>
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img class="logo" src="assets/mowa_neko_logo.jpg" alt="mowaソリューションズ" width="754" height="193">
+        <span class="brand__service">ITなんでも屋</span>
+      </a>
+      <details class="menu">
+        <summary>
+          <span class="burger" aria-hidden="true"></span>
+          <span class="when-closed">メニュー</span>
+          <span class="when-open">閉じる</span>
+        </summary>
+        <nav aria-label="ページ内（携帯）">
+          <a href="#troubles">困りごと</a>
+          <a href="#services">サービス</a>
+          <a href="#prices">料金</a>
+          <a href="#works">事例</a>
+          <a href="#about">会社</a>
+          <a href="#flow">流れ</a>
+          <a href="#faq">質問</a>
+          <a class="menu__cta" href="#contact">相談する</a>
+        </nav>
+      </details>
+      <nav class="nav-wide" aria-label="ページ内">
+        <a href="#troubles">困りごと</a>
+        <a href="#services">サービス</a>
+        <a href="#prices">料金</a>
+        <a href="#works">事例</a>
+        <a href="#about">会社</a>
+        <a href="#flow">流れ</a>
+        <a href="#faq">質問</a>
+        <a class="menu__cta" href="#contact">相談する</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div>
+          <p class="eyebrow">熊本の商店・農場・個人の方へ</p>
+          <h1 id="hero-title">熊本の、ITなんでも屋。</h1>
+          <p class="lede">スマホも、パソコンも、AIも、現場の道具も。むずかしい話の前に、いま困っていることから片づけます。</p>
+          <div class="actions">
+            <a class="btn btn--primary" href="#contact">無料で相談する</a>
+            <a class="btn btn--ghost" href="#prices">料金の目安を見る</a>
+          </div>
+          <p class="fine">オンラインの初回診断は無料です。ページ内の金額は、まだ仮の目安です。</p>
+          <ul class="points">
+            <li>言葉をかんたんに</li>
+            <li>今ある道具から</li>
+            <li>機械もソフトも見る</li>
+          </ul>
+        </div>
+        <div class="hero__art">
+          <svg viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="24" y="28" width="236" height="286" rx="18" fill="#f7f1e6" stroke="#d9cbb8" stroke-width="2"/>
+            <path d="M48 28v286" stroke="#efd0bc" stroke-width="10"/>
+            <path d="M74 86h150M74 118h136M74 150h150M74 182h104" stroke="#c4b29a" stroke-width="5" stroke-linecap="round"/>
+            <rect x="74" y="214" width="86" height="34" rx="10" fill="#e5f3eb"/>
+            <path d="M90 231l10 10 20-22" fill="none" stroke="#0d683e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="292" y="20" width="176" height="300" rx="28" fill="#1e1a16"/>
+            <rect x="308" y="52" width="144" height="214" rx="10" fill="#f4efe6"/>
+            <circle cx="380" cy="290" r="9" fill="#f3efe4"/>
+            <rect x="322" y="72" width="96" height="40" rx="12" fill="#63ed4a"/>
+            <rect x="346" y="124" width="90" height="40" rx="12" fill="#e7f8df"/>
+            <rect x="322" y="176" width="108" height="40" rx="12" fill="#fffdf8"/>
+            <rect x="28" y="340" width="292" height="104" rx="16" fill="#0d683e"/>
+            <path d="M58 372h210" stroke="#d7efe3" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="78" cy="404" r="11" fill="#f6e27a"/>
+            <circle cx="122" cy="404" r="11" fill="#fffdf8"/>
+            <circle cx="166" cy="404" r="11" fill="#f6e27a"/>
+            <circle cx="210" cy="404" r="11" fill="#fffdf8"/>
+            <circle cx="254" cy="404" r="11" fill="#8fd9a4"/>
+            <rect x="344" y="348" width="184" height="96" rx="16" fill="#fffdf8" stroke="#0d683e" stroke-width="3"/>
+            <rect x="364" y="366" width="144" height="16" rx="5" fill="#0d683e"/>
+            <rect x="392" y="396" width="88" height="28" rx="5" fill="#e7f8df"/>
+            <path d="M496 348v-30" stroke="#0d683e" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="482" cy="312" rx="14" ry="8" fill="#0d683e" transform="rotate(-28 482 312)"/>
+            <ellipse cx="512" cy="312" rx="14" ry="8" fill="#0d683e" transform="rotate(28 512 312)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="troubles">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">01</span>こんなお困りごと</h2>
+        <p class="lead">お店、農場、ひとりの仕事。紙と手作業が中心でも、直すところは一か所で足ります。当てはまるものだけ、見てもらえます。</p>
+        <ul class="card-grid card-grid--2">
+          <li class="trouble">
+            <h3>スマホの操作が不安</h3>
+            <p>LINE、写真、振込。どれを押していいのかが、わからない。</p>
+          </li>
+          <li class="trouble">
+            <h3>パソコンが遅い、急に止まった</h3>
+            <p>仕事のファイルが中に入ったまま、触れなくなった。</p>
+          </li>
+          <li class="trouble">
+            <h3>毎日、同じ転記がある</h3>
+            <p>紙に書いて、また表計算に入れている。その時間がもったいない。</p>
+          </li>
+          <li class="trouble">
+            <h3>在庫・予約・売上が手書き</h3>
+            <p>ノートを開かないと、いまの数がわからない。</p>
+          </li>
+          <li class="trouble">
+            <h3>AIが気になる</h3>
+            <p>何に使えるのか、使っていいのかが、まだわからない。</p>
+          </li>
+          <li class="trouble">
+            <h3>現場の数を、あとから見たい</h3>
+            <p>温度、個数、機械が止まった時刻。メモが残らない。</p>
+          </li>
+          <li class="trouble">
+            <h3>説明が、人によって違う</h3>
+            <p>新しい人に、毎回ゼロから教えている。</p>
+          </li>
+          <li class="trouble">
+            <h3>直せる人が、もういない</h3>
+            <p>昔作った表や仕組みを、触るのがこわい。</p>
+          </li>
+        </ul>
+        <p class="fine more">ひとつでも当てはまったら、それで十分です。<a href="#contact">その話からで大丈夫です。</a></p>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="services">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">02</span>サービス</h2>
+        <p class="lead">大きな入れ替えから始めません。今のやり方を見て、必要なところだけ手伝います。</p>
+        <ul class="card-grid card-grid--3">
+          <li class="service">
+            <h3>スマホ・パソコン</h3>
+            <p>設定、遅さ、つながらない、バックアップ、アカウント。今お使いの機械を見ます。</p>
+            <a class="service__link" href="#prices">料金の目安</a>
+          </li>
+          <li class="service">
+            <h3>業務の道具</h3>
+            <p>日報、在庫、予約、売上の集計。紙や表計算の「毎日同じ転記」を減らします。</p>
+            <a class="service__link" href="#prices">料金の目安</a>
+          </li>
+          <li class="service">
+            <h3>AIの導入</h3>
+            <p>文章の下書き、問い合わせの整理、社内の聞き方。外に出すデータは、先に決めます。</p>
+            <a class="service__link" href="#prices">料金の目安</a>
+          </li>
+          <li class="service">
+            <h3>現場の装置</h3>
+            <p>センサ、小さな表示、基板、3Dプリントの治具やケース。市販品で合わないところを作ります。</p>
+            <a class="service__link" href="#prices">料金の目安</a>
+          </li>
+          <li class="service">
+            <h3>研修</h3>
+            <p>スタッフといっしょに、画面を見ながら覚えます。少人数で、その場の仕事を題材にします。</p>
+            <a class="service__link" href="#prices">料金の目安</a>
+          </li>
+          <li class="service">
+            <h3>その後の保守</h3>
+            <p>使い始めたあとの「あれ、どうするんだっけ」を、月額で受けます。</p>
+            <a class="service__link" href="#prices">料金の目安</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         料金（仮）
+         金額を変えるときは、この section の中だけを編集してください。
+         表示は税込です。税別にするときは、直下の説明文も一緒に直してください。
+         入口は低く、足す分はオプション、続ける分は月額、という並びです。
+         ============================================================ -->
+    <section class="section" id="prices">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">03</span>料金</h2>
+        <div class="policy">
+          <p><strong>入口は低くします。</strong>診断は無料、訪問の診断と最初の設定は低めの金額です。道具づくり、AI、装置は小さく始められます。続ける分は月額の保守、足す機能や出張はオプションです。</p>
+          <p>下の金額は、まだ<strong>仮</strong>の目安です。税込です。この数字のままお願いすることはありません。作業の前に、内容と金額を書いてご確認いただきます。</p>
+        </div>
+
+        <div class="price-block">
+          <h3>はじめに</h3>
+          <ul class="price-grid price-grid--3">
+            <li class="price-card price-card--lead">
+              <h3>オンラインIT診断</h3>
+              <p class="amount">無料 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>30分。いま困っていることを整理し、やることを一緒に決めます。</p>
+            </li>
+            <li class="price-card">
+              <h3>訪問IT診断</h3>
+              <p class="amount">3,000円 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>熊本県内・60分の目安。遠い場所は、下のオプションを足します。</p>
+            </li>
+            <li class="price-card">
+              <h3>スマホ・パソコンの設定</h3>
+              <p class="amount">5,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>初期設定、LINE、メール、バックアップ、遅い・つながらない、の切り分け。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="price-block">
+          <h3>つくる・覚える</h3>
+          <ul class="price-grid">
+            <li class="price-card">
+              <h3>業務ツール作成</h3>
+              <p class="amount">30,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>日報、在庫、予約、集計。紙や表計算の置き換えを、小さい画面から。</p>
+            </li>
+            <li class="price-card">
+              <h3>AI導入</h3>
+              <p class="amount">20,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>文章の下書き、問い合わせの整理、聞き方の設定。出すデータは先に決めます。</p>
+            </li>
+            <li class="price-card">
+              <h3>IoT・基板・3Dプリント</h3>
+              <p class="amount">15,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>小さな表示、センサ、治具、ケース。部品代が別になるときは、先に言います。</p>
+            </li>
+            <li class="price-card">
+              <h3>研修</h3>
+              <p class="amount">10,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>90分の目安。スタッフ向け。人数と場所はご相談ください。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="price-block">
+          <h3>保守プラン（月額）</h3>
+          <ul class="price-grid price-grid--3">
+            <li class="price-card">
+              <h3>ライト</h3>
+              <p class="amount">5,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>チャットで質問。平日に返信します。</p>
+            </li>
+            <li class="price-card">
+              <h3>スタンダード</h3>
+              <p class="amount">12,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>ライトに加えて、月1回の遠隔、または訪問。</p>
+            </li>
+            <li class="price-card">
+              <h3>おまかせ</h3>
+              <p class="amount">25,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
+              <p>優先して見ます。小さな修正は、月2時間まで。</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="price-block">
+          <h3>オプション</h3>
+          <dl class="options">
+            <div>
+              <dt>追加の訪問（熊本県内）</dt>
+              <dd>3,000円 / 回 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+            <div>
+              <dt>遠方（交通費の実費に日当を足す）</dt>
+              <dd>日当 8,000円 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+            <div>
+              <dt>機能の追加</dt>
+              <dd>10,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+            <div>
+              <dt>データの移し替え</dt>
+              <dd>8,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+            <div>
+              <dt>その場の操作練習</dt>
+              <dd>5,000円 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+            <div>
+              <dt>3Dプリントの追加</dt>
+              <dd>材料費 + 1,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+            <div>
+              <dt>基板の追加</dt>
+              <dd>部品代 + 5,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+            <div>
+              <dt>特急（3営業日以内に着手）</dt>
+              <dd>作業費の 50% 増 <span class="kari">仮<span class="sr-only">の料金</span></span></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="works">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">04</span>事例</h2>
+        <p class="lead">自社で作っているものと、お手伝いの形の例です。</p>
+        <h3 class="price-block">自社の製品・道具</h3>
+        <ul class="card-grid card-grid--2">
+          <li class="work">
+            <p class="work-label">自社製品</p>
+            <h3>PEPPER / PEPPER Server</h3>
+            <p>測定と試験のための装置と、それを支えるサーバ側のしくみです。基板と、動かすソフトを一緒に作っています。</p>
+            <p><a href="https://amstester.com/" target="_blank" rel="noopener noreferrer">製品の紹介を見る（別サイト）</a></p>
+          </li>
+          <li class="work">
+            <p class="work-label">自社の基板</p>
+            <h3>Toyako</h3>
+            <p>ADC（アナログの値を数字にする部品）を試すための、小さな基板です。AD5790で細かい直流電圧を作り、8か所を同時に測って、結果を返します。測るタイミングはFPGAでそろえています。</p>
+          </li>
+          <li class="work">
+            <p class="work-label">自社の道具</p>
+            <h3>デバッグツール</h3>
+            <p>動きがおかしいとき、信号とソフトの流れを見て、原因が回路なのかプログラムなのかを切り分ける道具です。</p>
+          </li>
+          <li class="work">
+            <p class="work-label">教室の基板</p>
+            <h3>キーホルダー基板</h3>
+            <p>光る小さな基板に、自分のプログラムを入れて動かします。プログラミング教室で使っています。</p>
+            <p><a href="https://keychain.mowasol.com/" target="_blank" rel="noopener noreferrer">書き込みページを見る（別サイト）</a></p>
+          </li>
+        </ul>
+        <h3 class="price-block">たとえば、こんなお手伝い</h3>
+        <ul class="card-grid card-grid--2">
+          <li class="work">
+            <p class="work-label">例</p>
+            <h3>農場の日報</h3>
+            <p>紙の日報を、スマホで送る形にして、あとから表で見られるようにします。</p>
+          </li>
+          <li class="work">
+            <p class="work-label">例</p>
+            <h3>商店の在庫</h3>
+            <p>棚の数を、閉じたノートから、その日のうちに直せる表にします。</p>
+          </li>
+          <li class="work">
+            <p class="work-label">例</p>
+            <h3>問い合わせの下書き</h3>
+            <p>よくある返事を、AIで下ごしらえします。送る前に、人が読みます。</p>
+          </li>
+          <li class="work">
+            <p class="work-label">例</p>
+            <h3>急に止まったパソコン</h3>
+            <p>中のファイルを残すほうを先に見て、直すか入れ替えるかを一緒に決めます。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">05</span>強みと、会社のこと</h2>
+        <div class="about-grid">
+          <div>
+            <p>mowaソリューションズは、熊本で、機械とソフトの両方を作ってきた会社です。半導体を調べる試験装置では、細かく測る基板、FPGA、試験用のソフト、そして「動かない原因はどちらか」を追う仕事を、長くやってきました。</p>
+            <p>その丁寧さを、お店や農場や、ひとりの仕事のITにも使います。アプリも、AIの設定も、基板も、3Dプリンタも、同じところにあります。子ども向けのプログラミング教室も開いています。</p>
+            <p><a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">プログラミング教室のサイト（別サイト）</a></p>
+          </div>
+          <ul class="strengths">
+            <li class="strength">
+              <h3>測る基板と、動かすソフト</h3>
+              <p>精密な測定基板、FPGA、試験ソフト、不具合の切り分け。ハードとソフトの境目を、自分たちで見ます。</p>
+            </li>
+            <li class="strength">
+              <h3>アプリ</h3>
+              <p>日報や在庫のように、毎日使う画面を小さく作れます。</p>
+            </li>
+            <li class="strength">
+              <h3>AIの設定</h3>
+              <p>文章や問い合わせに使えるよう、最初の設定から一緒にやります。</p>
+            </li>
+            <li class="strength">
+              <h3>基板と環境</h3>
+              <p>小さな基板の設計と、パソコン・ネット・バックアップなどの環境づくり。</p>
+            </li>
+            <li class="strength">
+              <h3>3Dプリント</h3>
+              <p>Bambu Lab の P2S が3台。治具やケースを、形にして渡せます。</p>
+            </li>
+            <li class="strength">
+              <h3>教室</h3>
+              <p>プログラミングを、少人数で教えています。仕事の研修とは別の場です。</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============================================================
+             写真（仮）
+             1. 画像を images/ に置く
+                例: owner.jpg / p2s.jpg / works.jpg / workspace.jpg
+             2. 下の img の src を、そのファイル名に変える
+             ロゴは assets/mowa_neko_logo.jpg（ヘッダー）と assets/mowa_logomark.png（小マーク）
+             ============================================================ -->
+        <ul class="photo-grid more">
+          <li>
+            <figure>
+              <img src="images/owner-placeholder.svg" width="800" height="600" alt="代表者の写真はまだ入っていません" loading="lazy" decoding="async">
+              <figcaption>代表の写真 <span class="kari">仮</span></figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="images/p2s-placeholder.svg" width="800" height="600" alt="3Dプリンタ P2S の写真はまだ入っていません" loading="lazy" decoding="async">
+              <figcaption>3Dプリンタ（P2S が3台） <span class="kari">仮</span></figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="images/works-placeholder.svg" width="800" height="600" alt="作品や基板の写真はまだ入っていません" loading="lazy" decoding="async">
+              <figcaption>作品・基板 <span class="kari">仮</span></figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <img src="images/workspace-placeholder.svg" width="800" height="600" alt="作業場の写真はまだ入っていません" loading="lazy" decoding="async">
+              <figcaption>作業場 <span class="kari">仮</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--deep" id="flow">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">06</span>ご依頼の流れ</h2>
+        <p class="lead">契約が先、ではありません。話を聞いて、金額を見てから決めてください。</p>
+        <ol class="steps">
+          <li>
+            <span class="step-no" aria-hidden="true">1</span>
+            <div>
+              <h3>送る</h3>
+              <p>フォームに、困っていることを書きます。上手な文章でなくて大丈夫です。</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-no" aria-hidden="true">2</span>
+            <div>
+              <h3>話を聞く</h3>
+              <p>オンラインか、訪問か。初回の診断で、いまのやり方を見せていただきます。</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-no" aria-hidden="true">3</span>
+            <div>
+              <h3>内容と金額を書く</h3>
+              <p>やることと、やらないこと、金額を出します。見てから断っていただいてかまいません。</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-no" aria-hidden="true">4</span>
+            <div>
+              <h3>作業する</h3>
+              <p>ご納得いただいてから着手します。途中で方針が変わるときは、先に言います。</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-no" aria-hidden="true">5</span>
+            <div>
+              <h3>一緒に触る</h3>
+              <p>できあがりを、その場で触って確認します。質問も、そこで受けます。</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-no" aria-hidden="true">6</span>
+            <div>
+              <h3>必要なら、保守</h3>
+              <p>使い続けたいときは、月額のプランに移れます。一度きりでも大丈夫です。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="faq">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">07</span>よくある質問</h2>
+        <div class="faq-list">
+          <details class="faq">
+            <summary><h3>パソコンがほとんどわかりません。</h3></summary>
+            <p>大丈夫です。画面をいっしょに見ます。言葉も、ふだんの言い方にします。</p>
+          </details>
+          <details class="faq">
+            <summary><h3>どこまで来てもらえますか。</h3></summary>
+            <p>熊本県内が中心です。遠いところはご相談ください。オンラインだけでもできます。</p>
+          </details>
+          <details class="faq">
+            <summary><h3>新しい機械を買わされますか。</h3></summary>
+            <p>今お持ちのスマホやパソコンで足りるなら、買い足しません。必要なときだけ、理由をお伝えします。</p>
+          </details>
+          <details class="faq">
+            <summary><h3>いくらかかりますか。</h3></summary>
+            <p>このページの料金は仮の目安です。作業の前に、やることを書いて金額をお出しします。見てから断っていただいてかまいません。請求書も出します。</p>
+          </details>
+          <details class="faq">
+            <summary><h3>AIに、帳簿やお客さんの情報を送るのですか。</h3></summary>
+            <p>送ってよいかを、先に決めます。外に出したくないものは、外に出さないやり方を選びます。</p>
+          </details>
+          <details class="faq">
+            <summary><h3>直したあとも見てくれますか。</h3></summary>
+            <p>月額の保守があります。使っているうちの「あれ、どうするんだっけ」も、そこで聞けます。</p>
+          </details>
+          <details class="faq">
+            <summary><h3>基板や3Dプリントだけでも頼めますか。</h3></summary>
+            <p>はい。小さな部品、ケース、治具だけでもどうぞ。</p>
+          </details>
+          <details class="faq">
+            <summary><h3>教室とは何が違いますか。</h3></summary>
+            <p>同じ会社です。教室は子ども向けで、サイトは <a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">mowaschool.com（別サイト）</a> です。このページは、お店や農場、仕事で使うITの相談です。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <h2><span class="stamp" aria-hidden="true">08</span>お問い合わせ</h2>
+        <p class="lead">まずは、いま困っていることを短く書いてください。むずかしい言葉はいりません。届いた内容は、ご連絡のために使い、ほかの目的には使いません。</p>
+        <div class="contact-grid">
+          <!-- ============================================================
+               会社情報
+               代表・電話・メール・住所・受付を変えるときは、ここと直後の JSON-LD を揃えてください。
+               フォームの通知先（2アドレス）は site.js の FORM_NOTIFY です。
+               ============================================================ -->
+          <dl class="facts" id="company-info">
+            <div>
+              <dt>名前</dt>
+              <dd>mowaソリューションズ</dd>
+            </div>
+            <div>
+              <dt>サービス</dt>
+              <dd>ITなんでも屋</dd>
+            </div>
+            <div>
+              <dt>代表</dt>
+              <dd>玉木智和</dd>
+            </div>
+            <div>
+              <dt>電話</dt>
+              <dd><a href="tel:0962828122">096-282-8122</a></dd>
+            </div>
+            <div>
+              <dt>メール</dt>
+              <dd><a href="mailto:ttamaki@mowasol.com">ttamaki@mowasol.com</a></dd>
+            </div>
+            <div>
+              <dt>住所</dt>
+              <dd>〒869-1217<br>熊本県菊池郡大津町森729-41</dd>
+            </div>
+            <div>
+              <dt>受付</dt>
+              <dd>メール・SNSは24時間、365日<br>事務所は9:00〜17:00（ほぼ年中無休）</dd>
+            </div>
+            <div>
+              <dt>エリア</dt>
+              <dd>熊本県（オンラインもできます）</dd>
+            </div>
+          </dl>
+          <div class="form-card">
+            <div id="form-slot">
+              <h3>フォームは、まだ仮の場所です <span class="kari">仮</span></h3>
+              <p>GoogleフォームなどのURLを入れると、ここに表示されます。回答の通知は、次の両方に届くようにフォーム側で設定してください。</p>
+              <ul class="notify-list" id="form-notify">
+                <li>ttamaki@mowasol.com</li>
+                <li>satokana@mowasol.com</li>
+              </ul>
+              <ol class="form-steps">
+                <li>フォームを作る</li>
+                <li>通知先に、上の2つのメールアドレスを両方追加する</li>
+                <li>埋め込み用のURLを、<code>site.js</code> の <code>FORM_URL</code> に貼る</li>
+              </ol>
+            </div>
+            <p class="mail-fallback">フォームを使えないときは、メールで送ってください。<a href="mailto:ttamaki@mowasol.com">ttamaki@mowasol.com</a>（24時間受け付けています）</p>
+          </div>
+        </div>
+        <!-- 会社情報と同じ内容。検索向けの LocalBusiness です。 -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": ["LocalBusiness", "ProfessionalService"],
+          "@id": "https://it.mowasol.com/#business",
+          "name": "mowaソリューションズ ITなんでも屋",
+          "description": "熊本県の商店・農場・個人の方へ、スマホ、パソコン、業務の道具、AI、基板や3Dプリントをわかりやすい言葉で手伝うサービスです。メール・SNSの受付は24時間365日。事務所は9:00〜17:00（ほぼ年中無休）です。",
+          "url": "https://it.mowasol.com/",
+          "image": "https://it.mowasol.com/assets/ogp.png",
+          "logo": "https://it.mowasol.com/assets/mowa_logomark.png",
+          "telephone": "+81-96-282-8122",
+          "email": "ttamaki@mowasol.com",
+          "priceRange": "無料〜",
+          "currenciesAccepted": "JPY",
+          "address": {
+            "@type": "PostalAddress",
+            "postalCode": "869-1217",
+            "addressRegion": "熊本県",
+            "addressLocality": "菊池郡大津町",
+            "streetAddress": "森729-41",
+            "addressCountry": "JP"
+          },
+          "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "熊本県"
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "玉木智和"
+          },
+          "openingHours": "Mo-Su 09:00-17:00",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "17:00",
+            "description": "事務所の受付。ほぼ年中無休。"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "ttamaki@mowasol.com",
+              "telephone": "+81-96-282-8122",
+              "availableLanguage": "Japanese",
+              "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "00:00",
+                "closes": "23:59",
+                "description": "メール・SNSは24時間365日"
+              }
+            },
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "satokana@mowasol.com",
+              "availableLanguage": "Japanese",
+              "description": "お問い合わせフォームの通知先"
+            }
+          ],
+          "sameAs": [
+            "https://mowaschool.com/",
+            "https://amstester.com/",
+            "https://keychain.mowasol.com/"
+          ]
+        }
+        </script>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand"><img src="assets/mowa_logomark.png" alt="" width="116" height="109"><span class="brand__name">mowaソリューションズ<small>ITなんでも屋</small></span></p>
+        <p>熊本で、機械とソフトの両方を見てきた会社の、ふだんのITの相談口です。</p>
+      </div>
+      <div>
+        <h2>このページ</h2>
+        <ul>
+          <li><a href="#troubles">困りごと</a></li>
+          <li><a href="#services">サービス</a></li>
+          <li><a href="#prices">料金</a></li>
+          <li><a href="#works">事例</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+          <li><a href="#top">ページの上へ戻る</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>関連サイト</h2>
+        <ul>
+          <li><a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">プログラミング教室（別サイト）</a></li>
+          <li><a href="https://amstester.com/" target="_blank" rel="noopener noreferrer">PEPPER の紹介（別サイト）</a></li>
+          <li><a href="https://keychain.mowasol.com/" target="_blank" rel="noopener noreferrer">キーホルダー基板（別サイト）</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap legal">
+      <p>料金の表示は仮です。正式な金額は、ご相談のあとにお出しします。</p>
+      <p>© mowaソリューションズ</p>
+    </div>
+  </footer>
+  <script src="site.js"></script>
+</body>
+</html>
