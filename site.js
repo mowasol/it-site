@@ -1,4 +1,9 @@
 /* ============================================================
+   名前
+   屋号が決まったら、SITE.name だけ変えてください。
+   ページの表示、タイトル、検索用の JSON-LD はここから上書きします。
+   HTML に書いてある同じ文字は、JavaScript が動かないときの控えです。
+
    お問い合わせフォーム（仮）
    FORM_URL … Googleフォームなどの埋め込み用 URL。空なら案内を表示します。
    例: "https://docs.google.com/forms/d/e/________/viewform?embedded=true"
@@ -6,6 +11,11 @@
    FORM_NOTIFY … 回答の通知先。フォーム側の通知設定で、この2つ両方に届くようにする。
    ページの mailto 控えは ttamaki@mowasol.com だけ（index.html）。
    ============================================================ */
+var SITE = {
+  name: "mowaソリューションズ",
+  service: "ITなんでも屋"
+};
+
 var FORM_URL = "";
 var FORM_NOTIFY = [
   "ttamaki@mowasol.com",
@@ -15,16 +25,57 @@ var FORM_NOTIFY = [
 (function () {
   "use strict";
 
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function applyBrand() {
+    var name = SITE.name;
+    var service = SITE.service;
+    var nodes = document.querySelectorAll("[data-site='name']");
+    for (var i = 0; i < nodes.length; i++) nodes[i].textContent = name;
+    nodes = document.querySelectorAll("[data-site='service']");
+    for (var j = 0; j < nodes.length; j++) nodes[j].textContent = service;
+    nodes = document.querySelectorAll("[data-site-alt='name']");
+    for (var k = 0; k < nodes.length; k++) nodes[k].alt = name;
+
+    if (document.body.getAttribute("data-page") === "missing") return;
+
+    var title = "熊本のITなんでも屋｜" + name;
+    document.title = title;
+    var ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", title);
+    var twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute("content", title);
+    var ogSite = document.querySelector('meta[property="og:site_name"]');
+    if (ogSite) ogSite.setAttribute("content", name);
+    var ogAlt = document.querySelector('meta[property="og:image:alt"]');
+    if (ogAlt) ogAlt.setAttribute("content", name + "のマーク。熊本のITなんでも屋");
+
+    var ld = document.getElementById("business-ld");
+    if (!ld) return;
+    try {
+      var data = JSON.parse(ld.textContent);
+      data.name = name + " " + service;
+      ld.textContent = JSON.stringify(data);
+    } catch (err) {}
+  }
+
+  applyBrand();
+
   var details = document.querySelector(".menu");
   if (details) {
     var links = details.querySelectorAll("a");
     for (var i = 0; i < links.length; i++) {
       links[i].addEventListener("click", function () {
-        if (window.matchMedia("(max-width: 979px)").matches) {
+        if (window.matchMedia("(max-width: 1079px)").matches) {
           details.removeAttribute("open");
         }
       });
     }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && details.open && !document.querySelector("dialog[open]")) {
+        details.removeAttribute("open");
+      }
+    });
   }
 
   var notify = document.getElementById("form-notify");
@@ -38,35 +89,267 @@ var FORM_NOTIFY = [
   }
 
   var slot = document.getElementById("form-slot");
-  if (!slot) return;
+  if (slot) {
+    var url = String(FORM_URL || "").trim();
+    if (url) {
+      if (!/^https:\/\/\S+$/i.test(url)) {
+        var warn = document.createElement("p");
+        warn.className = "form-warn";
+        warn.setAttribute("role", "alert");
+        warn.textContent = "フォームの URL は、https から始まるものにしてください。いまの値は表示していません。";
+        slot.insertBefore(warn, slot.firstChild);
+      } else {
+        var frame = document.createElement("iframe");
+        frame.className = "form-frame";
+        frame.src = url;
+        frame.title = "お問い合わせフォーム";
+        frame.loading = "lazy";
+        frame.referrerPolicy = "strict-origin-when-cross-origin";
+        slot.replaceChildren(frame);
 
-  var url = String(FORM_URL || "").trim();
-  if (!url) return;
-
-  if (!/^https:\/\/\S+$/i.test(url)) {
-    var warn = document.createElement("p");
-    warn.className = "form-warn";
-    warn.setAttribute("role", "alert");
-    warn.textContent = "フォームの URL は、https から始まるものにしてください。いまの値は表示していません。";
-    slot.insertBefore(warn, slot.firstChild);
-    return;
+        var open = document.createElement("p");
+        open.className = "form-open";
+        var link = document.createElement("a");
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "フォームを別のタブで開く（別サイト）";
+        open.appendChild(link);
+        slot.appendChild(open);
+      }
+    }
   }
 
-  var frame = document.createElement("iframe");
-  frame.className = "form-frame";
-  frame.src = url;
-  frame.title = "お問い合わせフォーム";
-  frame.loading = "lazy";
-  frame.referrerPolicy = "strict-origin-when-cross-origin";
-  slot.replaceChildren(frame);
+  setupDebug();
+  setupGallery();
+  setupDock();
+  setupNav();
 
-  var open = document.createElement("p");
-  open.className = "form-open";
-  var link = document.createElement("a");
-  link.href = url;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.textContent = "フォームを別のタブで開く（別サイト）";
-  open.appendChild(link);
-  slot.appendChild(open);
+  function setupDebug() {
+    var img = document.getElementById("debug-shot");
+    var cap = document.getElementById("debug-cap");
+    if (!img || !cap) return;
+    var buttons = document.querySelectorAll("[data-debug]");
+    var busy = false;
+
+    function select(name) {
+      var btn = null;
+      for (var i = 0; i < buttons.length; i++) {
+        var on = buttons[i].getAttribute("data-debug") === name;
+        if (buttons[i].getAttribute("role") === "tab") {
+          buttons[i].setAttribute("aria-selected", on ? "true" : "false");
+          buttons[i].tabIndex = on ? 0 : -1;
+        } else {
+          buttons[i].setAttribute("aria-pressed", on ? "true" : "false");
+        }
+          if (on && buttons[i].hasAttribute("data-src")) btn = buttons[i];
+      }
+      if (!btn) return;
+
+      function apply() {
+        img.src = btn.getAttribute("data-src");
+        img.alt = btn.getAttribute("data-alt");
+        img.width = btn.getAttribute("data-w");
+        img.height = btn.getAttribute("data-h");
+        cap.textContent = btn.getAttribute("data-cap");
+      }
+
+      if (busy || reduce || !window.SiteFX || img.getAttribute("src") === btn.getAttribute("data-src")) {
+        apply();
+        return;
+      }
+      busy = true;
+      window.SiteFX.fadeOut(img).then(function () {
+        apply();
+        return window.SiteFX.fadeIn(img);
+      }).then(function () {
+        busy = false;
+      }).catch(function () {
+        apply();
+        img.style.opacity = "1";
+        busy = false;
+      });
+    }
+
+    for (var b = 0; b < buttons.length; b++) {
+      buttons[b].addEventListener("click", function () {
+        select(this.getAttribute("data-debug"));
+      });
+    }
+
+    var tabs = document.querySelectorAll(".debug-tabs [role='tab']");
+    for (var t = 0; t < tabs.length; t++) {
+      tabs[t].addEventListener("keydown", function (e) {
+        var list = Array.prototype.slice.call(document.querySelectorAll(".debug-tabs [role='tab']"));
+        var idx = list.indexOf(this);
+        var next = null;
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") next = list[(idx + 1) % list.length];
+        if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = list[(idx - 1 + list.length) % list.length];
+        if (e.key === "Home") next = list[0];
+        if (e.key === "End") next = list[list.length - 1];
+        if (!next) return;
+        e.preventDefault();
+        next.focus();
+        select(next.getAttribute("data-debug"));
+      });
+    }
+  }
+
+  function setupGallery() {
+    var grid = document.getElementById("gallery");
+    var dialog = document.getElementById("lightbox");
+    var lightImg = document.getElementById("light-img");
+    var lightCap = document.getElementById("light-cap");
+    var lightCount = document.getElementById("light-count");
+    if (!grid || !dialog || !lightImg) return;
+
+    var filters = document.querySelectorAll("[data-filter]");
+    var current = 0;
+    var lastFocus = null;
+    var busy = false;
+
+    function cards() {
+      return Array.prototype.filter.call(grid.querySelectorAll(".g-card"), function (el) {
+        return !el.hidden;
+      });
+    }
+
+    function showCard(index, fade) {
+      var list = cards();
+      if (!list.length) return;
+      current = (index + list.length) % list.length;
+      var card = list[current];
+      var pic = card.querySelector("img");
+      var caption = card.querySelector(".g-card__cap");
+
+      function apply() {
+        lightImg.src = pic.getAttribute("src");
+        lightImg.alt = pic.alt;
+        lightCap.textContent = caption ? caption.innerText.replace(/\s+/g, " ").trim() : pic.alt;
+        if (lightCount) lightCount.textContent = (current + 1) + " / " + list.length;
+      }
+
+      if (!fade || reduce || !window.SiteFX) {
+        apply();
+        lightImg.style.opacity = "1";
+        return;
+      }
+      busy = true;
+      window.SiteFX.fadeOut(lightImg).then(function () {
+        apply();
+        return window.SiteFX.fadeIn(lightImg);
+      }).then(function () {
+        busy = false;
+      }).catch(function () {
+        apply();
+        lightImg.style.opacity = "1";
+        busy = false;
+      });
+    }
+
+    grid.addEventListener("click", function (e) {
+      var card = e.target.closest(".g-card");
+      if (!card || card.hidden) return;
+      var list = cards();
+      current = list.indexOf(card);
+      lastFocus = card;
+      showCard(current, false);
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
+      document.dispatchEvent(new CustomEvent("site:lightbox-open"));
+    });
+
+    document.getElementById("light-prev").addEventListener("click", function () {
+      if (!busy) showCard(current - 1, true);
+    });
+    document.getElementById("light-next").addEventListener("click", function () {
+      if (!busy) showCard(current + 1, true);
+    });
+    document.getElementById("light-close").addEventListener("click", function () {
+      dialog.close();
+    });
+    dialog.addEventListener("click", function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("close", function () {
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    });
+    dialog.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        if (!busy) showCard(current - 1, true);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        if (!busy) showCard(current + 1, true);
+      }
+    });
+
+    function applyFilter(name) {
+      var items = grid.querySelectorAll(".g-card");
+      for (var i = 0; i < items.length; i++) {
+        var on = name === "all" || items[i].getAttribute("data-cat") === name;
+        items[i].hidden = !on;
+        if (on) {
+          items[i].style.opacity = "1";
+          items[i].style.transform = "none";
+        }
+      }
+      grid.dataset.played = "1";
+      for (var f = 0; f < filters.length; f++) {
+        var pressed = filters[f].getAttribute("data-filter") === name;
+        filters[f].setAttribute("aria-pressed", pressed ? "true" : "false");
+      }
+    }
+
+    for (var f = 0; f < filters.length; f++) {
+      filters[f].addEventListener("click", function () {
+        applyFilter(this.getAttribute("data-filter"));
+      });
+    }
+  }
+
+  function setupNav() {
+    var links = document.querySelectorAll(".nav-wide a[href^='#']:not(.menu__cta), .menu nav a[href^='#']:not(.menu__cta)");
+    if (!links.length || !("IntersectionObserver" in window)) return;
+    var map = {};
+    for (var i = 0; i < links.length; i++) {
+      var id = links[i].getAttribute("href").slice(1);
+      if (!map[id]) map[id] = [];
+      map[id].push(links[i]);
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      for (var e = 0; e < entries.length; e++) {
+        var group = map[entries[e].target.id];
+        if (!group) continue;
+        for (var n = 0; n < group.length; n++) {
+          group[n].classList.toggle("is-current", entries[e].isIntersecting);
+        }
+      }
+    }, { rootMargin: "-42% 0px -48% 0px", threshold: 0 });
+    var ids = Object.keys(map);
+    for (var k = 0; k < ids.length; k++) {
+      var section = document.getElementById(ids[k]);
+      if (section) observer.observe(section);
+    }
+  }
+
+  function setupDock() {
+    var dock = document.getElementById("dock");
+    var contact = document.getElementById("contact");
+    if (!dock || !contact) return;
+    var contactOn = false;
+    function placeDock() {
+      var scrolled = window.scrollY > 120;
+      dock.classList.toggle("is-hidden", !scrolled || contactOn);
+    }
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        contactOn = entries[0].isIntersecting;
+        placeDock();
+      }, { threshold: 0.12 });
+      observer.observe(contact);
+    }
+    window.addEventListener("scroll", placeDock, { passive: true });
+    placeDock();
+  }
 })();
