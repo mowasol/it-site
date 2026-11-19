@@ -3,7 +3,7 @@
 熊本の商店・農場・個人事業の方向けの、IT相談サイトです。  
 GitHub Pages で、`main` ブランチのルートから公開します。公開先は `https://it.mowasol.com/` です。
 
-金額は、まだ仮です。連絡先は入っています。写真は入っています。代表と3Dプリンタだけ、まだ仮です。
+金額は、まだ仮です。訪問して見る分と、追加の訪問は 1,000円（仮）です。連絡先は入っています。代表の写真は入っています。3Dプリンタだけ、まだ仮です。
 
 ## 屋号
 
@@ -70,7 +70,7 @@ Googleフォームなら、回答の通知先にこの2つを追加します。�
 
 自社のデバッグソフト `MwsDebugTool` は、`#debug` です。SnapShot（ピンの今の値、NGと警告）と Shmoo（二つの条件の Pass / Fail、png と csv）を、画面の例にしています。
 
-まだ仮なのは、代表の写真と 3Dプリンタ（P2S）だけです。ファイルは `images/owner-placeholder.svg` と `images/p2s-placeholder.svg` です。
+代表の写真は `assets/photos/owner-tamaki.webp` です。まだ仮なのは 3Dプリンタだけです。ファイルは `images/p2s-placeholder.svg` です。
 
 ## 公開（GitHub Pages）
 
