@@ -820,6 +820,7 @@ section[id] { scroll-margin-top: 5.6rem; }
   background: #efe6d6;
 }
 .photo-grid img.photo { aspect-ratio: 4 / 3; object-fit: cover; }
+.photo-grid img.owner { object-position: center 22%; }
 .photo-grid figcaption {
   padding: 0.7rem 0.9rem 0.85rem;
   font-family: var(--display);
