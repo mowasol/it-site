@@ -1,7 +1,7 @@
 /* ============================================================
    名前
-   屋号が決まったら、SITE.name だけ変えてください。
-   ページの表示、タイトル、検索用の JSON-LD はここから上書きします。
+   屋号を変えるときは、SITE.name だけ変えてください。
+   うたい文句は SITE.tagline です。表示、タイトル、検索用の JSON-LD はここから上書きします。
    HTML に書いてある同じ文字は、JavaScript が動かないときの控えです。
 
    お問い合わせフォーム（仮）
@@ -12,8 +12,8 @@
    ページの mailto 控えは ttamaki@mowasol.com だけ（index.html）。
    ============================================================ */
 var SITE = {
-  name: "mowaソリューションズ",
-  service: "ITなんでも屋"
+  name: "AIとデジタルのmowa",
+  tagline: "パソコン・スマホの困りごとから、アプリ開発まで"
 };
 
 var FORM_URL = "";
@@ -27,19 +27,59 @@ var FORM_NOTIFY = [
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function phraseHtml(parts) {
+    var html = "";
+    for (var i = 0; i < parts.length; i++) {
+      if (i) html += "<wbr>";
+      html += '<span class="phr">' + escapeHtml(parts[i]) + "</span>";
+    }
+    return html;
+  }
+
+  function nameParts(name) {
+    var tail = "mowa";
+    if (name.slice(-tail.length) === tail && name.length > tail.length) {
+      return [name.slice(0, name.length - tail.length), tail];
+    }
+    return [name];
+  }
+
+  function taglineParts(tagline) {
+    var parts = ["パソコン・スマホの", "困りごとから、", "アプリ開発まで"];
+    if (parts.join("") !== tagline) return [tagline];
+    return parts;
+  }
+
+  function fillText(selector, value) {
+    var nodes = document.querySelectorAll(selector);
+    for (var i = 0; i < nodes.length; i++) nodes[i].textContent = value;
+  }
+
+  function fillPhrase(selector, parts) {
+    var html = phraseHtml(parts);
+    var nodes = document.querySelectorAll(selector);
+    for (var i = 0; i < nodes.length; i++) nodes[i].innerHTML = html;
+  }
+
   function applyBrand() {
     var name = SITE.name;
-    var service = SITE.service;
-    var nodes = document.querySelectorAll("[data-site='name']");
-    for (var i = 0; i < nodes.length; i++) nodes[i].textContent = name;
-    nodes = document.querySelectorAll("[data-site='service']");
-    for (var j = 0; j < nodes.length; j++) nodes[j].textContent = service;
-    nodes = document.querySelectorAll("[data-site-alt='name']");
-    for (var k = 0; k < nodes.length; k++) nodes[k].alt = name;
+    var tagline = SITE.tagline;
+    fillText("[data-site='name']", name);
+    fillPhrase("[data-site='name-phrase']", nameParts(name));
+    fillPhrase("[data-site='tagline']", taglineParts(tagline));
+    var alts = document.querySelectorAll("[data-site-alt='name']");
+    for (var k = 0; k < alts.length; k++) alts[k].alt = name;
 
     if (document.body.getAttribute("data-page") === "missing") return;
 
-    var title = "熊本のITなんでも屋｜" + name;
+    var title = name + "｜" + tagline;
     document.title = title;
     var ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", title);
@@ -48,13 +88,22 @@ var FORM_NOTIFY = [
     var ogSite = document.querySelector('meta[property="og:site_name"]');
     if (ogSite) ogSite.setAttribute("content", name);
     var ogAlt = document.querySelector('meta[property="og:image:alt"]');
-    if (ogAlt) ogAlt.setAttribute("content", name + "のマーク。熊本のITなんでも屋");
+    if (ogAlt) ogAlt.setAttribute("content", name + "のマーク。" + tagline);
+
+    var desc = "熊本県菊池郡大津町の" + name + "です。" + tagline + "。どんな小さなことでも、お気軽にどうぞ。診断・ご相談は無料です。";
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", desc);
+    var ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", desc);
+    var twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute("content", desc);
 
     var ld = document.getElementById("business-ld");
     if (!ld) return;
     try {
       var data = JSON.parse(ld.textContent);
-      data.name = name + " " + service;
+      data.name = name;
+      data.description = name + "。" + tagline + "。どんな小さなことでも、お気軽にどうぞ。診断・ご相談は無料。メールとSNSは24時間365日。事務所は年中無休 9:00〜17:00。";
       ld.textContent = JSON.stringify(data);
     } catch (err) {}
   }
@@ -96,7 +145,7 @@ var FORM_NOTIFY = [
         var warn = document.createElement("p");
         warn.className = "form-warn";
         warn.setAttribute("role", "alert");
-        warn.textContent = "フォームの URL は、https から始まるものにしてください。いまの値は表示していません。";
+        warn.textContent = "フォームの\u200b URL は、\u200bhttps から\u200b始まる\u200bものに\u200bしてください。\u200bいまの\u200b値は\u200b表示していません。";
         slot.insertBefore(warn, slot.firstChild);
       } else {
         var frame = document.createElement("iframe");
@@ -113,7 +162,7 @@ var FORM_NOTIFY = [
         link.href = url;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
-        link.textContent = "フォームを別のタブで開く（別サイト）";
+        link.textContent = "フォームを\u200b別の\u200bタブで\u200b開く\u200b（別サイト）";
         open.appendChild(link);
         slot.appendChild(open);
       }
@@ -225,7 +274,17 @@ var FORM_NOTIFY = [
       function apply() {
         lightImg.src = pic.getAttribute("src");
         lightImg.alt = pic.alt;
-        lightCap.textContent = caption ? caption.innerText.replace(/\s+/g, " ").trim() : pic.alt;
+        if (caption) {
+          var capTitle = caption.querySelector(".ttl");
+          var capTag = caption.querySelector(".g-card__tag");
+          if (capTitle) {
+            lightCap.innerHTML = (capTag ? capTag.textContent + " " : "") + capTitle.innerHTML;
+          } else {
+            lightCap.textContent = caption.innerText.replace(/\s+/g, " ").trim();
+          }
+        } else {
+          lightCap.textContent = pic.alt;
+        }
         if (lightCount) lightCount.textContent = (current + 1) + " / " + list.length;
       }
 
