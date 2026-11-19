@@ -90,7 +90,7 @@ var FORM_NOTIFY = [
     var ogAlt = document.querySelector('meta[property="og:image:alt"]');
     if (ogAlt) ogAlt.setAttribute("content", name + "のマーク。" + tagline);
 
-    var desc = "熊本県菊池郡大津町の" + name + "。" + tagline + "。診断・ご相談は無料です。";
+    var desc = "熊本県菊池郡大津町の" + name + "です。" + tagline + "。どんな小さなことでも、お気軽にどうぞ。診断・ご相談は無料です。";
     var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", desc);
     var ogDesc = document.querySelector('meta[property="og:description"]');
@@ -103,7 +103,7 @@ var FORM_NOTIFY = [
     try {
       var data = JSON.parse(ld.textContent);
       data.name = name;
-      data.description = name + "。" + tagline + "。診断・ご相談は無料。メールとSNSは24時間365日。事務所は年中無休 9:00〜17:00。";
+      data.description = name + "。" + tagline + "。どんな小さなことでも、お気軽にどうぞ。診断・ご相談は無料。メールとSNSは24時間365日。事務所は年中無休 9:00〜17:00。";
       ld.textContent = JSON.stringify(data);
     } catch (err) {}
   }

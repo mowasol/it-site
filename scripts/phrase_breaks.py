@@ -51,6 +51,10 @@ PROTECT = [
     "ままで",
     "見せてもらい",
     "そのとき",
+    "寄り添",
+    "お気軽に",
+    "ご安心ください",
+    "どんな小さなことでも",
 ]
 
 # Characters that should not start a line.
