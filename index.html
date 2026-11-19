@@ -29,14 +29,17 @@
   <link rel="apple-touch-icon" href="assets/mowa_logomark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/photos/pc-build-white-complete.webp" imagesrcset="assets/photos/pc-build-white-complete-800.webp 800w, assets/photos/pc-build-white-complete.webp 1200w" imagesizes="(max-width: 720px) 100vw, 42vw" fetchpriority="high">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <noscript><style>.reveal,.reveal-item,.hero-side,.hero-rise,.shot--main img{opacity:1!important;transform:none!important}</style></noscript>
   <!--
     編集する場所
+      屋号            … site.js の SITE.name（表示・タイトル・JSON-LD はここから上書き）
       料金（仮）        … 下の section#prices だけ
       連絡先            … section#contact の会社情報と、その直後の JSON-LD
       フォームURL・通知先 … site.js の FORM_URL と FORM_NOTIFY
-      写真・ロゴ（仮）  … images/ を置き、このファイルの img の src を変える
     詳しくは README.md
   -->
 </head>
@@ -45,8 +48,8 @@
   <header class="site-header" id="top">
     <div class="wrap header-inner">
       <a class="brand" href="#top">
-        <img class="logo" src="assets/mowa_neko_logo.jpg" alt="mowaソリューションズ" width="754" height="193">
-        <span class="brand__service">ITなんでも屋</span>
+        <img class="logo" src="assets/mowa_neko_logo.jpg" alt="mowaソリューションズ" data-site-alt="name" width="754" height="193">
+        <span class="brand__service" data-site="service">ITなんでも屋</span>
       </a>
       <details class="menu">
         <summary>
@@ -59,6 +62,8 @@
           <a href="#services">サービス</a>
           <a href="#prices">料金</a>
           <a href="#works">事例</a>
+          <a href="#debug">ツール</a>
+          <a href="#photos">写真</a>
           <a href="#about">会社</a>
           <a href="#flow">流れ</a>
           <a href="#faq">質問</a>
@@ -70,93 +75,82 @@
         <a href="#services">サービス</a>
         <a href="#prices">料金</a>
         <a href="#works">事例</a>
-        <a href="#about">会社</a>
-        <a href="#flow">流れ</a>
-        <a href="#faq">質問</a>
+        <a href="#debug">ツール</a>
+        <a href="#photos">写真</a>
+        <a class="nav-late" href="#about">会社</a>
         <a class="menu__cta" href="#contact">無料で相談する</a>
       </nav>
     </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
   </header>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
         <div>
-          <p class="eyebrow">熊本の店、畑、ひとり仕事の方へ</p>
-          <h1 id="hero-title">熊本のITなんでも屋です。</h1>
-          <p class="free-line">診断・ご相談は無料。まずは無料で見ます。</p>
-          <p class="lede">スマホの操作、遅いパソコン、紙の帳面、AI。わからないところからでいいです。</p>
-          <div class="actions">
+          <p class="eyebrow hero-rise">熊本の店、畑、ひとり仕事の方へ</p>
+          <h1 id="hero-title" class="hero-rise">熊本のITなんでも屋です。</h1>
+          <p class="free-line hero-rise">診断・ご相談は無料。まずは無料で見ます。</p>
+          <p class="lede hero-rise">スマホの操作、遅いパソコン、紙の帳面、AI。わからないところからでいいです。</p>
+          <div class="actions hero-rise">
             <a class="btn btn--primary" href="#contact">無料で相談する</a>
             <a class="btn btn--ghost" href="#prices">料金の目安を見る</a>
           </div>
-          <p class="fine">相談だけでもOKです。見積もりも無料。このページの金額は、まだ仮です。</p>
+          <p class="fine hero-rise">相談だけでもOKです。見積もりも無料。このページの金額は、まだ仮です。</p>
+          <ul class="hero-facts hero-rise">
+            <li>年中無休 9:00–17:00</li>
+            <li>熊本県菊池郡大津町</li>
+            <li><a href="tel:0962828122">096-282-8122</a></li>
+          </ul>
         </div>
-        <div class="hero__art">
-          <svg viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="24" y="28" width="236" height="286" rx="18" fill="#f7f1e6" stroke="#d9cbb8" stroke-width="2"/>
-            <path d="M48 28v286" stroke="#efd0bc" stroke-width="10"/>
-            <path d="M74 86h150M74 118h136M74 150h150M74 182h104" stroke="#c4b29a" stroke-width="5" stroke-linecap="round"/>
-            <rect x="74" y="214" width="86" height="34" rx="10" fill="#e5f3eb"/>
-            <path d="M90 231l10 10 20-22" fill="none" stroke="#0d683e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="292" y="20" width="176" height="300" rx="28" fill="#1e1a16"/>
-            <rect x="308" y="52" width="144" height="214" rx="10" fill="#f4efe6"/>
-            <circle cx="380" cy="290" r="9" fill="#f3efe4"/>
-            <rect x="322" y="72" width="96" height="40" rx="12" fill="#63ed4a"/>
-            <rect x="346" y="124" width="90" height="40" rx="12" fill="#e7f8df"/>
-            <rect x="322" y="176" width="108" height="40" rx="12" fill="#fffdf8"/>
-            <rect x="28" y="340" width="292" height="104" rx="16" fill="#0d683e"/>
-            <path d="M58 372h210" stroke="#d7efe3" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="78" cy="404" r="11" fill="#f6e27a"/>
-            <circle cx="122" cy="404" r="11" fill="#fffdf8"/>
-            <circle cx="166" cy="404" r="11" fill="#f6e27a"/>
-            <circle cx="210" cy="404" r="11" fill="#fffdf8"/>
-            <circle cx="254" cy="404" r="11" fill="#8fd9a4"/>
-            <rect x="344" y="348" width="184" height="96" rx="16" fill="#fffdf8" stroke="#0d683e" stroke-width="3"/>
-            <rect x="364" y="366" width="144" height="16" rx="5" fill="#0d683e"/>
-            <rect x="392" y="396" width="88" height="28" rx="5" fill="#e7f8df"/>
-            <path d="M496 348v-30" stroke="#0d683e" stroke-width="4" stroke-linecap="round"/>
-            <ellipse cx="482" cy="312" rx="14" ry="8" fill="#0d683e" transform="rotate(-28 482 312)"/>
-            <ellipse cx="512" cy="312" rx="14" ry="8" fill="#0d683e" transform="rotate(28 512 312)"/>
-          </svg>
+        <div class="hero-collage">
+          <div class="shot shot--main">
+            <img src="assets/photos/pc-build-white-complete.webp" srcset="assets/photos/pc-build-white-complete-800.webp 800w, assets/photos/pc-build-white-complete.webp 1200w" sizes="(max-width: 720px) 100vw, 42vw" width="1200" height="900" alt="完成した白いパソコン。水冷のクーラーと、グラフィックボード、光るファン" fetchpriority="high" decoding="async">
+          </div>
+          <div class="shot hero-side">
+            <img src="assets/photos/pepper-rack.webp" srcset="assets/photos/pepper-rack-800.webp 800w, assets/photos/pepper-rack.webp 1200w" sizes="(max-width: 720px) 46vw, 18vw" width="1200" height="1600" alt="自社の装置PEPPER。扉を開け、モジュールの基板が並んでいる" decoding="async">
+          </div>
+          <div class="shot hero-side">
+            <img src="assets/photos/laptop-ram.webp" srcset="assets/photos/laptop-ram-800.webp 800w, assets/photos/laptop-ram.webp 1600w" sizes="(max-width: 720px) 46vw, 18vw" width="1600" height="1200" alt="ノートパソコン用のメモリ。基板のそばで持っている" decoding="async">
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="troubles">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">01</span>こんなお困りごと</h2>
-        <p class="lead">店でも畑でも、ひとりの仕事でも。紙のままのところがあって大丈夫です。当てはまるものだけ、見ます。</p>
-        <ul class="card-grid card-grid--2">
-          <li class="trouble">
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">01</span>こんなお困りごと</h2>
+        <p class="lead reveal">店でも畑でも、ひとりの仕事でも。紙のままのところがあって大丈夫です。当てはまるものだけ、見ます。</p>
+        <ul class="card-grid card-grid--2" data-stagger>
+          <li class="trouble lift reveal-item">
             <h3>スマホの操作が不安</h3>
             <p>LINE、写真、振込。押していいボタンがわからない。</p>
           </li>
-          <li class="trouble">
+          <li class="trouble lift reveal-item">
             <h3>パソコンが遅い、急に止まった</h3>
             <p>仕事のファイルが中に入ったまま、開けなくなった。</p>
           </li>
-          <li class="trouble">
+          <li class="trouble lift reveal-item">
             <h3>毎日、同じ転記がある</h3>
             <p>紙に書いて、もう一度表計算に打っている。</p>
           </li>
-          <li class="trouble">
+          <li class="trouble lift reveal-item">
             <h3>在庫・予約・売上が手書き</h3>
             <p>ノートを開かないと、いまの数がわからない。</p>
           </li>
-          <li class="trouble">
+          <li class="trouble lift reveal-item">
             <h3>AIが気になる</h3>
             <p>何に使えるのか、使っていいのか、まだわからない。</p>
           </li>
-          <li class="trouble">
+          <li class="trouble lift reveal-item">
             <h3>現場の数を、あとから見たい</h3>
             <p>温度、個数、機械が止まった時刻。あとから見られない。</p>
           </li>
-          <li class="trouble">
+          <li class="trouble lift reveal-item">
             <h3>説明が、人によって違う</h3>
             <p>新しい人に、毎回ゼロから教えている。</p>
           </li>
-          <li class="trouble">
+          <li class="trouble lift reveal-item">
             <h3>直せる人が、もういない</h3>
             <p>昔作った表や仕組みを、触るのがこわい。</p>
           </li>
@@ -167,57 +161,57 @@
 
     <section class="section section--paper" id="services">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">02</span>サービス</h2>
-        <p class="lead">全部入れかえる話から始めません。今のやり方を見て、いるところだけやります。</p>
-        <ul class="card-grid card-grid--3">
-          <li class="service">
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">02</span>サービス</h2>
+        <p class="lead reveal">全部入れかえる話から始めません。今のやり方を見て、いるところだけやります。</p>
+        <ul class="card-grid card-grid--3" data-stagger>
+          <li class="service lift reveal-item">
             <h3>スマホ・パソコン</h3>
             <p>設定、遅い、つながらない、バックアップ。今使っている機械を見ます。</p>
             <a class="service__link" href="#prices">料金の目安</a>
           </li>
-          <li class="service">
+          <li class="service lift reveal-item">
             <h3>業務の道具</h3>
             <p>日報、在庫、予約、売上。紙や表計算への、同じ書き写しを減らします。</p>
             <a class="service__link" href="#prices">料金の目安</a>
           </li>
-          <li class="service">
+          <li class="service lift reveal-item">
             <h3>AIを使ってみる</h3>
             <p>文章の下書きや、問い合わせの整理。外に出すデータは、先に決めます。</p>
             <a class="service__link" href="#prices">料金の目安</a>
           </li>
-          <li class="service">
+          <li class="service lift reveal-item">
             <h3>現場の装置</h3>
             <p>センサ、小さい表示、基板、3Dプリントの治具やケース。売っているもので合わないときに作ります。</p>
             <a class="service__link" href="#prices">料金の目安</a>
           </li>
-          <li class="service">
+          <li class="service lift reveal-item">
             <h3>研修</h3>
             <p>スタッフと画面を見ながら覚えます。人数は少なめで、その仕事を題材にします。</p>
             <a class="service__link" href="#prices">料金の目安</a>
           </li>
-          <li class="service">
+          <li class="service lift reveal-item">
             <h3>その後の保守</h3>
             <p>使い始めたあとの「あれ、どうするんだっけ」を、月ごとに受けます。</p>
             <a class="service__link" href="#prices">料金の目安</a>
           </li>
         </ul>
         <h3 class="price-block">仕事のようす</h3>
-        <div class="gallery">
-          <figure>
-            <img src="assets/photos/exhibition-booth-01.webp" width="1200" height="900" alt="展示会のmowaソリューションズのブース全景。PEPPERのポスターと実機、測定器" loading="lazy" decoding="async">
-            <figcaption>展示会のブース</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/photos/pc-build-white-complete.webp" width="1200" height="900" alt="完成した白いPC。水冷クーラー、グラフィックボード、ライト" loading="lazy" decoding="async">
+        <div class="film" data-stagger>
+          <figure class="film__item reveal-item">
+            <img src="assets/photos/pc-build-assembly.webp" srcset="assets/photos/pc-build-assembly-800.webp 800w, assets/photos/pc-build-assembly.webp 1400w" sizes="(max-width: 799px) 78vw, 24vw" width="1400" height="1050" alt="小さいパソコンの電源を、ねじで留めているところ" loading="lazy" decoding="async">
             <figcaption>パソコンの組み立て</figcaption>
           </figure>
-          <figure>
-            <img src="assets/photos/laptop-repair-board.webp" width="1200" height="900" alt="ノートPCを分解して基板を確認" loading="lazy" decoding="async">
-            <figcaption>ノートPCの確認</figcaption>
+          <figure class="film__item reveal-item">
+            <img src="assets/photos/laptop-battery.webp" srcset="assets/photos/laptop-battery-800.webp 800w, assets/photos/laptop-battery.webp 1200w" sizes="(max-width: 799px) 78vw, 24vw" width="1200" height="1600" alt="裏ぶたを外したノートパソコン。バッテリーと冷却ファン" loading="lazy" decoding="async">
+            <figcaption>ノートのバッテリー</figcaption>
           </figure>
-          <figure>
-            <img src="assets/photos/board-pair-mowa.webp" width="1200" height="1600" alt="mowa solutionsの基板2種" loading="lazy" decoding="async">
-            <figcaption>自社の基板</figcaption>
+          <figure class="film__item reveal-item">
+            <img src="assets/photos/pc-build-mini-itx.webp" srcset="assets/photos/pc-build-mini-itx-800.webp 800w, assets/photos/pc-build-mini-itx.webp 1600w" sizes="(max-width: 799px) 78vw, 24vw" width="1600" height="1200" alt="小さいケースに入れたマザーボード。CPUを載せたところ" loading="lazy" decoding="async">
+            <figcaption>小さいパソコン</figcaption>
+          </figure>
+          <figure class="film__item reveal-item">
+            <img src="assets/photos/rpi-sensehat.webp" srcset="assets/photos/rpi-sensehat-800.webp 800w, assets/photos/rpi-sensehat.webp 1200w" sizes="(max-width: 799px) 78vw, 24vw" width="1200" height="1600" alt="Raspberry Piに載せたLEDの盤。いくつか光っている" loading="lazy" decoding="async">
+            <figcaption>Raspberry Pi</figcaption>
           </figure>
         </div>
       </div>
@@ -231,26 +225,26 @@
          ============================================================ -->
     <section class="section" id="prices">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">03</span>料金</h2>
-        <div class="policy">
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">03</span>料金</h2>
+        <div class="policy reveal">
           <p><strong>診断・ご相談は無料です。</strong>まずは無料で見ます。相談だけでもOKです。見積もりも無料です。</p>
           <p>下の金額は、まだ<strong>仮</strong>です。税込の目安で、この数字のまま請求はしません。作業の前に、やることと金額を書きます。見てから、頼まなくても大丈夫です。訪問してその場で見るときは、下の「訪問して見る」の金額がかかります。</p>
         </div>
 
         <div class="price-block">
           <h3>はじめに</h3>
-          <ul class="price-grid price-grid--3">
-            <li class="price-card price-card--lead">
+          <ul class="price-grid price-grid--3" data-stagger>
+            <li class="price-card price-card--lead lift reveal-item">
               <h3>診断・ご相談</h3>
               <p class="amount">無料 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>まずは無料で見ます。オンラインで30分。相談だけでもOKです。</p>
             </li>
-            <li class="price-card">
+            <li class="price-card lift reveal-item">
               <h3>訪問して見る</h3>
               <p class="amount">3,000円 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>熊本県内で60分くらい。遠い場所は、下のオプションを足します。</p>
             </li>
-            <li class="price-card">
+            <li class="price-card lift reveal-item">
               <h3>スマホ・パソコンの設定</h3>
               <p class="amount">5,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>最初の設定、LINE、メール、バックアップ。遅い、つながらない、の原因を見ます。</p>
@@ -260,23 +254,23 @@
 
         <div class="price-block">
           <h3>つくる・覚える</h3>
-          <ul class="price-grid">
-            <li class="price-card">
+          <ul class="price-grid" data-stagger>
+            <li class="price-card lift reveal-item">
               <h3>業務ツール作成</h3>
               <p class="amount">30,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>日報、在庫、予約、集計。紙や表計算を、小さい画面から置きかえます。</p>
             </li>
-            <li class="price-card">
+            <li class="price-card lift reveal-item">
               <h3>AIを使ってみる</h3>
               <p class="amount">20,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>文章の下書き、問い合わせの整理、聞き方の設定。出すデータは先に決めます。</p>
             </li>
-            <li class="price-card">
+            <li class="price-card lift reveal-item">
               <h3>IoT・基板・3Dプリント</h3>
               <p class="amount">15,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>小さい表示、センサ、治具、ケース。部品代が別になるときは、先に言います。</p>
             </li>
-            <li class="price-card">
+            <li class="price-card lift reveal-item">
               <h3>研修</h3>
               <p class="amount">10,000円〜 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>90分くらい。スタッフ向け。人数と場所は、そのとき決めます。</p>
@@ -286,18 +280,18 @@
 
         <div class="price-block">
           <h3>保守プラン（月額）</h3>
-          <ul class="price-grid price-grid--3">
-            <li class="price-card">
+          <ul class="price-grid price-grid--3" data-stagger>
+            <li class="price-card lift reveal-item">
               <h3>ライト</h3>
               <p class="amount">5,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>チャットで質問できます。平日に返します。</p>
             </li>
-            <li class="price-card">
+            <li class="price-card lift reveal-item">
               <h3>スタンダード</h3>
               <p class="amount">12,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>ライトに加えて月1回。画面ごしか、現地に来るかです。</p>
             </li>
-            <li class="price-card">
+            <li class="price-card lift reveal-item">
               <h3>おまかせ</h3>
               <p class="amount">25,000円 / 月 <span class="kari">仮<span class="sr-only">の料金</span></span></p>
               <p>先に見ます。小さい直しは、月2時間までです。</p>
@@ -347,29 +341,29 @@
 
     <section class="section section--paper" id="works">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">04</span>事例</h2>
-        <p class="lead">自分たちで作っているものと、手伝い方の例です。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">04</span>事例</h2>
+        <p class="lead reveal">自分たちで作っているものと、手伝い方の例です。</p>
         <h3 class="price-block">自社の製品・道具</h3>
-        <ul class="card-grid card-grid--2">
-          <li class="work">
+        <ul class="card-grid card-grid--2" data-stagger>
+          <li class="work lift reveal-item">
             <figure class="shot-grid">
-              <img src="assets/photos/pepper-chassis-front-closed.webp" width="1200" height="900" alt="PEPPERの筐体。扉を閉め、メッシュの窓ごしに中が見える。右上に黄色い非常停止ボタンがある。" loading="lazy" decoding="async">
+              <img src="assets/photos/pepper-rack.webp" srcset="assets/photos/pepper-rack-800.webp 800w, assets/photos/pepper-rack.webp 1200w" sizes="(max-width: 700px) 92vw, 46vw" width="1200" height="1600" alt="自社の装置PEPPER。扉を開け、モジュールの基板が並んでいる。" loading="lazy" decoding="async">
               <div class="shot-pair">
-                <img src="assets/photos/pepper-chassis-front-open-modules.webp" width="1200" height="900" alt="PEPPERの筐体。扉を開け、スロットにモジュールを挿した正面。" loading="lazy" decoding="async">
-                <img src="assets/photos/pepper-module-top-view-1.webp" width="1200" height="900" alt="PEPPERのモジュール基板。ヒートシンクが並んだ上面。" loading="lazy" decoding="async">
+                <img src="assets/photos/pepper-chassis-front-closed.webp" srcset="assets/photos/pepper-chassis-front-closed-800.webp 800w, assets/photos/pepper-chassis-front-closed.webp 1200w" sizes="22vw" width="1200" height="900" alt="PEPPERの筐体。扉を閉め、メッシュの窓ごしに中が見える。右上に黄色い非常停止ボタンがある。" loading="lazy" decoding="async">
+                <img src="assets/photos/pepper-module-top-view-1.webp" srcset="assets/photos/pepper-module-top-view-1-800.webp 800w, assets/photos/pepper-module-top-view-1.webp 1200w" sizes="22vw" width="1200" height="900" alt="PEPPERのモジュール基板。ヒートシンクが並んだ上面。" loading="lazy" decoding="async">
               </div>
-              <figcaption>自社の装置。扉を閉めた姿、モジュールを挿した正面、基板の上面。</figcaption>
+              <figcaption>自社の装置。ラック、扉を閉めた姿、基板の上面。</figcaption>
             </figure>
             <p class="work-label">自社製品</p>
             <h3>PEPPER / PEPPER Server</h3>
             <p>測る・試すための装置です。それを支えるサーバ側も、基板も、動かすプログラムも、ここで作っています。</p>
             <p><a href="https://amstester.com/" target="_blank" rel="noopener noreferrer">製品の紹介を見る（別サイト）</a></p>
           </li>
-          <li class="work">
+          <li class="work lift reveal-item">
             <figure class="shot-grid">
               <div class="shot-pair">
-                <img src="assets/photos/toyako-board-top-view-v300.webp" width="1200" height="900" alt="Toyako基板の部品面。電源部と、測定用の回路、端のコネクタが載っている。" loading="lazy" decoding="async">
-                <img src="assets/photos/toyako-board-bottom-view.webp" width="1200" height="900" alt="Toyako基板の裏面。黒い部品が2列に並び、端にコネクタがある。" loading="lazy" decoding="async">
+                <img src="assets/photos/toyako-board-top-view-v300.webp" srcset="assets/photos/toyako-board-top-view-v300-800.webp 800w, assets/photos/toyako-board-top-view-v300.webp 1200w" sizes="22vw" width="1200" height="900" alt="Toyako基板の部品面。電源部と、測定用の回路、端のコネクタが載っている。" loading="lazy" decoding="async">
+                <img src="assets/photos/toyako-board-bottom-view.webp" srcset="assets/photos/toyako-board-bottom-view-800.webp 800w, assets/photos/toyako-board-bottom-view.webp 1200w" sizes="22vw" width="1200" height="900" alt="Toyako基板の裏面。黒い部品が2列に並び、端にコネクタがある。" loading="lazy" decoding="async">
               </div>
               <figcaption>Toyako。部品面と、裏面。</figcaption>
             </figure>
@@ -377,59 +371,41 @@
             <h3>Toyako</h3>
             <p>ADC（アナログを数字にする部品）を試す、小さい基板です。AD5790で細かい直流を作り、8か所を同時に測って、結果を返します。測るタイミングはFPGAでそろえています。</p>
           </li>
-          <li class="work">
+          <li class="work lift reveal-item">
+            <figure class="shot-grid">
+              <img src="assets/photos/debugtool-shmoo.webp" width="1229" height="891" alt="MwsDebugToolのShmoo画面。二つの条件を振った通ったマスと落ちたマス。パターンのファイル名は伏せてある。" loading="lazy" decoding="async">
+              <figcaption>自社のデバッグソフト。条件を振った地図。</figcaption>
+            </figure>
             <p class="work-label">自社の道具</p>
-            <h3>デバッグツール</h3>
-            <p>動きがおかしいとき、信号とプログラムの流れを見て、回路なのかプログラムなのかを分けます。</p>
+            <h3>MwsDebugTool</h3>
+            <p>動きがおかしいとき、信号とプログラムの流れを見て、回路なのかプログラムなのかを分けます。ピンの今の値と、条件を振った地図を、その場で見ます。</p>
+            <p><a href="#debug">画面の説明を見る</a></p>
           </li>
-          <li class="work">
+          <li class="work lift reveal-item">
             <p class="work-label">教室の基板</p>
             <h3>キーホルダー基板</h3>
             <p>光る小さい基板に、自分のプログラムを入れて動かします。教室で使っています。</p>
             <p><a href="https://keychain.mowasol.com/" target="_blank" rel="noopener noreferrer">書き込みページを見る（別サイト）</a></p>
           </li>
         </ul>
-        <h3 class="price-block">装置のようす</h3>
-        <div class="gallery">
-          <figure>
-            <img src="assets/photos/pepper-chassis-side-left.webp" width="1200" height="900" alt="PEPPERの筐体を横から見たところ。通気口と、青いマークがある。" loading="lazy" decoding="async">
-            <figcaption>横から見た筐体</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/photos/pepper-chassis-rear-closed-window.webp" width="1200" height="900" alt="PEPPERの背面。扉の小窓から、中の緑色の基板が見える。" loading="lazy" decoding="async">
-            <figcaption>背面の小窓</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/photos/pepper-chassis-front-open-empty.webp" width="1200" height="900" alt="PEPPERの筐体。扉を開け、モジュールを挿す前の空いたスロット。" loading="lazy" decoding="async">
-            <figcaption>モジュールを挿す前</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/photos/pepper-module-front-panel-labels-blurred.webp" width="1200" height="675" alt="PEPPERモジュールの前面パネル。青いコネクタが並ぶ。表記の一部は伏せてある。" loading="lazy" decoding="async">
-            <figcaption>モジュールの前面</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/photos/pepper-chassis-inside-backplane.webp" width="1200" height="900" alt="PEPPERの内部。コネクタが並んだ緑色の基板と、下のファン。" loading="lazy" decoding="async">
-            <figcaption>内部の基板とファン</figcaption>
-          </figure>
-        </div>
         <h3 class="price-block">こういう手伝いもします</h3>
-        <ul class="card-grid card-grid--2">
-          <li class="work">
+        <ul class="card-grid card-grid--2" data-stagger>
+          <li class="work lift reveal-item">
             <p class="work-label">例</p>
             <h3>農場の日報</h3>
             <p>紙の日報を、スマホから送れるようにして、あとから表で見ます。</p>
           </li>
-          <li class="work">
+          <li class="work lift reveal-item">
             <p class="work-label">例</p>
             <h3>商店の在庫</h3>
             <p>棚の数を、閉じたノートではなく、その日のうちに直せる表にします。</p>
           </li>
-          <li class="work">
+          <li class="work lift reveal-item">
             <p class="work-label">例</p>
             <h3>問い合わせの下書き</h3>
             <p>よくある返事の下書きを、AIに作らせます。送る前に人が読みます。</p>
           </li>
-          <li class="work">
+          <li class="work lift reveal-item">
             <p class="work-label">例</p>
             <h3>急に止まったパソコン</h3>
             <p>中のファイルを残すほうを先に見て、直すか入れかえるかを一緒に決めます。</p>
@@ -438,37 +414,222 @@
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section section--ink" id="debug">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">05</span>強みと、会社のこと</h2>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">05</span>現場に合わせたツールを、自社で作れます</h2>
+        <p class="lead reveal">売っているソフトで足りないときは、その仕事用の道具をここで作ります。下の画面は、自分たちの試験装置を見るために作ったソフトです。</p>
+        <div class="debug-layout">
+          <div class="debug-copy">
+            <p class="debug-kicker">自社のソフト</p>
+            <h3>MwsDebugTool</h3>
+            <p>半導体の試験プログラムを、となりで見るWindowsのソフトです。サーバが次の命令を待っているあいだに、ピンの今の値を読み込みます。</p>
+            <div class="debug-points" data-stagger>
+              <button type="button" class="debug-point lift reveal-item" data-debug="snapshot" aria-pressed="true">
+                <h3>ピンの今の値を一覧にする</h3>
+                <p>SnapShotです。選んでいるサイトのピンを、その時点の値で読みます。直流ピン（PMU）は、モード、加えている値、レンジ、測った電圧と電流、クランプ。デジタルピン（PE）は、電圧のレベルとタイミングです。</p>
+              </button>
+              <button type="button" class="debug-point lift reveal-item" data-debug="warn" aria-pressed="false">
+                <h3>おかしい設定を色で出す</h3>
+                <p>仕様の範囲を外れているものは NG、確認した方がいいものは警告です。気になるピンだけに絞って表示できます。</p>
+              </button>
+              <button type="button" class="debug-point lift reveal-item" data-debug="shmoo" aria-pressed="false">
+                <h3>二つの条件を振って、地図にする</h3>
+                <p>Shmooです。たとえば High の電圧（VIH）と、信号を読むタイミング（ストローブ）。少しずつ変えて、通ったマスと落ちたマスが並びます。図は png、数字は csv で残せます。</p>
+              </button>
+            </div>
+          </div>
+          <div class="debug-stage reveal">
+            <div class="debug-tabs" role="tablist" aria-label="MwsDebugToolの画面">
+              <button type="button" class="chip" role="tab" id="tab-snapshot" aria-controls="debug-panel" aria-selected="true" data-debug="snapshot" data-src="assets/photos/debugtool-snapshot.webp" data-alt="MwsDebugToolのSnapShot画面。ピンの電圧とタイミングの一覧。" data-w="1239" data-h="901" data-cap="サーバが待っているあいだに読んだ、ピンの今の値です。">SnapShot</button>
+              <button type="button" class="chip" role="tab" id="tab-warn" aria-controls="debug-panel" aria-selected="false" tabindex="-1" data-debug="warn" data-src="assets/photos/debugtool-pmu.webp" data-alt="MwsDebugToolのSnapShot画面。範囲を外れた測定値を警告の色で示している。" data-w="714" data-h="446" data-cap="範囲を外れた値は、警告の色になります。">警告</button>
+              <button type="button" class="chip" role="tab" id="tab-shmoo" aria-controls="debug-panel" aria-selected="false" tabindex="-1" data-debug="shmoo" data-src="assets/photos/debugtool-shmoo.webp" data-alt="MwsDebugToolのShmoo画面。二つの条件を振った、通ったマスと落ちたマス。パターンのファイル名は伏せてある。" data-w="1229" data-h="891" data-cap="二つの条件を振った結果です。通ったマスと落ちたマスが並びます。パターンのファイル名は伏せてあります。図は png、数字は csv で残せます。">Shmoo</button>
+            </div>
+            <figure class="window" id="debug-panel" role="tabpanel" aria-labelledby="tab-snapshot">
+              <div class="window__bar" aria-hidden="true"><span></span><span></span><span></span><em>MwsDebugTool</em></div>
+              <img id="debug-shot" src="assets/photos/debugtool-snapshot.webp" width="1239" height="901" alt="MwsDebugToolのSnapShot画面。ピンの電圧とタイミングの一覧。">
+              <figcaption class="debug-cap" id="debug-cap">サーバが待っているあいだに読んだ、ピンの今の値です。</figcaption>
+            </figure>
+          </div>
+        </div>
+        <p class="fine more">このソフトは、自社の装置PEPPERと、それを動かすPEPPER Serverのために作りました。店の在庫も、畑の記録も、同じように、その現場の画面から作れます。</p>
+      </div>
+    </section>
+
+    <section class="section" id="photos">
+      <div class="wrap">
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">06</span>仕事の写真</h2>
+        <p class="lead reveal">組み立て、修理、電子工作、自社の装置です。写真を押すと、大きく見られます。</p>
+        <div class="filters" role="group" aria-label="写真の絞り込み">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">すべて</button>
+          <button type="button" class="chip" data-filter="pc" aria-pressed="false">組み立て</button>
+          <button type="button" class="chip" data-filter="repair" aria-pressed="false">修理・増設</button>
+          <button type="button" class="chip" data-filter="make" aria-pressed="false">電子工作・教室</button>
+          <button type="button" class="chip" data-filter="product" aria-pressed="false">自社の装置</button>
+        </div>
+        <div class="gallery-grid" id="gallery" data-stagger>
+          <button type="button" class="g-card reveal-item lift" data-cat="pc">
+            <img src="assets/photos/pc-build-white-complete.webp" srcset="assets/photos/pc-build-white-complete-800.webp 800w, assets/photos/pc-build-white-complete.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="完成した白いパソコン。水冷のクーラーと、グラフィックボード、光るファン" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>白いパソコンの完成</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="pc">
+            <img src="assets/photos/pc-build-white-board.webp" srcset="assets/photos/pc-build-white-board-800.webp 800w, assets/photos/pc-build-white-board.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="白いケースに載せたマザーボード。CPUと白いファン" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>ケースに載せた基板</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="pc">
+            <img src="assets/photos/pc-build-cpu.webp" srcset="assets/photos/pc-build-cpu-800.webp 800w, assets/photos/pc-build-cpu.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="ソケットに載せたCPU" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>CPUを載せる</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="pc">
+            <img src="assets/photos/pc-build-mini-itx.webp" srcset="assets/photos/pc-build-mini-itx-800.webp 800w, assets/photos/pc-build-mini-itx.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="小さいケースに入れたマザーボード。CPUを載せたところ" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>小さいパソコンの途中</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="pc">
+            <img src="assets/photos/pc-build-assembly.webp" srcset="assets/photos/pc-build-assembly-800.webp 800w, assets/photos/pc-build-assembly.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="小さいパソコンの電源を、ねじで留めているところ" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>電源を留める</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="pc">
+            <img src="assets/photos/pc-build-desktop-ram.webp" srcset="assets/photos/pc-build-desktop-ram-800.webp 800w, assets/photos/pc-build-desktop-ram.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="デスクトップのメモリスロットに、メモリを挿しているところ" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">組み立て</span>メモリを挿す</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="repair">
+            <img src="assets/photos/laptop-ram.webp" srcset="assets/photos/laptop-ram-800.webp 800w, assets/photos/laptop-ram.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="ノートパソコン用のメモリ。基板のそばで持っている" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>ノートのメモリ</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="repair">
+            <img src="assets/photos/laptop-ram-slot.webp" width="900" height="1600" alt="裏ぶたを外したノートパソコン。メモリとバッテリーが見える" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>メモリを増やす前</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="repair">
+            <img src="assets/photos/laptop-battery.webp" srcset="assets/photos/laptop-battery-800.webp 800w, assets/photos/laptop-battery.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="裏ぶたを外したノートパソコン。バッテリーと冷却ファン" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>バッテリーの交換</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="repair">
+            <img src="assets/photos/laptop-board.webp" srcset="assets/photos/laptop-board-800.webp 800w, assets/photos/laptop-board.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="ノートパソコンの基板。銅の放熱板と、細かい部品" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>基板を見る</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="repair">
+            <img src="assets/photos/laptop-teardown.webp" srcset="assets/photos/laptop-teardown-800.webp 800w, assets/photos/laptop-teardown.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="900" alt="裏ぶたを外したノートパソコン。バッテリー、ファン、基板" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>ばらしたノート</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="repair">
+            <img src="assets/photos/laptop-repair-board.webp" srcset="assets/photos/laptop-repair-board-800.webp 800w, assets/photos/laptop-repair-board.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="ノートパソコンを分解して、基板を確認しているところ" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>基板の確認</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift g-card--wide" data-cat="repair">
+            <img src="assets/photos/parts-m2-ssd.webp" srcset="assets/photos/parts-m2-ssd-800.webp 800w, assets/photos/parts-m2-ssd.webp 1490w" sizes="(max-width: 700px) 92vw, 60vw" width="1490" height="330" alt="M.2のSSD。番号の一部は伏せてある" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">修理・増設</span>M.2 SSD</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="make">
+            <img src="assets/photos/rpi-sensehat.webp" srcset="assets/photos/rpi-sensehat-800.webp 800w, assets/photos/rpi-sensehat.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="Raspberry Piに載せたLEDの盤。いくつか光っている" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">電子工作</span>光るRaspberry Pi</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="make">
+            <img src="assets/photos/rpi-case.webp" srcset="assets/photos/rpi-case-800.webp 800w, assets/photos/rpi-case.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="900" alt="透明なケースに入ったRaspberry Pi。ケーブルをつないだところ" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">電子工作</span>ケースに入れたRaspberry Pi</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="make">
+            <img src="assets/photos/lemon-battery.webp" width="900" height="1600" alt="レモンに金属を刺して、テスタで電圧を見ている" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">電子工作</span>レモン電池</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="make">
+            <img src="assets/photos/block-robot.webp" srcset="assets/photos/block-robot-800.webp 800w, assets/photos/block-robot.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="ブロックで組んだ恐竜の形のロボット。上に小さい基板と電池" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">教室</span>ブロックのロボット</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="make">
+            <img src="assets/photos/classroom-rpi.webp" srcset="assets/photos/classroom-rpi-800.webp 800w, assets/photos/classroom-rpi.webp 1600w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1600" height="1200" alt="机に並べたモニタと、ケースに入ったRaspberry Pi" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">教室</span>教室の机</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-front-panel.webp" srcset="assets/photos/pepper-front-panel-800.webp 800w, assets/photos/pepper-front-panel.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="PEPPERの前面。電源のつまみと、基板を挿すスロット" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>PEPPERの前面</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-rack-close.webp" srcset="assets/photos/pepper-rack-close-800.webp 800w, assets/photos/pepper-rack-close.webp 1400w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1400" height="1050" alt="PEPPERの内部。光っている基板と、青いマーク" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>PEPPERの中</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-chassis-front-open-modules.webp" srcset="assets/photos/pepper-chassis-front-open-modules-800.webp 800w, assets/photos/pepper-chassis-front-open-modules.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの筐体。扉を開け、スロットにモジュールを挿した正面" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>モジュールを挿した正面</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-chassis-front-open-empty.webp" srcset="assets/photos/pepper-chassis-front-open-empty-800.webp 800w, assets/photos/pepper-chassis-front-open-empty.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの筐体。扉を開け、モジュールを挿す前の空いたスロット" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>モジュールを挿す前</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-chassis-rear-closed-window.webp" srcset="assets/photos/pepper-chassis-rear-closed-window-800.webp 800w, assets/photos/pepper-chassis-rear-closed-window.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの背面。扉の小窓から、中の基板が見える" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>背面の小窓</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-chassis-side-left.webp" srcset="assets/photos/pepper-chassis-side-left-800.webp 800w, assets/photos/pepper-chassis-side-left.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの筐体を横から見たところ。通気口がある" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>横から見た筐体</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-chassis-inside-backplane.webp" srcset="assets/photos/pepper-chassis-inside-backplane-800.webp 800w, assets/photos/pepper-chassis-inside-backplane.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="PEPPERの内部。コネクタが並んだ基板と、下のファン" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>内部の基板とファン</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/pepper-module-front-panel-labels-blurred.webp" srcset="assets/photos/pepper-module-front-panel-labels-blurred-800.webp 800w, assets/photos/pepper-module-front-panel-labels-blurred.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="675" alt="PEPPERモジュールの前面パネル。コネクタが並ぶ。表記の一部は伏せてある" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>モジュールの前面</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/toyako-board-top-view-v300.webp" srcset="assets/photos/toyako-board-top-view-v300-800.webp 800w, assets/photos/toyako-board-top-view-v300.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="Toyako基板の部品面。電源部と、測定用の回路、端のコネクタ" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>Toyakoの部品面</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/toyako-board-bottom-view.webp" srcset="assets/photos/toyako-board-bottom-view-800.webp 800w, assets/photos/toyako-board-bottom-view.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="Toyako基板の裏面。部品が並び、端にコネクタがある" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>Toyakoの裏面</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/eval-board-8site-top.webp" srcset="assets/photos/eval-board-8site-top-800.webp 800w, assets/photos/eval-board-8site-top.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="675" alt="mowa solutionsのロゴが入った評価ボードの表" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>評価ボード</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/board-pair-mowa.webp" srcset="assets/photos/board-pair-mowa-800.webp 800w, assets/photos/board-pair-mowa.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="1600" alt="mowa solutionsの基板が2枚" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>自社の基板</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/exhibition-booth-01.webp" srcset="assets/photos/exhibition-booth-01-800.webp 800w, assets/photos/exhibition-booth-01.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="展示会のブース。PEPPERのポスターと実機、測定器" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>展示会のブース</span>
+          </button>
+          <button type="button" class="g-card reveal-item lift" data-cat="product">
+            <img src="assets/photos/workspace-bench-work.webp" srcset="assets/photos/workspace-bench-work-800.webp 800w, assets/photos/workspace-bench-work.webp 1200w" sizes="(max-width: 700px) 92vw, (max-width: 979px) 46vw, 30vw" width="1200" height="900" alt="社内の作業台。基板を測っているところ" loading="lazy" decoding="async">
+            <span class="g-card__cap"><span class="g-card__tag">自社の装置</span>作業台</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="about">
+      <div class="wrap">
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">07</span>強みと、会社のこと</h2>
         <div class="about-grid">
-          <div>
-            <p>mowaソリューションズは、熊本で機械もプログラムも作ってきた会社です。試験の装置では、細かく測る基板、FPGA、試験のソフト、動かない原因を追う仕事を、長くやってきました。</p>
+          <div class="reveal">
+            <p><span data-site="name">mowaソリューションズ</span>は、熊本で機械もプログラムも作ってきた会社です。試験の装置では、細かく測る基板、FPGA、試験のソフト、動かない原因を追う仕事を、長くやってきました。</p>
             <p>そのやり方を、店や畑や、ひとりの仕事にも使っています。アプリも、AIの設定も、基板も、3Dプリンタも、ここにあります。子どものプログラミング教室もやっています。</p>
             <p><a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">プログラミング教室のサイト（別サイト）</a></p>
           </div>
-          <ul class="strengths">
-            <li class="strength">
+          <ul class="strengths" data-stagger>
+            <li class="strength lift reveal-item">
               <h3>基板も、動かすプログラムも</h3>
               <p>測る基板、FPGA、試験のプログラムを自分で作ります。調子が悪いとき、回路側かプログラム側かをその場で見ます。</p>
             </li>
-            <li class="strength">
+            <li class="strength lift reveal-item">
               <h3>仕事の画面</h3>
               <p>日報や在庫みたいに、毎日開く画面を小さく作れます。</p>
             </li>
-            <li class="strength">
+            <li class="strength lift reveal-item">
               <h3>AI</h3>
               <p>文章の下書きや、問い合わせの整理。使い始めの設定から一緒にやります。</p>
             </li>
-            <li class="strength">
+            <li class="strength lift reveal-item">
               <h3>基板と、パソコンまわり</h3>
               <p>小さい基板を設計します。パソコン、ネット、バックアップも整えます。</p>
             </li>
-            <li class="strength">
+            <li class="strength lift reveal-item">
               <h3>3Dプリント</h3>
               <p>Bambu LabのP2Sが3台あります。治具やケースを、形にして渡せます。</p>
             </li>
-            <li class="strength">
+            <li class="strength lift reveal-item">
               <h3>教室</h3>
               <p>プログラミングを少人数で教えています。仕事の研修とは別です。</p>
             </li>
@@ -481,28 +642,40 @@
              作品・基板と作業場は assets/photos/ の承認済み写真。
              ぼかしを削る切り抜きはしない。
              ============================================================ -->
-        <ul class="photo-grid more">
-          <li>
+        <ul class="photo-grid more" data-stagger>
+          <li class="reveal-item">
             <figure>
               <img src="images/owner-placeholder.svg" width="800" height="600" alt="代表者の写真はまだ入っていません" loading="lazy" decoding="async">
               <figcaption>代表の写真 <span class="kari">仮</span></figcaption>
             </figure>
           </li>
-          <li>
+          <li class="reveal-item">
             <figure>
               <img src="images/p2s-placeholder.svg" width="800" height="600" alt="3Dプリンタ P2S の写真はまだ入っていません" loading="lazy" decoding="async">
               <figcaption>3Dプリンタ（P2S が3台） <span class="kari">仮</span></figcaption>
             </figure>
           </li>
-          <li>
+          <li class="reveal-item">
             <figure>
-              <img class="photo" src="assets/photos/eval-board-8site-top.webp" width="1200" height="675" alt="mowa solutionsロゴ入りの8サイト評価ボード（表）" loading="lazy" decoding="async">
-              <figcaption>作品・基板</figcaption>
+              <img class="photo" src="assets/photos/classroom-rpi.webp" srcset="assets/photos/classroom-rpi-800.webp 800w, assets/photos/classroom-rpi.webp 1600w" sizes="(max-width: 700px) 92vw, 24vw" width="1600" height="1200" alt="机に並べたモニタと、ケースに入ったRaspberry Pi" loading="lazy" decoding="async">
+              <figcaption>教室の机</figcaption>
             </figure>
           </li>
-          <li>
+          <li class="reveal-item">
             <figure>
-              <img class="photo" src="assets/photos/workspace-bench-work.webp" width="1200" height="900" alt="社内の作業風景。基板を測定する様子" loading="lazy" decoding="async">
+              <img class="photo" src="assets/photos/lemon-battery.webp" width="900" height="1600" alt="レモンに金属を刺して、テスタで電圧を見ている" loading="lazy" decoding="async">
+              <figcaption>レモン電池</figcaption>
+            </figure>
+          </li>
+          <li class="reveal-item">
+            <figure>
+              <img class="photo" src="assets/photos/block-robot.webp" srcset="assets/photos/block-robot-800.webp 800w, assets/photos/block-robot.webp 1400w" sizes="(max-width: 700px) 92vw, 24vw" width="1400" height="1050" alt="ブロックで組んだ恐竜の形のロボット。上に小さい基板と電池" loading="lazy" decoding="async">
+              <figcaption>教室のロボット</figcaption>
+            </figure>
+          </li>
+          <li class="reveal-item">
+            <figure>
+              <img class="photo" src="assets/photos/workspace-bench-work.webp" srcset="assets/photos/workspace-bench-work-800.webp 800w, assets/photos/workspace-bench-work.webp 1200w" sizes="(max-width: 700px) 92vw, 24vw" width="1200" height="900" alt="社内の作業風景。基板を測定する様子" loading="lazy" decoding="async">
               <figcaption>作業場</figcaption>
             </figure>
           </li>
@@ -512,45 +685,45 @@
 
     <section class="section section--deep" id="flow">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">06</span>ご依頼の流れ</h2>
-        <p class="lead">先に契約はしません。話を聞いて、金額を見てから決めてください。</p>
-        <ol class="steps">
-          <li>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">08</span>ご依頼の流れ</h2>
+        <p class="lead reveal">先に契約はしません。話を聞いて、金額を見てから決めてください。</p>
+        <ol class="steps" data-stagger>
+          <li class="reveal-item lift">
             <span class="step-no" aria-hidden="true">1</span>
             <div>
               <h3>送る</h3>
               <p>フォームに、困っていることを書きます。上手な文章でなくていいです。</p>
             </div>
           </li>
-          <li>
+          <li class="reveal-item lift">
             <span class="step-no" aria-hidden="true">2</span>
             <div>
               <h3>話を聞く</h3>
               <p>オンラインか、来てもらうか。初回は今のやり方を見せてもらいます。診断は無料です。</p>
             </div>
           </li>
-          <li>
+          <li class="reveal-item lift">
             <span class="step-no" aria-hidden="true">3</span>
             <div>
               <h3>内容と金額を書く</h3>
               <p>やること、やらないこと、金額を書きます。見てから断ってもいいです。見積もりは無料です。</p>
             </div>
           </li>
-          <li>
+          <li class="reveal-item lift">
             <span class="step-no" aria-hidden="true">4</span>
             <div>
               <h3>作業する</h3>
               <p>納得してから始めます。途中で方針が変わるときは、先に言います。</p>
             </div>
           </li>
-          <li>
+          <li class="reveal-item lift">
             <span class="step-no" aria-hidden="true">5</span>
             <div>
               <h3>一緒に触る</h3>
               <p>できたものを、その場で触って確認します。質問もそこで受けます。</p>
             </div>
           </li>
-          <li>
+          <li class="reveal-item lift">
             <span class="step-no" aria-hidden="true">6</span>
             <div>
               <h3>必要なら、保守</h3>
@@ -563,37 +736,37 @@
 
     <section class="section section--paper" id="faq">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">07</span>よくある質問</h2>
-        <div class="faq-list">
-          <details class="faq">
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">09</span>よくある質問</h2>
+        <div class="faq-list" data-stagger>
+          <details class="faq reveal-item">
             <summary><h3>パソコンがほとんどわかりません。</h3></summary>
             <p>大丈夫です。画面を一緒に見ます。ふだんの言葉で話します。</p>
           </details>
-          <details class="faq">
+          <details class="faq reveal-item">
             <summary><h3>どこまで来てもらえますか。</h3></summary>
             <p>熊本県内が中心です。遠いところは聞いてください。オンラインだけでもできます。</p>
           </details>
-          <details class="faq">
+          <details class="faq reveal-item">
             <summary><h3>新しい機械を買わされますか。</h3></summary>
             <p>今のスマホやパソコンで足りるなら、買い足しません。いるときだけ、理由を言います。</p>
           </details>
-          <details class="faq">
+          <details class="faq reveal-item">
             <summary><h3>いくらかかりますか。</h3></summary>
             <p>診断・ご相談と見積もりは無料です。このページの作業の金額は仮です。作業の前に、やることと金額を書きます。見てから断ってもいいです。請求書も出します。</p>
           </details>
-          <details class="faq">
+          <details class="faq reveal-item">
             <summary><h3>AIに、帳簿やお客さんの情報を送るのですか。</h3></summary>
             <p>送っていいかを、先に決めます。出したくないものは、出さないやり方にします。</p>
           </details>
-          <details class="faq">
+          <details class="faq reveal-item">
             <summary><h3>直したあとも見てくれますか。</h3></summary>
             <p>月額で見続けるコースがあります。「あれ、どうするんだっけ」も、そこで聞けます。</p>
           </details>
-          <details class="faq">
+          <details class="faq reveal-item">
             <summary><h3>基板や3Dプリントだけでも頼めますか。</h3></summary>
             <p>はい。小さな部品、ケース、治具だけでもどうぞ。</p>
           </details>
-          <details class="faq">
+          <details class="faq reveal-item">
             <summary><h3>教室とは何が違いますか。</h3></summary>
             <p>同じ会社です。教室は子ども向けで、サイトは <a href="https://mowaschool.com/" target="_blank" rel="noopener noreferrer">mowaschool.com（別サイト）</a> です。このページは、店や畑や仕事のITの相談です。</p>
           </details>
@@ -603,22 +776,23 @@
 
     <section class="section" id="contact">
       <div class="wrap">
-        <h2><span class="stamp" aria-hidden="true">08</span>お問い合わせ</h2>
-        <p class="lead"><strong>診断・ご相談は無料です。</strong>まずは無料で見ます。相談だけでもOKです。見積もりも無料です。困っていることを、短く書いてください。届いた話は、返事以外には使いません。</p>
+        <h2 class="reveal"><span class="stamp" aria-hidden="true">10</span>お問い合わせ</h2>
+        <p class="lead reveal"><strong>診断・ご相談は無料です。</strong>まずは無料で見ます。相談だけでもOKです。見積もりも無料です。困っていることを、短く書いてください。届いた話は、返事以外には使いません。</p>
         <div class="contact-grid">
           <!-- ============================================================
                会社情報
                代表・電話・メール・住所・受付を変えるときは、ここと直後の JSON-LD を揃えてください。
+               屋号は site.js の SITE.name です。
                フォームの通知先（2アドレス）は site.js の FORM_NOTIFY です。
                ============================================================ -->
-          <dl class="facts" id="company-info">
+          <dl class="facts reveal" id="company-info">
             <div>
               <dt>名前</dt>
-              <dd>mowaソリューションズ</dd>
+              <dd data-site="name">mowaソリューションズ</dd>
             </div>
             <div>
               <dt>サービス</dt>
-              <dd>ITなんでも屋</dd>
+              <dd data-site="service">ITなんでも屋</dd>
             </div>
             <div>
               <dt>代表</dt>
@@ -645,7 +819,7 @@
               <dd>熊本県（オンラインもできます）</dd>
             </div>
           </dl>
-          <div class="form-card">
+          <div class="form-card reveal">
             <div id="form-slot">
               <h3>フォームは、まだ仮の場所です <span class="kari">仮</span></h3>
               <p>GoogleフォームなどのURLを入れると、ここに表示されます。回答の通知は、次の両方に届くようにフォーム側で設定してください。</p>
@@ -663,7 +837,7 @@
           </div>
         </div>
         <!-- 会社情報と同じ内容。検索向けの LocalBusiness です。 -->
-        <script type="application/ld+json">
+        <script type="application/ld+json" id="business-ld">
         {
           "@context": "https://schema.org",
           "@type": ["LocalBusiness", "ProfessionalService"],
@@ -738,8 +912,9 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <p class="footer-brand"><img src="assets/mowa_logomark.png" alt="" width="116" height="109"><span class="brand__name">mowaソリューションズ<small>ITなんでも屋</small></span></p>
+        <p class="footer-brand"><img src="assets/mowa_logomark.png" alt="" width="116" height="109"><span class="brand__name"><span data-site="name">mowaソリューションズ</span><small data-site="service">ITなんでも屋</small></span></p>
         <p>熊本で機械もプログラムも作ってきた会社です。店や畑のITも、ここで見ます。</p>
+        <p>年中無休 9:00–17:00<br><a href="tel:0962828122">096-282-8122</a></p>
       </div>
       <div>
         <h2>このページ</h2>
@@ -748,6 +923,8 @@
           <li><a href="#services">サービス</a></li>
           <li><a href="#prices">料金</a></li>
           <li><a href="#works">事例</a></li>
+          <li><a href="#debug">自社のツール</a></li>
+          <li><a href="#photos">写真</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
           <li><a href="#top">ページの上へ戻る</a></li>
         </ul>
@@ -762,10 +939,34 @@
       </div>
     </div>
     <div class="wrap legal">
-      <p>料金の数字は仮です。見積もりは無料で、作業の前に金額を出します。</p>
-      <p>© mowaソリューションズ</p>
+      <p>料金の数字は仮です。見積もりは無料で、作業の前に金額を出します。診断・ご相談は無料です。</p>
+      <p>© <span data-site="name">mowaソリューションズ</span></p>
     </div>
   </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="写真の拡大">
+    <div class="lightbox__panel">
+      <div class="lightbox__top">
+        <p class="lightbox__count" id="light-count">1 / 1</p>
+        <button type="button" id="light-close">閉じる</button>
+      </div>
+      <figure>
+        <img id="light-img" alt="" width="1200" height="900">
+        <figcaption id="light-cap"></figcaption>
+      </figure>
+      <div class="lightbox__nav">
+        <button type="button" id="light-prev">前の写真</button>
+        <button type="button" id="light-next">次の写真</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="dock" id="dock">
+    <a class="btn btn--ghost" href="tel:0962828122">電話する</a>
+    <a class="btn btn--primary" href="#contact">無料で相談する</a>
+  </div>
+
   <script src="site.js"></script>
+  <script type="module" src="motion.js"></script>
 </body>
 </html>

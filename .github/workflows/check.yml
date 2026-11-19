@@ -1,0 +1,13 @@
+name: check
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Local assets and confidential names
+        run: python3 scripts/check_site.py

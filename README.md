@@ -3,7 +3,11 @@
 熊本の商店・農場・個人事業の方向けの、IT相談サイトです。  
 GitHub Pages で、`main` ブランチのルートから公開します。公開先は `https://it.mowasol.com/` です。
 
-金額と写真は、まだ仮です。連絡先は入っています。
+金額は、まだ仮です。連絡先は入っています。写真は入っています。代表と3Dプリンタだけ、まだ仮です。
+
+## 屋号
+
+まだ決まっていません。変えるときは `site.js` の `SITE.name` だけです。表示、ページのタイトル、検索用の JSON-LD は、そこから上書きします。HTMLに書いてある同じ文字は、JavaScriptが動かないときの控えです。
 
 ## 料金を変える
 
@@ -44,6 +48,12 @@ Googleフォームなら、回答の通知先にこの2つを追加します。�
 
 フォームがまだ無いとき、ページのメール控えは `ttamaki@mowasol.com` への mailto です。
 
+## 動き
+
+スクロールで出す動き、カードの浮き、写真の切り替えは Motion（framer-motion と同じライブラリ）です。ファイルは `assets/vendor/motion.js`（MIT、`motion-LICENSE.md`）で、`motion.js` から読みます。外部のCDNは使いません。
+
+`prefers-reduced-motion` のときは動きを止めます。読み込めないときは、2.5秒後に隠した要素を戻します。
+
 ## 写真とロゴ
 
 公式ロゴは `assets/` です。
@@ -56,7 +66,9 @@ Googleフォームなら、回答の通知先にこの2つを追加します。�
 
 ロゴを差し替えるときは、同じファイル名で上書きしてください。サイトの緑は、猫の体 `#63ed4a` と、ロゴの s の `#0d683e` です。
 
-事例と会社紹介の写真は `assets/photos/` です。幅1200pxの WebP で、ぼかしを削る切り抜きはしていません。代替テキストは、納品時の manifest の文を使っています。
+事例と会社紹介の写真は `assets/photos/` です。幅の大きい写真は 800px 版も置いて、`srcset` で出し分けます。形式は WebP です。ぼかしを削る切り抜きはしていません。
+
+自社のデバッグソフト `MwsDebugTool` は、`#debug` です。SnapShot（ピンの今の値、NGと警告）と Shmoo（二つの条件の Pass / Fail、png と csv）を、画面の例にしています。
 
 まだ仮なのは、代表の写真と 3Dプリンタ（P2S）だけです。ファイルは `images/owner-placeholder.svg` と `images/p2s-placeholder.svg` です。
 
@@ -79,7 +91,9 @@ Googleフォームなら、回答の通知先にこの2つを追加します。�
 | --- | --- |
 | `index.html` | ページ本体 |
 | `styles.css` | 見た目 |
-| `site.js` | フォームURLと、携帯メニューを閉じる処理だけ |
+| `site.js` | 屋号、フォームURL、メニュー、写真の拡大、画面の切り替え |
+| `motion.js` | スクロールとホバーの動き |
+| `assets/vendor/motion.js` | Motion 本体 |
 | `CNAME` | `it.mowasol.com` |
 | `404.html` | 見つからないとき |
 | `assets/mowa_neko_logo.jpg` | ヘッダーの公式ロゴ |
