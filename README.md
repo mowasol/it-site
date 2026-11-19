@@ -56,18 +56,9 @@ Googleフォームなら、回答の通知先にこの2つを追加します。�
 
 ロゴを差し替えるときは、同じファイル名で上書きしてください。サイトの緑は、猫の体 `#63ed4a` と、ロゴの s の `#0d683e` です。
 
-事例（PEPPER と Toyako）の写真は `assets/photos/` です。公開用に幅1200pxの WebP にしてあります。ぼかしを削らないよう、切り抜きはしていません。代表・プリンタ・作業場の写真は、まだ仮です。
+事例と会社紹介の写真は `assets/photos/` です。幅1200pxの WebP で、ぼかしを削る切り抜きはしていません。代替テキストは、納品時の manifest の文を使っています。
 
-写真の仮画像は `images/` です。
-
-| 場所 | いまのファイル |
-| --- | --- |
-| 代表の写真 | `images/owner-placeholder.svg` |
-| 3Dプリンタ（P2S） | `images/p2s-placeholder.svg` |
-| 作品・基板 | `images/works-placeholder.svg` |
-| 作業場 | `images/workspace-placeholder.svg` |
-
-写真を足すときは、`images/` にファイルを置き、`index.html` の「写真（仮）」にある `img` の `src` をその名前に変えます。
+まだ仮なのは、代表の写真と 3Dプリンタ（P2S）だけです。ファイルは `images/owner-placeholder.svg` と `images/p2s-placeholder.svg` です。
 
 ## 公開（GitHub Pages）
 
