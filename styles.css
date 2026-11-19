@@ -352,6 +352,32 @@ h2 .stamp {
   padding: 1rem 1.05rem 1.05rem;
   min-width: 0;
 }
+.shot-grid, .shot-pair, .gallery {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 0.75rem;
+}
+.shot-pair { grid-template-columns: 1fr 1fr; margin: 0; }
+.shot-grid img, .shot-pair img, .gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: #e7e0d4;
+}
+.gallery {
+  gap: 12px;
+  margin-top: 0.4rem;
+}
+.gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+.gallery figcaption, .shot-grid figcaption {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
 .section--paper .trouble,
 .section--paper .service,
 .section--paper .work,
@@ -581,7 +607,8 @@ h2 .stamp {
 
 @media (min-width: 700px) {
   .wrap { width: min(1080px, calc(100% - 3rem)); }
-  .card-grid--2, .price-grid, .strengths, .photo-grid { grid-template-columns: 1fr 1fr; }
+  .card-grid--2, .price-grid, .strengths, .photo-grid, .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .options > div { grid-template-columns: 1fr auto; align-items: baseline; gap: 16px; }
   .facts > div { grid-template-columns: 7.5rem 1fr; align-items: baseline; gap: 12px; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
