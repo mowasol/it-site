@@ -23,9 +23,9 @@ GitHub Pages で、`main` ブランチのルートから公開します。公開
 | 電話 | 096-282-8122 |
 | メール | ttamaki@mowasol.com（ページの mailto） |
 | 所在地 | 〒869-1217 熊本県菊池郡大津町森729-41 |
-| 受付 | メール・SNSは24時間365日。事務所は9:00〜17:00（ほぼ年中無休） |
+| 受付 | メール・SNSは24時間365日。事務所は年中無休 9:00〜17:00 |
 
-JSON-LD の `openingHours` は事務所の時間で、`Mo-Su 09:00-17:00` です。メールとSNSが24時間であることは `description` と `contactPoint` に書いてあります。
+JSON-LD の `openingHours` は事務所の時間で、`Mo-Su 09:00-17:00`（年中無休 9:00〜17:00）です。メールとSNSが24時間365日であることは `description` と `contactPoint` に書いてあります。
 
 ## フォームのURLと通知先
 
