@@ -97,7 +97,16 @@
     inView("[data-stagger]", function (el) { playItems(el); }, { margin: "0px 0px -8% 0px" });
     inView(".reveal", function (el) { playBlock(el); }, { margin: "0px 0px -8% 0px" });
 
-    hover(".lift", function (el) {
+    document.querySelectorAll(".faq").forEach(function (item) {
+      item.addEventListener("toggle", function () {
+        var body = item.querySelector("p");
+        if (item.open && body) {
+          animate(body, { opacity: [0, 1], y: [8, 0] }, { duration: 0.32, ease: ease });
+        }
+      });
+    });
+
+    hover(".trouble, .service, .price-card, .work, .strength, .g-card, .debug-point", function (el) {
       animate(el, { y: -6 }, { duration: 0.22, ease: "easeOut" });
       return function () {
         animate(el, { y: 0 }, { duration: 0.28, ease: "easeOut" });

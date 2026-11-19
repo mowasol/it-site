@@ -123,6 +123,7 @@ var FORM_NOTIFY = [
   setupDebug();
   setupGallery();
   setupDock();
+  setupNav();
 
   function setupDebug() {
     var img = document.getElementById("debug-shot");
@@ -304,6 +305,31 @@ var FORM_NOTIFY = [
       filters[f].addEventListener("click", function () {
         applyFilter(this.getAttribute("data-filter"));
       });
+    }
+  }
+
+  function setupNav() {
+    var links = document.querySelectorAll(".nav-wide a[href^='#']:not(.menu__cta), .menu nav a[href^='#']:not(.menu__cta)");
+    if (!links.length || !("IntersectionObserver" in window)) return;
+    var map = {};
+    for (var i = 0; i < links.length; i++) {
+      var id = links[i].getAttribute("href").slice(1);
+      if (!map[id]) map[id] = [];
+      map[id].push(links[i]);
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      for (var e = 0; e < entries.length; e++) {
+        var group = map[entries[e].target.id];
+        if (!group) continue;
+        for (var n = 0; n < group.length; n++) {
+          group[n].classList.toggle("is-current", entries[e].isIntersecting);
+        }
+      }
+    }, { rootMargin: "-42% 0px -48% 0px", threshold: 0 });
+    var ids = Object.keys(map);
+    for (var k = 0; k < ids.length; k++) {
+      var section = document.getElementById(ids[k]);
+      if (section) observer.observe(section);
     }
   }
 
