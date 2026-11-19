@@ -799,7 +799,13 @@ section[id] { scroll-margin-top: 5.6rem; }
   .g-card:focus-visible img,
   .film__item:hover img,
   .work:hover .shot-grid img {
-    transform: scale(1.045);
+    transform: scale(1.08);
+  }
+  .trouble, .service, .price-card, .work, .strength, .g-card, .debug-point {
+    transition: box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease;
+  }
+  .trouble:hover, .service:hover, .price-card:hover, .work:hover, .strength:hover, .g-card:hover, .debug-point:hover {
+    box-shadow: 0 22px 44px rgb(19 36 28 / 0.14);
   }
 }
 
@@ -1190,9 +1196,9 @@ body:has(dialog[open]) .dock { display: none; }
     transform-origin: left center;
     animation: rule-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
-  html.js .hero-rise { transform: translateY(16px); }
-  html.js .hero-side { opacity: 0; }
-  html.js .shot--main img { transform: scale(1.045); }
+  html.js .hero-rise { opacity: 0; transform: translateY(40px); }
+  html.js .hero-side { opacity: 0; transform: translateY(36px) scale(0.92); }
+  html.js .shot--main img { transform: scale(1.12); }
   html.js .reveal,
   html.js .reveal-item { opacity: 0; }
 }

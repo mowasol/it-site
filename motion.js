@@ -54,19 +54,19 @@
       }
     };
 
-    animate(".hero-rise", { y: [16, 0] }, {
-      duration: 0.72,
-      delay: stagger(0.055),
+    animate(".hero-rise", { opacity: [0, 1], y: [40, 0] }, {
+      duration: 0.9,
+      delay: stagger(0.09),
       ease: ease
     });
-    animate(".hero-side", { opacity: [0, 1], y: [18, 0] }, {
-      duration: 0.7,
-      delay: stagger(0.12, { startDelay: 0.08 }),
+    animate(".hero-side", { opacity: [0, 1], y: [36, 0], scale: [0.92, 1] }, {
+      duration: 0.9,
+      delay: stagger(0.14, { startDelay: 0.2 }),
       ease: ease
     });
     var mainImg = document.querySelector(".shot--main img");
     if (mainImg) {
-      animate(mainImg, { scale: [1.045, 1] }, { duration: 1.15, ease: ease });
+      animate(mainImg, { scale: [1.12, 1] }, { duration: 1.45, ease: ease });
     }
 
     function playItems(el) {
@@ -74,9 +74,9 @@
       el.dataset.played = "1";
       var items = el.querySelectorAll(".reveal-item");
       if (!items.length) return;
-      animate(items, { opacity: [0, 1], y: [18, 0] }, {
-        delay: stagger(0.042, { startDelay: 0.02 }),
-        duration: 0.52,
+      animate(items, { opacity: [0, 1], y: [36, 0] }, {
+        delay: stagger(0.07, { startDelay: 0.04 }),
+        duration: 0.72,
         ease: ease
       });
     }
@@ -84,7 +84,7 @@
     function playBlock(el) {
       if (!el || el.dataset.played === "1") return;
       el.dataset.played = "1";
-      animate(el, { opacity: [0, 1], y: [16, 0] }, { duration: 0.58, ease: ease });
+      animate(el, { opacity: [0, 1], y: [28, 0] }, { duration: 0.7, ease: ease });
     }
 
     document.querySelectorAll("[data-stagger]").forEach(function (el) {
@@ -107,9 +107,9 @@
     });
 
     hover(".trouble, .service, .price-card, .work, .strength, .g-card, .debug-point", function (el) {
-      animate(el, { y: -6 }, { duration: 0.22, ease: "easeOut" });
+      animate(el, { y: -12 }, { duration: 0.28, ease: ease });
       return function () {
-        animate(el, { y: 0 }, { duration: 0.28, ease: "easeOut" });
+        animate(el, { y: 0 }, { duration: 0.35, ease: ease });
       };
     });
 
@@ -141,7 +141,7 @@
 
     document.addEventListener("site:lightbox-open", function () {
       var panel = document.querySelector(".lightbox__panel");
-      if (panel) animate(panel, { opacity: [0, 1], y: [14, 0] }, { duration: 0.28, ease: ease });
+      if (panel) animate(panel, { opacity: [0, 1], y: [28, 0], scale: [0.96, 1] }, { duration: 0.45, ease: ease });
     });
   }
 })();
