@@ -16,7 +16,7 @@ var SITE = {
   tagline: "パソコン・スマホの困りごとから、アプリ開発まで"
 };
 
-var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdb1XyTA4C_K0W5Oy-pLBaNuWc1V_d_HoLe1A9pNUVKaVmJTw/viewform?embedded=true";
+var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScvb5plKPqGAXg9a4uRq0Ynq1v0lUVfdyGFyqacMeiaS5kluw/viewform?embedded=true";
 var FORM_NOTIFY = []; // 通知先はGoogleフォーム側で設定（公開ファイルにアドレスを書かない）
 
 (function () {
