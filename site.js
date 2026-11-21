@@ -8,19 +8,16 @@
    FORM_URL … Googleフォームなどの埋め込み用 URL。空なら案内を表示します。
    例: "https://docs.google.com/forms/d/e/________/viewform?embedded=true"
 
-   FORM_NOTIFY … 回答の通知先。フォーム側の通知設定で、この2つ両方に届くようにする。
-   ページの mailto 控えは ttamaki@mowasol.com だけ（index.html）。
+   FORM_NOTIFY … 使っていません。回答の通知はGoogleフォーム側で設定します。
+   ページの mailto 控えは support@mowasol.com だけ（index.html）。
    ============================================================ */
 var SITE = {
   name: "AIとデジタルのmowa",
   tagline: "パソコン・スマホの困りごとから、アプリ開発まで"
 };
 
-var FORM_URL = "";
-var FORM_NOTIFY = [
-  "ttamaki@mowasol.com",
-  "satokana@mowasol.com"
-];
+var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdb1XyTA4C_K0W5Oy-pLBaNuWc1V_d_HoLe1A9pNUVKaVmJTw/viewform?embedded=true";
+var FORM_NOTIFY = []; // 通知先はGoogleフォーム側で設定（公開ファイルにアドレスを書かない）
 
 (function () {
   "use strict";
@@ -363,8 +360,34 @@ var FORM_NOTIFY = [
     for (var f = 0; f < filters.length; f++) {
       filters[f].addEventListener("click", function () {
         applyFilter(this.getAttribute("data-filter"));
+        markExtra();
       });
     }
+
+    // スマホでは最初の数枚だけ見せて、「もっと見る」で残りを出す
+    var SHOW_FIRST = 6;
+    var more = document.createElement("button");
+    more.type = "button";
+    more.className = "btn btn--ghost gallery-more";
+    grid.classList.add("is-collapsed");
+    grid.parentNode.insertBefore(more, grid.nextSibling);
+
+    function markExtra() {
+      var list = cards();
+      var all = grid.querySelectorAll(".g-card");
+      for (var i = 0; i < all.length; i++) all[i].classList.remove("is-extra");
+      for (var j = SHOW_FIRST; j < list.length; j++) list[j].classList.add("is-extra");
+      var rest = Math.max(0, list.length - SHOW_FIRST);
+      more.hidden = rest === 0 || !grid.classList.contains("is-collapsed");
+      more.textContent = "ほかの写真も見る（あと" + rest + "枚）";
+    }
+
+    more.addEventListener("click", function () {
+      grid.classList.remove("is-collapsed");
+      more.hidden = true;
+    });
+
+    markExtra();
   }
 
   function setupNav() {

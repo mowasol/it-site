@@ -27,7 +27,7 @@ GitHub Pages で、`main` ブランチのルートから公開します。公開
 | 名前 | AIとデジタルのmowa |
 | 代表 | たまき |
 | 電話 | 096-282-8122 |
-| メール | ttamaki@mowasol.com（ページの mailto） |
+| メール | support@mowasol.com（ページの mailto） |
 | 所在地 | 〒869-1217 熊本県菊池郡大津町森729-41 |
 | 受付 | メール・SNSは24時間365日。事務所は年中無休 9:00〜17:00 |
 
@@ -43,12 +43,12 @@ var FORM_URL = "https://docs.google.com/forms/d/e/________/viewform?embedded=tru
 
 回答の通知は、`FORM_NOTIFY` の両方に届くようにしてください。
 
-- ttamaki@mowasol.com
+- support@mowasol.com
 - satokana@mowasol.com
 
 Googleフォームなら、回答の通知先にこの2つを追加します。片方だけでは足りません。`https://` から始まるURLだけをページに埋め込みます。
 
-フォームがまだ無いとき、ページのメール控えは `ttamaki@mowasol.com` への mailto です。
+フォームがまだ無いとき、ページのメール控えは `support@mowasol.com` への mailto です。
 
 ## 動き
 
