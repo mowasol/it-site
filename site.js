@@ -13,7 +13,7 @@
    ============================================================ */
 var SITE = {
   name: "AIとデジタルのmowa",
-  tagline: "パソコン・スマホの困りごとから、アプリ開発まで"
+  tagline: "パソコン修理・業務アプリ・AI導入と、半導体テスト装置"
 };
 
 var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScvb5plKPqGAXg9a4uRq0Ynq1v0lUVfdyGFyqacMeiaS5kluw/viewform?embedded=true";
@@ -49,7 +49,7 @@ var FORM_NOTIFY = []; // 通知先はGoogleフォーム側で設定（公開フ�
   }
 
   function taglineParts(tagline) {
-    var parts = ["パソコン・スマホの", "困りごとから、", "アプリ開発まで"];
+    var parts = ["パソコン修理・", "業務アプリ・", "AI導入と、", "半導体テスト装置"];
     if (parts.join("") !== tagline) return [tagline];
     return parts;
   }

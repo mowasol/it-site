@@ -1289,3 +1289,37 @@ html.js.motion-failed .shot--main img {
   .gallery-more { display: flex; margin: 1.2rem auto 0; }
   .gallery-more[hidden] { display: none; }
 }
+
+/* ---------- 2事業の案内（ヒーロー） ---------- */
+.biz-list { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .7rem; }
+.biz-list a { display: block; padding: .85rem 1rem; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; color: var(--ink); text-decoration: none; }
+.biz-list a:hover { border-color: var(--green); }
+.biz-list__name { display: block; font-family: var(--display); font-weight: 700; color: var(--green-dark); }
+.biz-list__body { display: block; font-size: .95rem; color: var(--muted); }
+
+/* ---------- 一覧表（サービス・製品） ---------- */
+.spec-wrap { margin-top: 1.4rem; }
+.spec-table { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); font-size: .97rem; }
+.spec-table th, .spec-table td { padding: .75rem .9rem; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.spec-table thead th { background: var(--bg-deep); font-size: .9rem; color: var(--muted); font-weight: 700; }
+.spec-table tbody th { font-weight: 700; white-space: normal; min-width: 9em; }
+.spec-table__price { white-space: nowrap; font-weight: 700; }
+@media (max-width: 760px) {
+  .spec-table thead { display: none; }
+  .spec-table, .spec-table tbody, .spec-table tr, .spec-table th, .spec-table td { display: block; width: 100%; }
+  .spec-table tr { border-bottom: 1px solid var(--line); padding: .6rem 0; }
+  .spec-table th, .spec-table td { border: 0; padding: .25rem .9rem; }
+  .spec-table td::before { content: attr(data-label) "："; color: var(--muted); font-size: .85rem; }
+  .spec-table__price { white-space: normal; }
+}
+
+.semicon-debug { margin-top: 2.4rem; padding: clamp(1rem, 3vw, 2rem); border-radius: var(--radius); }
+.spec-table { color: var(--ink); }
+.owner-fig { margin: 1.2rem 0 0; max-width: 320px; }
+.owner-fig img { width: 100%; height: auto; border-radius: 14px; }
+.owner-fig figcaption { font-size: .9rem; color: var(--muted); margin-top: .3rem; }
+.debug-copy { min-width: 0; }
+.debug-copy p, .spec-table td, .biz-list__body { overflow-wrap: anywhere; }
+/* 長い語句がはみ出さないように（グリッドの最小幅を詰める） */
+.about-grid > *, .steps li > div, .card-grid > * { min-width: 0; }
+main p, main h3, main td, main th { overflow-wrap: anywhere; }
