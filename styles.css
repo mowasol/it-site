@@ -1323,3 +1323,10 @@ html.js.motion-failed .shot--main img {
 /* 長い語句がはみ出さないように（グリッドの最小幅を詰める） */
 .about-grid > *, .steps li > div, .card-grid > * { min-width: 0; }
 main p, main h3, main td, main th { overflow-wrap: anywhere; }
+/* 会社概要の表（2列） */
+.company-table { margin-bottom: 2rem; }
+.company-table tbody th { width: 9em; background: var(--bg-deep); }
+@media (max-width: 760px) {
+  .company-table td::before { content: none; }
+  .company-table tbody th { width: 100%; background: none; color: var(--muted); font-size: .85rem; padding-bottom: 0; }
+}
