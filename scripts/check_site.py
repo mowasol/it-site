@@ -17,7 +17,7 @@ text_files = [
 ]
 banned = [
     "Innotech", "Mitsumi", "JASM", "TSMC", "Sony", "Lattice", "Regulus",
-    "イノテック", "ミツミ", "ソニー", "ラティス", "レグルス", "Binetest",
+    "イノテック", "ミツミ", "ソニー", "ラティス", "レグルス", "Binetest", "Toyako", "toyako",
 ]
 attr = re.compile(r"""(?:src|href)=["']([^"']+)["']|srcset=["']([^"']+)["']""")
 missing = []
@@ -47,7 +47,7 @@ if cname != "it.mowasol.com":
 visible = re.sub(r"<[^>]+>", "", (root / "index.html").read_text(encoding="utf-8"))
 if "診断・ご相談は無料" not in visible:
     named.append("missing 診断・ご相談は無料")
-if "AIとデジタルのmowa" not in visible or "パソコン・スマホの困りごとから、アプリ開発まで" not in visible:
+if "AIとデジタルのmowa" not in visible or "パソコン修理・業務アプリ・AI導入と、半導体テスト装置" not in visible:
     named.append("brand name or tagline missing")
 if "ITなんでも屋" in visible or "なんでも屋" in visible:
     named.append("old shop name still visible")
