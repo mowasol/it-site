@@ -13,7 +13,8 @@
    ============================================================ */
 var SITE = {
   name: "AIとデジタルのmowa",
-  tagline: "パソコン修理・業務アプリ・AI導入と、半導体テスト装置"
+  tagline: "パソコン・スマホの困りごとから、アプリ開発まで",
+  description: "熊本県菊池郡大津町のAIとデジタルのmowa（mowaソリューションズ株式会社）です。受託開発・アプリ開発・AI導入を中心に、パソコンの修理・設定やスマホの設定のご相談まで対応します。診断・ご相談は無料です。"
 };
 
 var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScvb5plKPqGAXg9a4uRq0Ynq1v0lUVfdyGFyqacMeiaS5kluw/viewform?embedded=true";
@@ -49,7 +50,7 @@ var FORM_NOTIFY = []; // 通知先はGoogleフォーム側で設定（公開フ�
   }
 
   function taglineParts(tagline) {
-    var parts = ["パソコン修理・", "業務アプリ・", "AI導入と、", "半導体テスト装置"];
+    var parts = ["パソコン・スマホの", "困りごとから、", "アプリ開発まで"];
     if (parts.join("") !== tagline) return [tagline];
     return parts;
   }
@@ -85,9 +86,9 @@ var FORM_NOTIFY = []; // 通知先はGoogleフォーム側で設定（公開フ�
     var ogSite = document.querySelector('meta[property="og:site_name"]');
     if (ogSite) ogSite.setAttribute("content", name);
     var ogAlt = document.querySelector('meta[property="og:image:alt"]');
-    if (ogAlt) ogAlt.setAttribute("content", name + "のマーク。" + tagline);
+    if (ogAlt) ogAlt.setAttribute("content", name + "。" + tagline + "。受託開発・アプリ開発・AI導入。");
 
-    var desc = "熊本県菊池郡大津町の" + name + "です。" + tagline + "。どんな小さなことでも、お気軽にどうぞ。診断・ご相談は無料です。";
+    var desc = SITE.description;
     var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", desc);
     var ogDesc = document.querySelector('meta[property="og:description"]');
@@ -100,7 +101,7 @@ var FORM_NOTIFY = []; // 通知先はGoogleフォーム側で設定（公開フ�
     try {
       var data = JSON.parse(ld.textContent);
       data.name = name;
-      data.description = name + "。" + tagline + "。どんな小さなことでも、お気軽にどうぞ。診断・ご相談は無料。メールとSNSは24時間365日。事務所は年中無休 9:00〜17:00。";
+      data.description = desc;
       ld.textContent = JSON.stringify(data);
     } catch (err) {}
   }

@@ -1024,10 +1024,18 @@ section[id] { scroll-margin-top: 5.6rem; }
 .form-frame {
   display: block;
   width: 100%;
-  min-height: 720px;
+  height: 1400px;
+  min-height: 1400px;
   border: 0;
   border-radius: 12px;
   background: #fff;
+}
+.form-privacy { margin: 0.8rem 0 0; }
+@media (max-width: 520px) {
+  .form-frame {
+    height: 1720px;
+    min-height: 1720px;
+  }
 }
 .form-warn {
   background: #fff4f0;
@@ -1164,6 +1172,12 @@ body:has(dialog[open]) .dock { display: none; }
   align-content: center;
   padding: 3rem 0;
 }
+.privacy { max-width: 44rem; }
+.privacy h2 {
+  font-size: 1.35rem;
+  margin: 1.6rem 0 0.4rem;
+}
+.privacy .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.6rem; }
 
 @media (max-width: 520px) {
   .brand__service { display: none; }
